@@ -1,7 +1,7 @@
 
 # Adaptive Runtime Platform for TypeScript
 [![Build Status](https://api.travis-ci.org/AdaptiveMe/adaptive-arp-typescript.svg?branch=master)](https://travis-ci.org/AdaptiveMe/adaptive-arp-typescript) [![Codacy Badge](https://www.codacy.com/project/badge/e88afab095404cdd88b70de43df182de)](https://www.codacy.com/public/carlos/adaptive-arp-javascript) [![GitHub tag](https://img.shields.io/github/tag/AdaptiveMe/adaptive-arp-typescript.svg)](https://github.com/AdaptiveMe/adaptive-arp-typescript) [![License](https://img.shields.io/badge/license-apache%202-blue.svg)](https://raw.githubusercontent.com/AdaptiveMe/adaptive-arp-typescript/master/LICENSE) [![ARP](https://img.shields.io/badge/arp-typescript-blue.svg)](#) [![adaptive.me](https://img.shields.io/badge/adaptive-me-orange.svg)](http://adaptive.me)
-[![Adaptive Runtime Platform](https://raw.githubusercontent.com/AdaptiveMe/AdaptiveMe.github.io/master/assets/logos/arp_for_Typescript.png)](#)
+[![Adaptive Runtime Platform](https://raw.githubusercontent.com/AdaptiveMe/AdaptiveMe.github.io/master/assets/logos/transparent/arp_for_Typescript.png)](#)
 ## Introduction
 
 ### About This Project
