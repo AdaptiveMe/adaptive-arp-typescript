@@ -28,3 +28,5 @@ replace -s "for \(var p in b\) if \(b.hasOwnProperty\(p\)\) d\[p] = b\[p];" "for
 RETVAL=$?
 [ $RETVAL -eq 0 ] && echo Success fixing-up unit JS files.
 [ $RETVAL -ne 0 ] && exit $?
+
+exit 0
