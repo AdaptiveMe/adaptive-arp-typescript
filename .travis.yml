@@ -1,7 +1,9 @@
 language: node_js
+before_install: cd adaptive-arp-ts
 node_js:
   - "0.12"
 install:
   - "npm install -g typescript"
+  - "npm install -g replace"
 script:
-  - "tsc -d -m commonjs --sourcemap --target ES5 *.ts"
+  - "./compile.sh"
