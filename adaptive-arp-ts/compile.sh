@@ -29,4 +29,11 @@ RETVAL=$?
 [ $RETVAL -eq 0 ] && echo Success fixing-up unit JS files.
 [ $RETVAL -ne 0 ] && exit $?
 
+rm $HOME_DIR/src_units/*.js
+rm $HOME_DIR/src_units/*.js.map
+rm $HOME_DIR/src_units/*.d.ts
+
+mv $HOME_DIR/src_global/Adaptive.ts $HOME_DIR
+mv $HOME_DIR/src_global/Adaptive.js $HOME_DIR/adaptive.js
+
 exit 0
