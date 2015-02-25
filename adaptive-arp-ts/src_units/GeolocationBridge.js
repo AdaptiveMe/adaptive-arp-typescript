@@ -107,4 +107,7 @@ var Adaptive;
     })(Adaptive.BaseSensorBridge);
     Adaptive.GeolocationBridge = GeolocationBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=GeolocationBridge.js.map

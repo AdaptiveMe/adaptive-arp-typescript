@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseUtilBridge);
     Adaptive.ConcurrentBridge = ConcurrentBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ConcurrentBridge.js.map

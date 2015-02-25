@@ -36,4 +36,7 @@ Release:
 ///<reference path="IBaseCallback.ts"/>
 ///<reference path="IContactResultCallbackError.ts"/>
 ///<reference path="IContactResultCallbackWarning.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IContactResultCallback.js.map

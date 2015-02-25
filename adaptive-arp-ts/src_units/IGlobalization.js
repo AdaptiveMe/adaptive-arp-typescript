@@ -35,4 +35,7 @@ Release:
 ///<reference path="IBaseApplication.ts"/>
 ///<reference path="KeyPair.ts"/>
 ///<reference path="Locale.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IGlobalization.js.map

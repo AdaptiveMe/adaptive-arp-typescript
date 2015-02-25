@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseUIBridge);
     Adaptive.DesktopBridge = DesktopBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=DesktopBridge.js.map

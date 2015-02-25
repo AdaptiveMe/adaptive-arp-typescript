@@ -206,4 +206,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.ContactEmail = ContactEmail;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ContactEmail.js.map

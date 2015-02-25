@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseUtilBridge);
     Adaptive.CompressionBridge = CompressionBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=CompressionBridge.js.map

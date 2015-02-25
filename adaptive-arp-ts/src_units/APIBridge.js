@@ -33,4 +33,7 @@ Release:
 */
 ///<reference path="APIRequest.ts"/>
 ///<reference path="APIResponse.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=APIBridge.js.map

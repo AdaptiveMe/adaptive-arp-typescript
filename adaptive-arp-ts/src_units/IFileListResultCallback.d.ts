@@ -61,7 +61,7 @@ declare module Adaptive {
            @param files Array of resulting files/folders.
            @since v2.0
         */
-        onResult(files: FileDescriptor[]): any;
+        onResult(files: Array<FileDescriptor>): any;
         /**
            @method
            On partial result of a file operation, containing a warning.
@@ -69,6 +69,6 @@ declare module Adaptive {
            @param warning Warning condition encountered.
            @since v2.0
         */
-        onWarning(files: FileDescriptor[], warning: IFileListResultCallbackWarning): any;
+        onWarning(files: Array<FileDescriptor>, warning: IFileListResultCallbackWarning): any;
     }
 }

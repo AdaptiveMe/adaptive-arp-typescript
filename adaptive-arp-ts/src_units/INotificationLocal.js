@@ -33,4 +33,7 @@ Release:
 */
 ///<reference path="IAdaptiveRPGroup.ts"/>
 ///<reference path="IBaseNotification.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=INotificationLocal.js.map

@@ -72,8 +72,8 @@ declare module Adaptive {
        Utility class for Dictionary type support.
     */
     class Dictionary<V> implements IDictionary<V> {
-        _keys: string[];
-        _values: V[];
+        _keys: Array<string>;
+        _values: Array<V>;
         constructor(init: {
             key: string;
             value: V;

@@ -33,4 +33,7 @@ Release:
 */
 ///<reference path="IAdaptiveRPGroup.ts"/>
 ///<reference path="IBaseCommerce.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IStore.js.map

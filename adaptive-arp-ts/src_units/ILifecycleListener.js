@@ -36,4 +36,7 @@ Release:
 ///<reference path="ILifecycleListenerError.ts"/>
 ///<reference path="ILifecycleListenerWarning.ts"/>
 ///<reference path="Lifecycle.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ILifecycleListener.js.map

@@ -38,4 +38,7 @@ Release:
 ///<reference path="ICapabilitiesOrientation.ts"/>
 ///<reference path="IDeviceOrientationListener.ts"/>
 ///<reference path="Locale.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IDevice.js.map

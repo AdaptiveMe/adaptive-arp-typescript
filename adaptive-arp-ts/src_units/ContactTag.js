@@ -168,4 +168,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.ContactTag = ContactTag;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ContactTag.js.map

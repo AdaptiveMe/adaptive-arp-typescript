@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseSensorBridge);
     Adaptive.AmbientLightBridge = AmbientLightBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=AmbientLightBridge.js.map

@@ -85,12 +85,12 @@ declare module Adaptive {
            @property {string[]} parameters
            Parameters of the request as JSON formatted strings.
         */
-        parameters: string[];
+        parameters: Array<string>;
         /**
            @property {string[]} parameters
            Parameters of the request as JSON formatted strings. The 'parametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'parameters'.
         */
-        parametersProperty: string[];
+        parametersProperty: Array<string>;
         /**
            @method constructor
            Constructor with all the parameters
@@ -101,7 +101,7 @@ declare module Adaptive {
            @param {number} asyncId    Id of callback or listener or zero if none for synchronous calls.
            @since v2.0
         */
-        constructor(bridgeType: string, methodName: string, parameters: string[], asyncId: number);
+        constructor(bridgeType: string, methodName: string, parameters: Array<string>, asyncId: number);
         /**
            @method
            Returns the request's API version. This should be the same or higher than the platform managing the
@@ -172,7 +172,7 @@ listener.
            @return {string[]} Parameters
            @since v2.0
         */
-        getParameters(): string[];
+        getParameters(): Array<string>;
         /**
            @method
            Parameters Setter
@@ -180,7 +180,7 @@ listener.
            @param {string[]} parameters Parameters, JSON formatted strings of objects.
            @since v2.0
         */
-        setParameters(parameters: string[]): void;
+        setParameters(parameters: Array<string>): void;
         /**
            @method
            @static

@@ -36,4 +36,7 @@ Release:
 ///<reference path="IServiceResultCallbackError.ts"/>
 ///<reference path="IServiceResultCallbackWarning.ts"/>
 ///<reference path="ServiceResponse.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IServiceResultCallback.js.map

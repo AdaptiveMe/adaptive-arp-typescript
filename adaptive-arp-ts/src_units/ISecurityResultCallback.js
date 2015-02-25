@@ -36,4 +36,7 @@ Release:
 ///<reference path="ISecurityResultCallbackError.ts"/>
 ///<reference path="ISecurityResultCallbackWarning.ts"/>
 ///<reference path="SecureKeyPair.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ISecurityResultCallback.js.map

@@ -75,4 +75,7 @@ var Adaptive;
     })();
     Adaptive.BaseMediaBridge = BaseMediaBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=BaseMediaBridge.js.map

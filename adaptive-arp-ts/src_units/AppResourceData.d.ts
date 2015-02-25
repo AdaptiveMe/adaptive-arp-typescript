@@ -81,12 +81,12 @@ uncompressed/unencrypted/etc format. The 'cookedTypeProperty' is registered with
            @property {number[]} data
            The payload data of the resource in ready to consume format.
         */
-        data: number[];
+        data: Array<number>;
         /**
            @property {number[]} data
            The payload data of the resource in ready to consume format. The 'dataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'data'.
         */
-        dataProperty: number[];
+        dataProperty: Array<number>;
         /**
            @property {string} id
            The id or path identifier of the resource.
@@ -132,7 +132,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @param {number} cookedLength The cooked length in bytes of the resource.
            @since v2.1.3
         */
-        constructor(id: string, data: number[], rawType: string, rawLength: number, cooked: boolean, cookedType: string, cookedLength: number);
+        constructor(id: string, data: Array<number>, rawType: string, rawLength: number, cooked: boolean, cookedType: string, cookedLength: number);
         /**
            @method
            Attribute to denote whether the payload of the resource is cooked.
@@ -188,7 +188,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {number[]} Binary payload of the resource.
            @since v2.1.3
         */
-        getData(): number[];
+        getData(): Array<number>;
         /**
            @method
            Sets the payload of the resource.
@@ -196,7 +196,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @param {number[]} data Binary payload of the resource.
            @since v2.1.3
         */
-        setData(data: number[]): void;
+        setData(data: Array<number>): void;
         /**
            @method
            Gets The id or path identifier of the resource.

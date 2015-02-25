@@ -223,4 +223,7 @@ should be passed as a parameter
     })(Adaptive.BaseDataBridge);
     Adaptive.DatabaseBridge = DatabaseBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=DatabaseBridge.js.map

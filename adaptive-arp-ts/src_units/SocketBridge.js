@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseCommunicationBridge);
     Adaptive.SocketBridge = SocketBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=SocketBridge.js.map

@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseReaderBridge);
     Adaptive.NFCBridge = NFCBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=NFCBridge.js.map

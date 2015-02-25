@@ -193,4 +193,7 @@ var Adaptive;
     })(Adaptive.BaseCallback);
     Adaptive.NetworkReachabilityCallback = NetworkReachabilityCallback;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=NetworkReachabilityCallback.js.map

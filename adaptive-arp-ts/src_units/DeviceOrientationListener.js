@@ -193,4 +193,7 @@ event may be fired if the devices vetoes the rotation before rotation is complet
     })(Adaptive.BaseListener);
     Adaptive.DeviceOrientationListener = DeviceOrientationListener;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=DeviceOrientationListener.js.map

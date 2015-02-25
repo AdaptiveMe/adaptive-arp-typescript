@@ -36,4 +36,7 @@ Release:
 ///<reference path="IBaseListener.ts"/>
 ///<reference path="IButtonListenerError.ts"/>
 ///<reference path="IButtonListenerWarning.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IButtonListener.js.map

@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseCommerceBridge);
     Adaptive.WalletBridge = WalletBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=WalletBridge.js.map

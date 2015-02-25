@@ -41,4 +41,7 @@ Release:
 ///<reference path="ICapabilitiesNotification.ts"/>
 ///<reference path="ICapabilitiesOrientation.ts"/>
 ///<reference path="ICapabilitiesSensor.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ICapabilities.js.map

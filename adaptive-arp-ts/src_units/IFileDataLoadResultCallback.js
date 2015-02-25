@@ -35,4 +35,7 @@ Release:
 ///<reference path="IBaseCallback.ts"/>
 ///<reference path="IFileDataLoadResultCallbackError.ts"/>
 ///<reference path="IFileDataLoadResultCallbackWarning.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IFileDataLoadResultCallback.js.map

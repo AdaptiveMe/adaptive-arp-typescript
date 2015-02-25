@@ -64,7 +64,7 @@ declare module Adaptive {
        @param {number} id
        @param {Adaptive.SecureKeyPair[]} keyValues
     */
-    function handleSecurityResultCallbackResult(id: number, keyValues: SecureKeyPair[]): void;
+    function handleSecurityResultCallbackResult(id: number, keyValues: Array<SecureKeyPair>): void;
     /**
        @method
        @private
@@ -73,7 +73,7 @@ declare module Adaptive {
        @param {Adaptive.SecureKeyPair[]} keyValues
        @param {Adaptive.ISecurityResultCallbackWarning} warning
     */
-    function handleSecurityResultCallbackWarning(id: number, keyValues: SecureKeyPair[], warning: ISecurityResultCallbackWarning): void;
+    function handleSecurityResultCallbackWarning(id: number, keyValues: Array<SecureKeyPair>, warning: ISecurityResultCallbackWarning): void;
     /**
        @class Adaptive.SecurityResultCallback
        @extends Adaptive.BaseCallback
@@ -88,12 +88,12 @@ declare module Adaptive {
            @private
            @property
         */
-        onResultFunction: (keyValues: SecureKeyPair[]) => void;
+        onResultFunction: (keyValues: Array<SecureKeyPair>) => void;
         /**
            @private
            @property
         */
-        onWarningFunction: (keyValues: SecureKeyPair[], warning: ISecurityResultCallbackWarning) => void;
+        onWarningFunction: (keyValues: Array<SecureKeyPair>, warning: ISecurityResultCallbackWarning) => void;
         /**
            @method constructor
            Constructor with anonymous handler functions for callback.
@@ -102,7 +102,7 @@ declare module Adaptive {
            @param {Function} onResultFunction Function receiving parameters of type: Adaptive.SecureKeyPair[]
            @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.SecureKeyPair[], Adaptive.ISecurityResultCallbackWarning
         */
-        constructor(onErrorFunction: (error: ISecurityResultCallbackError) => void, onResultFunction: (keyValues: SecureKeyPair[]) => void, onWarningFunction: (keyValues: SecureKeyPair[], warning: ISecurityResultCallbackWarning) => void);
+        constructor(onErrorFunction: (error: ISecurityResultCallbackError) => void, onResultFunction: (keyValues: Array<SecureKeyPair>) => void, onWarningFunction: (keyValues: Array<SecureKeyPair>, warning: ISecurityResultCallbackWarning) => void);
         /**
            @method
            No data received - error condition, not authorized .
@@ -116,7 +116,7 @@ declare module Adaptive {
            @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
            @since v2.0
         */
-        onResult(keyValues: SecureKeyPair[]): void;
+        onResult(keyValues: Array<SecureKeyPair>): void;
         /**
            @method
            Data received with warning - ie Found entries with existing key and values have been overriden
@@ -124,6 +124,6 @@ declare module Adaptive {
            @param {Adaptive.ISecurityResultCallbackWarning} warning warning   Warning values
            @since v2.0
         */
-        onWarning(keyValues: SecureKeyPair[], warning: ISecurityResultCallbackWarning): void;
+        onWarning(keyValues: Array<SecureKeyPair>, warning: ISecurityResultCallbackWarning): void;
     }
 }

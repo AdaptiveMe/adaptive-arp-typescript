@@ -194,4 +194,7 @@ var Adaptive;
     })(Adaptive.BaseCallback);
     Adaptive.FileDataStoreResultCallback = FileDataStoreResultCallback;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=FileDataStoreResultCallback.js.map

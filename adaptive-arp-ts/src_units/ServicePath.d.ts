@@ -57,12 +57,12 @@ declare module Adaptive {
            @property {Adaptive.IServiceMethod[]} methods
            The methods for calling a path.
         */
-        methods: IServiceMethod[];
+        methods: Array<IServiceMethod>;
         /**
            @property {Adaptive.IServiceMethod[]} methods
            The methods for calling a path. The 'methodsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'methods'.
         */
-        methodsProperty: IServiceMethod[];
+        methodsProperty: Array<IServiceMethod>;
         /**
            @property {string} path
            The path for the endpoint.
@@ -82,7 +82,7 @@ declare module Adaptive {
            @param {Adaptive.IServiceType} type    Protocol type.
            @since v2.0.6
         */
-        constructor(path: string, methods: IServiceMethod[], type: IServiceType);
+        constructor(path: string, methods: Array<IServiceMethod>, type: IServiceType);
         /**
            @method
            Gets the protocol for the path.
@@ -106,7 +106,7 @@ declare module Adaptive {
            @return {Adaptive.IServiceMethod[]} Endpoint's path methods
            @since v2.0.4
         */
-        getMethods(): IServiceMethod[];
+        getMethods(): Array<IServiceMethod>;
         /**
            @method
            Endpoint's path methods setter
@@ -114,7 +114,7 @@ declare module Adaptive {
            @param {Adaptive.IServiceMethod[]} methods Endpoint's path methods
            @since v2.0.4
         */
-        setMethods(methods: IServiceMethod[]): void;
+        setMethods(methods: Array<IServiceMethod>): void;
         /**
            @method
            Endpoint's Path Getter

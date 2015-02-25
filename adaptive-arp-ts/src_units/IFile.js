@@ -41,4 +41,7 @@ Release:
 ///<reference path="IFileSystemSecurity.ts"/>
 ///<reference path="IFileSystemStorageType.ts"/>
 ///<reference path="IFileSystemType.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IFile.js.map

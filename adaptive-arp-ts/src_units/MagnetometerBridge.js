@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseSensorBridge);
     Adaptive.MagnetometerBridge = MagnetometerBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=MagnetometerBridge.js.map

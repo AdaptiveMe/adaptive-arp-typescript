@@ -107,4 +107,7 @@ var Adaptive;
     })(Adaptive.BaseCommunicationBridge);
     Adaptive.NetworkStatusBridge = NetworkStatusBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=NetworkStatusBridge.js.map

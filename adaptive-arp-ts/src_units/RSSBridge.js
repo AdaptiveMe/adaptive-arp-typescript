@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseSocialBridge);
     Adaptive.RSSBridge = RSSBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=RSSBridge.js.map

@@ -85,4 +85,7 @@ var Adaptive;
     })(Adaptive.BasePIMBridge);
     Adaptive.MailBridge = MailBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=MailBridge.js.map

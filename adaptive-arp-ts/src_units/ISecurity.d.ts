@@ -55,7 +55,7 @@ declare module Adaptive {
            @param callback         callback to be executed upon function result.
            @since v2.0
         */
-        deleteSecureKeyValuePairs(keys: string[], publicAccessName: string, callback: ISecurityResultCallback): any;
+        deleteSecureKeyValuePairs(keys: Array<string>, publicAccessName: string, callback: ISecurityResultCallback): any;
         /**
            @method
            Retrieves from the device internal storage the entry/entries containing the specified key names.
@@ -64,7 +64,7 @@ declare module Adaptive {
            @param callback         callback to be executed upon function result.
            @since v2.0
         */
-        getSecureKeyValuePairs(keys: string[], publicAccessName: string, callback: ISecurityResultCallback): any;
+        getSecureKeyValuePairs(keys: Array<string>, publicAccessName: string, callback: ISecurityResultCallback): any;
         /**
            @method
            Returns if the device has been modified in anyhow
@@ -80,6 +80,6 @@ declare module Adaptive {
            @param callback         callback to be executed upon function result.
            @since v2.0
         */
-        setSecureKeyValuePairs(keyValues: SecureKeyPair[], publicAccessName: string, callback: ISecurityResultCallback): any;
+        setSecureKeyValuePairs(keyValues: Array<SecureKeyPair>, publicAccessName: string, callback: ISecurityResultCallback): any;
     }
 }

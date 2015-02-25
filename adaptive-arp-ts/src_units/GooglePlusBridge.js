@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseSocialBridge);
     Adaptive.GooglePlusBridge = GooglePlusBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=GooglePlusBridge.js.map

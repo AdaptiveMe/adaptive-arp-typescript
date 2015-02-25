@@ -63,7 +63,7 @@ declare module Adaptive {
        @param {number} id
        @param {number[]} data
     */
-    function handleFileDataLoadResultCallbackResult(id: number, data: number[]): void;
+    function handleFileDataLoadResultCallbackResult(id: number, data: Array<number>): void;
     /**
        @method
        @private
@@ -72,7 +72,7 @@ declare module Adaptive {
        @param {number[]} data
        @param {Adaptive.IFileDataLoadResultCallbackWarning} warning
     */
-    function handleFileDataLoadResultCallbackWarning(id: number, data: number[], warning: IFileDataLoadResultCallbackWarning): void;
+    function handleFileDataLoadResultCallbackWarning(id: number, data: Array<number>, warning: IFileDataLoadResultCallbackWarning): void;
     /**
        @class Adaptive.FileDataLoadResultCallback
        @extends Adaptive.BaseCallback
@@ -87,12 +87,12 @@ declare module Adaptive {
            @private
            @property
         */
-        onResultFunction: (data: number[]) => void;
+        onResultFunction: (data: Array<number>) => void;
         /**
            @private
            @property
         */
-        onWarningFunction: (data: number[], warning: IFileDataLoadResultCallbackWarning) => void;
+        onWarningFunction: (data: Array<number>, warning: IFileDataLoadResultCallbackWarning) => void;
         /**
            @method constructor
            Constructor with anonymous handler functions for callback.
@@ -101,7 +101,7 @@ declare module Adaptive {
            @param {Function} onResultFunction Function receiving parameters of type: number[]
            @param {Function} onWarningFunction Function receiving parameters of type: number[], Adaptive.IFileDataLoadResultCallbackWarning
         */
-        constructor(onErrorFunction: (error: IFileDataLoadResultCallbackError) => void, onResultFunction: (data: number[]) => void, onWarningFunction: (data: number[], warning: IFileDataLoadResultCallbackWarning) => void);
+        constructor(onErrorFunction: (error: IFileDataLoadResultCallbackError) => void, onResultFunction: (data: Array<number>) => void, onWarningFunction: (data: Array<number>, warning: IFileDataLoadResultCallbackWarning) => void);
         /**
            @method
            Error processing data retrieval/storage operation.
@@ -115,7 +115,7 @@ declare module Adaptive {
            @param {number[]} data data Data loaded.
            @since v2.0
         */
-        onResult(data: number[]): void;
+        onResult(data: Array<number>): void;
         /**
            @method
            Result with warning of data retrieval/storage operation.
@@ -123,6 +123,6 @@ declare module Adaptive {
            @param {Adaptive.IFileDataLoadResultCallbackWarning} warning warning Warning condition encountered.
            @since v2.0
         */
-        onWarning(data: number[], warning: IFileDataLoadResultCallbackWarning): void;
+        onWarning(data: Array<number>, warning: IFileDataLoadResultCallbackWarning): void;
     }
 }

@@ -37,4 +37,7 @@ Release:
 ///<reference path="IServiceResultCallback.ts"/>
 ///<reference path="ServiceRequest.ts"/>
 ///<reference path="ServiceToken.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IService.js.map

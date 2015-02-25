@@ -88,4 +88,7 @@ var Adaptive;
     })(Adaptive.BaseSystemBridge);
     Adaptive.OSBridge = OSBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=OSBridge.js.map

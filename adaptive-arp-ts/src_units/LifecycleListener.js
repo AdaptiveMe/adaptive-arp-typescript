@@ -191,4 +191,7 @@ var Adaptive;
     })(Adaptive.BaseListener);
     Adaptive.LifecycleListener = LifecycleListener;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=LifecycleListener.js.map

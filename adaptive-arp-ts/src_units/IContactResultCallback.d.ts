@@ -61,7 +61,7 @@ declare module Adaptive {
            @param contacts returned by the platform
            @since v2.0
         */
-        onResult(contacts: Contact[]): any;
+        onResult(contacts: Array<Contact>): any;
         /**
            @method
            This method is called on Warning
@@ -69,6 +69,6 @@ declare module Adaptive {
            @param warning  returned by the platform
            @since v2.0
         */
-        onWarning(contacts: Contact[], warning: IContactResultCallbackWarning): any;
+        onWarning(contacts: Array<Contact>, warning: IContactResultCallbackWarning): any;
     }
 }

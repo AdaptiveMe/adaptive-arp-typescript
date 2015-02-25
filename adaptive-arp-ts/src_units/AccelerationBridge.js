@@ -107,4 +107,7 @@ var Adaptive;
     })(Adaptive.BaseSensorBridge);
     Adaptive.AccelerationBridge = AccelerationBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=AccelerationBridge.js.map

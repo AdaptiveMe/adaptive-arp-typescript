@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseSocialBridge);
     Adaptive.TwitterBridge = TwitterBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=TwitterBridge.js.map

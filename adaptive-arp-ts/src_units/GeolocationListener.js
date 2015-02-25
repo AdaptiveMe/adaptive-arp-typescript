@@ -191,4 +191,7 @@ var Adaptive;
     })(Adaptive.BaseListener);
     Adaptive.GeolocationListener = GeolocationListener;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=GeolocationListener.js.map

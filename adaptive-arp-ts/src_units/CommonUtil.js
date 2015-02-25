@@ -237,4 +237,7 @@ var Adaptive;
     }
     Adaptive.postRequest = postRequest;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=CommonUtil.js.map

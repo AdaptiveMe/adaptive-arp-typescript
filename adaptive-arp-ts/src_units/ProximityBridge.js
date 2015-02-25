@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseSensorBridge);
     Adaptive.ProximityBridge = ProximityBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ProximityBridge.js.map

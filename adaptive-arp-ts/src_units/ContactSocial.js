@@ -169,4 +169,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.ContactSocial = ContactSocial;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ContactSocial.js.map

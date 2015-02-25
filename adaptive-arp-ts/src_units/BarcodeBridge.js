@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseReaderBridge);
     Adaptive.BarcodeBridge = BarcodeBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=BarcodeBridge.js.map

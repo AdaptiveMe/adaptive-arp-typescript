@@ -241,4 +241,7 @@ be unique for a specific instance of an application on a specific device.
     })(Adaptive.APIBean);
     Adaptive.DeviceInfo = DeviceInfo;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=DeviceInfo.js.map

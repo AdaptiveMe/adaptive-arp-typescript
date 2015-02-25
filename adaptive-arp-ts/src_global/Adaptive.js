@@ -18652,4 +18652,7 @@ of the device. For device orientation, use the IDevice APIs.
     })();
     Adaptive.RotationEventState = RotationEventState;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=Adaptive.js.map

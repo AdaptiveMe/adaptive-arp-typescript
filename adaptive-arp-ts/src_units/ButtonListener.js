@@ -191,4 +191,7 @@ var Adaptive;
     })(Adaptive.BaseListener);
     Adaptive.ButtonListener = ButtonListener;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ButtonListener.js.map

@@ -37,4 +37,7 @@ Release:
 ///<reference path="IBaseData.ts"/>
 ///<reference path="IDatabaseResultCallback.ts"/>
 ///<reference path="IDatabaseTableResultCallback.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IDatabase.js.map

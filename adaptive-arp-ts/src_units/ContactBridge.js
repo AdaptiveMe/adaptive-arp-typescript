@@ -205,4 +205,7 @@ var Adaptive;
     })(Adaptive.BasePIMBridge);
     Adaptive.ContactBridge = ContactBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ContactBridge.js.map

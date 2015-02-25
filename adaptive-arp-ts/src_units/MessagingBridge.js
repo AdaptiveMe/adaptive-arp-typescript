@@ -86,4 +86,7 @@ var Adaptive;
     })(Adaptive.BasePIMBridge);
     Adaptive.MessagingBridge = MessagingBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=MessagingBridge.js.map

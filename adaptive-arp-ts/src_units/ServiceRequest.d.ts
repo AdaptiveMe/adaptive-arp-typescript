@@ -65,13 +65,13 @@ populates this field with defaults for the service. The 'contentEncodingProperty
            Body parameters to be included in the body of the request to a service. These may be applied
 during GET/POST operations. No body parameters are included if this array is null or length zero.
         */
-        bodyParameters: ServiceRequestParameter[];
+        bodyParameters: Array<ServiceRequestParameter>;
         /**
            @property {Adaptive.ServiceRequestParameter[]} bodyParameters
            Body parameters to be included in the body of the request to a service. These may be applied
 during GET/POST operations. No body parameters are included if this array is null or length zero. The 'bodyParametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'bodyParameters'.
         */
-        bodyParametersProperty: ServiceRequestParameter[];
+        bodyParametersProperty: Array<ServiceRequestParameter>;
         /**
            @property {string} content
            Request data content (plain text). This should be populated by the application. The content should be
@@ -115,13 +115,13 @@ populates this field with defaults for the service. The 'contentTypeProperty' is
            Query string parameters to be appended to the service URL when making the request. These may be applied
 during GET/POST operations. No query parameters are appended if this array is null or length zero.
         */
-        queryParameters: ServiceRequestParameter[];
+        queryParameters: Array<ServiceRequestParameter>;
         /**
            @property {Adaptive.ServiceRequestParameter[]} queryParameters
            Query string parameters to be appended to the service URL when making the request. These may be applied
 during GET/POST operations. No query parameters are appended if this array is null or length zero. The 'queryParametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'queryParameters'.
         */
-        queryParametersProperty: ServiceRequestParameter[];
+        queryParametersProperty: Array<ServiceRequestParameter>;
         /**
            @property {string} refererHost
            This host indicates the origin host of the request. This, could be useful in case of redirected requests.
@@ -138,14 +138,14 @@ during GET/POST operations. No query parameters are appended if this array is nu
 application, the platform populates this field with defaults for the service and the previous headers.
 In specific, the platform maintains request and response state automatically.
         */
-        serviceHeaders: ServiceHeader[];
+        serviceHeaders: Array<ServiceHeader>;
         /**
            @property {Adaptive.ServiceHeader[]} serviceHeaders
            The serviceHeaders array (name,value pairs) to be included in the request. This may be populated by the
 application, the platform populates this field with defaults for the service and the previous headers.
 In specific, the platform maintains request and response state automatically. The 'serviceHeadersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceHeaders'.
         */
-        serviceHeadersProperty: ServiceHeader[];
+        serviceHeadersProperty: Array<ServiceHeader>;
         /**
            @property {Adaptive.ServiceSession} serviceSession
            Session attributes and cookies. This may be populated by the application, the platform populates
@@ -214,7 +214,7 @@ identifiers. This should not be manipulated by the application directly. The 'se
            @return {Adaptive.ServiceRequestParameter[]} ServiceRequestParameter array or null if none are specified.
            @since v2.0.6
         */
-        getBodyParameters(): ServiceRequestParameter[];
+        getBodyParameters(): Array<ServiceRequestParameter>;
         /**
            @method
            Sets the body parameters of the request.
@@ -222,7 +222,7 @@ identifiers. This should not be manipulated by the application directly. The 'se
            @param {Adaptive.ServiceRequestParameter[]} bodyParameters ServiceRequestParameter array or null if none are specified.
            @since v2.0.6
         */
-        setBodyParameters(bodyParameters: ServiceRequestParameter[]): void;
+        setBodyParameters(bodyParameters: Array<ServiceRequestParameter>): void;
         /**
            @method
            Returns the content
@@ -278,7 +278,7 @@ identifiers. This should not be manipulated by the application directly. The 'se
            @return {Adaptive.ServiceRequestParameter[]} ServiceRequestParameter array or null if none are specified.
            @since v2.0.6
         */
-        getQueryParameters(): ServiceRequestParameter[];
+        getQueryParameters(): Array<ServiceRequestParameter>;
         /**
            @method
            Sets the query parameters of the request.
@@ -286,7 +286,7 @@ identifiers. This should not be manipulated by the application directly. The 'se
            @param {Adaptive.ServiceRequestParameter[]} queryParameters ServiceRequestParameter array or null if none are specified.
            @since v2.0.6
         */
-        setQueryParameters(queryParameters: ServiceRequestParameter[]): void;
+        setQueryParameters(queryParameters: Array<ServiceRequestParameter>): void;
         /**
            @method
            Returns the referer host (origin) of the request.
@@ -310,7 +310,7 @@ identifiers. This should not be manipulated by the application directly. The 'se
            @return {Adaptive.ServiceHeader[]} serviceHeaders
            @since v2.0
         */
-        getServiceHeaders(): ServiceHeader[];
+        getServiceHeaders(): Array<ServiceHeader>;
         /**
            @method
            Set the array of ServiceHeader
@@ -318,7 +318,7 @@ identifiers. This should not be manipulated by the application directly. The 'se
            @param {Adaptive.ServiceHeader[]} serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
            @since v2.0
         */
-        setServiceHeaders(serviceHeaders: ServiceHeader[]): void;
+        setServiceHeaders(serviceHeaders: Array<ServiceHeader>): void;
         /**
            @method
            Getter for service session

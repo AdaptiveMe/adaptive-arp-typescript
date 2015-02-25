@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseSocialBridge);
     Adaptive.FacebookBridge = FacebookBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=FacebookBridge.js.map

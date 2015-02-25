@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseCommunicationBridge);
     Adaptive.BluetoothBridge = BluetoothBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=BluetoothBridge.js.map

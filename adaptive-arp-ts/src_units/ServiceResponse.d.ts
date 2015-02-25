@@ -92,12 +92,12 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @property {Adaptive.ServiceHeader[]} serviceHeaders
            The serviceHeaders array (name,value pairs) to be included on the I/O service request.
         */
-        serviceHeaders: ServiceHeader[];
+        serviceHeaders: Array<ServiceHeader>;
         /**
            @property {Adaptive.ServiceHeader[]} serviceHeaders
            The serviceHeaders array (name,value pairs) to be included on the I/O service request. The 'serviceHeadersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceHeaders'.
         */
-        serviceHeadersProperty: ServiceHeader[];
+        serviceHeadersProperty: Array<ServiceHeader>;
         /**
            @property {Adaptive.ServiceSession} serviceSession
            Information about the session.
@@ -131,7 +131,7 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @param {number} statusCode      HTTP Status code of the response.
            @since v2.0
         */
-        constructor(content: string, contentType: string, contentEncoding: IServiceContentEncoding, contentLength: number, serviceHeaders: ServiceHeader[], serviceSession: ServiceSession, statusCode: number);
+        constructor(content: string, contentType: string, contentEncoding: IServiceContentEncoding, contentLength: number, serviceHeaders: Array<ServiceHeader>, serviceSession: ServiceSession, statusCode: number);
         /**
            @method
            Returns the content encoding
@@ -203,7 +203,7 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @return {Adaptive.ServiceHeader[]} serviceHeaders
            @since v2.0
         */
-        getServiceHeaders(): ServiceHeader[];
+        getServiceHeaders(): Array<ServiceHeader>;
         /**
            @method
            Set the array of ServiceHeader
@@ -211,7 +211,7 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @param {Adaptive.ServiceHeader[]} serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
            @since v2.0
         */
-        setServiceHeaders(serviceHeaders: ServiceHeader[]): void;
+        setServiceHeaders(serviceHeaders: Array<ServiceHeader>): void;
         /**
            @method
            Getter for service session

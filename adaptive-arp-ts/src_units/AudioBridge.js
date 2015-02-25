@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseMediaBridge);
     Adaptive.AudioBridge = AudioBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=AudioBridge.js.map

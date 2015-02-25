@@ -60,7 +60,7 @@ declare module Adaptive {
            @param contactPhoto returned by the platform
            @since v2.0
         */
-        onResult(contactPhoto: number[]): any;
+        onResult(contactPhoto: Array<number>): any;
         /**
            @method
            This method is called on Warning
@@ -68,6 +68,6 @@ declare module Adaptive {
            @param warning      returned by the platform
            @since v2.0
         */
-        onWarning(contactPhoto: number[], warning: IContactPhotoResultCallbackWarning): any;
+        onWarning(contactPhoto: Array<number>, warning: IContactPhotoResultCallbackWarning): any;
     }
 }

@@ -250,4 +250,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.RotationEvent = RotationEvent;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=RotationEvent.js.map

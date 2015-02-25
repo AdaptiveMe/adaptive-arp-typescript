@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseSecurityBridge);
     Adaptive.OpenIdBridge = OpenIdBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=OpenIdBridge.js.map

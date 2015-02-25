@@ -210,6 +210,6 @@ new destination file.
            @param {Adaptive.FileDataStoreResultCallback} callback callback   Result of the operation.
            @since v2.0
         */
-        setContent(descriptor: FileDescriptor, content: number[], callback: IFileDataStoreResultCallback): void;
+        setContent(descriptor: FileDescriptor, content: Array<number>, callback: IFileDataStoreResultCallback): void;
     }
 }

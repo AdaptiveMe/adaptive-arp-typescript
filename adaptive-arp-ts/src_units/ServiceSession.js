@@ -170,4 +170,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.ServiceSession = ServiceSession;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ServiceSession.js.map

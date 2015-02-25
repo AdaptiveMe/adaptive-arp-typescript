@@ -75,4 +75,7 @@ var Adaptive;
     })();
     Adaptive.BasePIMBridge = BasePIMBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=BasePIMBridge.js.map

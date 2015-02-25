@@ -193,4 +193,7 @@ event may be fired if the application vetoes display rotation before rotation is
     })(Adaptive.BaseListener);
     Adaptive.DisplayOrientationListener = DisplayOrientationListener;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=DisplayOrientationListener.js.map

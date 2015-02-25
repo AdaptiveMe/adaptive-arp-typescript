@@ -132,4 +132,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.Button = Button;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=Button.js.map

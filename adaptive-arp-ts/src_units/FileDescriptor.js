@@ -273,4 +273,7 @@ doesn't exist, this will be -1. Used internally.
     })(Adaptive.APIBean);
     Adaptive.FileDescriptor = FileDescriptor;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=FileDescriptor.js.map

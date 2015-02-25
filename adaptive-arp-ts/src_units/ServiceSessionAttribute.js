@@ -98,4 +98,7 @@ var Adaptive;
     })(Adaptive.KeyValue);
     Adaptive.ServiceSessionAttribute = ServiceSessionAttribute;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ServiceSessionAttribute.js.map

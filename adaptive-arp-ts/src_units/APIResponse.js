@@ -189,4 +189,7 @@ var Adaptive;
     })();
     Adaptive.APIResponse = APIResponse;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=APIResponse.js.map

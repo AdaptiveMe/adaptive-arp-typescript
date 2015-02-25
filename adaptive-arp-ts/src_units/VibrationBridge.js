@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseNotificationBridge);
     Adaptive.VibrationBridge = VibrationBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=VibrationBridge.js.map

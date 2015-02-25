@@ -101,4 +101,7 @@ Release:
 ///<reference path="IVideo.ts"/>
 ///<reference path="IWallet.ts"/>
 ///<reference path="IXML.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IAppRegistry.js.map

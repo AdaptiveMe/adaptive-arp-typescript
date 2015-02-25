@@ -67,12 +67,12 @@ declare module Adaptive {
            @property {Adaptive.ServicePath[]} paths
            The remote service paths (to be added to the hostURI and port url).
         */
-        paths: ServicePath[];
+        paths: Array<ServicePath>;
         /**
            @property {Adaptive.ServicePath[]} paths
            The remote service paths (to be added to the hostURI and port url). The 'pathsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'paths'.
         */
-        pathsProperty: ServicePath[];
+        pathsProperty: Array<ServicePath>;
         /**
            @method constructor
            Constructor with parameters
@@ -81,7 +81,7 @@ declare module Adaptive {
            @param {Adaptive.ServicePath[]} paths   Remote service Paths
            @since v2.0.6
         */
-        constructor(hostURI: string, paths: ServicePath[]);
+        constructor(hostURI: string, paths: Array<ServicePath>);
         /**
            @method
            Gets the validation type for the certificate of a SSL host.
@@ -121,7 +121,7 @@ declare module Adaptive {
            @return {Adaptive.ServicePath[]} Remote service Paths
            @since v2.0
         */
-        getPaths(): ServicePath[];
+        getPaths(): Array<ServicePath>;
         /**
            @method
            Set the Remote service Paths
@@ -129,7 +129,7 @@ declare module Adaptive {
            @param {Adaptive.ServicePath[]} paths Remote service Paths
            @since v2.0
         */
-        setPaths(paths: ServicePath[]): void;
+        setPaths(paths: Array<ServicePath>): void;
         /**
            @method
            @static

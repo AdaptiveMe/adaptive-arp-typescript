@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseSensorBridge);
     Adaptive.BarometerBridge = BarometerBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=BarometerBridge.js.map

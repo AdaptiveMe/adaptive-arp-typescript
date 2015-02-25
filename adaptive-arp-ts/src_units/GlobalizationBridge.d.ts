@@ -70,7 +70,7 @@ declare module Adaptive {
            @return {Adaptive.Locale[]} List of locales
            @since v2.0
         */
-        getLocaleSupportedDescriptors(): Locale[];
+        getLocaleSupportedDescriptors(): Array<Locale>;
         /**
            @method
            Gets the text/message corresponding to the given key and locale.
@@ -89,6 +89,6 @@ declare module Adaptive {
            @return {Adaptive.KeyPair[]} Localized texts in the form of an object.
            @since v2.0
         */
-        getResourceLiterals(locale: Locale): KeyPair[];
+        getResourceLiterals(locale: Locale): Array<KeyPair>;
     }
 }

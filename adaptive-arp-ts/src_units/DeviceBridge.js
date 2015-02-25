@@ -211,4 +211,7 @@ of the display. For display orientation, use the IDisplay APIs.
     })(Adaptive.BaseSystemBridge);
     Adaptive.DeviceBridge = DeviceBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=DeviceBridge.js.map

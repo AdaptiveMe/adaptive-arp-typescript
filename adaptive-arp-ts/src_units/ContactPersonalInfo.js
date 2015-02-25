@@ -243,4 +243,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.ContactPersonalInfo = ContactPersonalInfo;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ContactPersonalInfo.js.map

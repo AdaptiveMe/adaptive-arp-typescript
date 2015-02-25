@@ -36,4 +36,7 @@ Release:
 ///<reference path="ICapabilitiesNet.ts"/>
 ///<reference path="INetworkStatusListenerError.ts"/>
 ///<reference path="INetworkStatusListenerWarning.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=INetworkStatusListener.js.map

@@ -141,4 +141,7 @@ var Adaptive;
     })(Adaptive.BaseSecurityBridge);
     Adaptive.SecurityBridge = SecurityBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=SecurityBridge.js.map

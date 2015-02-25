@@ -85,4 +85,7 @@ in every platform. This id is populated by the Javascript platform
     })();
     Adaptive.BaseListener = BaseListener;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=BaseListener.js.map

@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseApplicationBridge);
     Adaptive.PrintingBridge = PrintingBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=PrintingBridge.js.map

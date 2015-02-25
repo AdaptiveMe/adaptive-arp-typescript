@@ -193,4 +193,7 @@ var Adaptive;
     })(Adaptive.BaseCallback);
     Adaptive.ContactPhotoResultCallback = ContactPhotoResultCallback;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ContactPhotoResultCallback.js.map

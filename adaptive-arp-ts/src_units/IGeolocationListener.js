@@ -36,4 +36,7 @@ Release:
 ///<reference path="IBaseListener.ts"/>
 ///<reference path="IGeolocationListenerError.ts"/>
 ///<reference path="IGeolocationListenerWarning.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IGeolocationListener.js.map

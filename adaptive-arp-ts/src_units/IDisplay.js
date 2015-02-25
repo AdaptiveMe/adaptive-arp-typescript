@@ -35,4 +35,7 @@ Release:
 ///<reference path="IBaseSystem.ts"/>
 ///<reference path="ICapabilitiesOrientation.ts"/>
 ///<reference path="IDisplayOrientationListener.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IDisplay.js.map

@@ -75,4 +75,7 @@ var Adaptive;
     })();
     Adaptive.BaseCommerceBridge = BaseCommerceBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=BaseCommerceBridge.js.map

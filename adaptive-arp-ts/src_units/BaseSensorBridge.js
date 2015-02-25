@@ -75,4 +75,7 @@ var Adaptive;
     })();
     Adaptive.BaseSensorBridge = BaseSensorBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=BaseSensorBridge.js.map

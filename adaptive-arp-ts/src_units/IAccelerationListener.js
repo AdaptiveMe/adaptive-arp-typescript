@@ -36,4 +36,7 @@ Release:
 ///<reference path="IAccelerationListenerWarning.ts"/>
 ///<reference path="IAdaptiveRPGroup.ts"/>
 ///<reference path="IBaseListener.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IAccelerationListener.js.map

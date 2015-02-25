@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseMediaBridge);
     Adaptive.ImagingBridge = ImagingBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ImagingBridge.js.map

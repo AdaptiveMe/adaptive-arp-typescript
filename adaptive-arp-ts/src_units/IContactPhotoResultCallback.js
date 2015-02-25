@@ -35,4 +35,7 @@ Release:
 ///<reference path="IBaseCallback.ts"/>
 ///<reference path="IContactPhotoResultCallbackError.ts"/>
 ///<reference path="IContactPhotoResultCallbackWarning.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IContactPhotoResultCallback.js.map

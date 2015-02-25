@@ -131,4 +131,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.ContactUid = ContactUid;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ContactUid.js.map

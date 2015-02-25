@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseUtilBridge);
     Adaptive.TimerBridge = TimerBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=TimerBridge.js.map

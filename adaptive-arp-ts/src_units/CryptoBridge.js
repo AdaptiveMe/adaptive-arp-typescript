@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseUtilBridge);
     Adaptive.CryptoBridge = CryptoBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=CryptoBridge.js.map

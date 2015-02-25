@@ -193,4 +193,7 @@ var Adaptive;
     })(Adaptive.BaseCallback);
     Adaptive.FileDataLoadResultCallback = FileDataLoadResultCallback;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=FileDataLoadResultCallback.js.map

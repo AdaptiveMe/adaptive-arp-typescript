@@ -129,4 +129,7 @@ of the device. For device orientation, use the IDevice APIs.
     })(Adaptive.BaseSystemBridge);
     Adaptive.DisplayBridge = DisplayBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=DisplayBridge.js.map

@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseDataBridge);
     Adaptive.CloudBridge = CloudBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=CloudBridge.js.map

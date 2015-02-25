@@ -131,4 +131,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.EmailAddress = EmailAddress;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=EmailAddress.js.map

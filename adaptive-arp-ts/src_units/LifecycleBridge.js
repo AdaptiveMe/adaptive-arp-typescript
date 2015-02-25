@@ -127,4 +127,7 @@ var Adaptive;
     })(Adaptive.BaseApplicationBridge);
     Adaptive.LifecycleBridge = LifecycleBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=LifecycleBridge.js.map

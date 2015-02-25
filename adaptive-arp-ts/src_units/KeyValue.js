@@ -168,4 +168,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.KeyValue = KeyValue;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=KeyValue.js.map

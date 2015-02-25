@@ -68,8 +68,8 @@ declare module Adaptive {
        Utility class for Dictionary type support.
     */
     class Dictionary<V> implements IDictionary<V> {
-        _keys: string[];
-        _values: V[];
+        _keys: Array<string>;
+        _values: Array<V>;
         constructor(init: {
             key: string;
             value: V;
@@ -951,7 +951,7 @@ in every platform. This id is populated by the Javascript platform
            @return {Adaptive.Locale[]} List of locales
            @since v2.0
         */
-        getLocaleSupportedDescriptors(): Locale[];
+        getLocaleSupportedDescriptors(): Array<Locale>;
         /**
            @method
            Gets the text/message corresponding to the given key and locale.
@@ -968,7 +968,7 @@ in every platform. This id is populated by the Javascript platform
            @return {Adaptive.KeyPair[]} Localized texts in the form of an object.
            @since v2.0
         */
-        getResourceLiterals(locale: Locale): KeyPair[];
+        getResourceLiterals(locale: Locale): Array<KeyPair>;
     }
     /**
        Interface for Managing the Lifecycle listeners
@@ -1081,7 +1081,7 @@ in every platform. This id is populated by the Javascript platform
            @param contactPhoto returned by the platform
            @since v2.0
         */
-        onResult(contactPhoto: number[]): any;
+        onResult(contactPhoto: Array<number>): any;
         /**
            @method
            This method is called on Warning
@@ -1089,7 +1089,7 @@ in every platform. This id is populated by the Javascript platform
            @param warning      returned by the platform
            @since v2.0
         */
-        onWarning(contactPhoto: number[], warning: IContactPhotoResultCallbackWarning): any;
+        onWarning(contactPhoto: Array<number>, warning: IContactPhotoResultCallbackWarning): any;
     }
     /**
        Interface for Managing the Contact operations
@@ -1115,7 +1115,7 @@ in every platform. This id is populated by the Javascript platform
            @param contacts returned by the platform
            @since v2.0
         */
-        onResult(contacts: Contact[]): any;
+        onResult(contacts: Array<Contact>): any;
         /**
            @method
            This method is called on Warning
@@ -1123,7 +1123,7 @@ in every platform. This id is populated by the Javascript platform
            @param warning  returned by the platform
            @since v2.0
         */
-        onWarning(contacts: Contact[], warning: IContactResultCallbackWarning): any;
+        onWarning(contacts: Array<Contact>, warning: IContactResultCallbackWarning): any;
     }
     /**
        Interface for Managing the Cloud operations
@@ -1217,7 +1217,7 @@ in every platform. This id is populated by the Javascript platform
            @param data Data loaded.
            @since v2.0
         */
-        onResult(data: number[]): any;
+        onResult(data: Array<number>): any;
         /**
            @method
            Result with warning of data retrieval/storage operation.
@@ -1225,7 +1225,7 @@ in every platform. This id is populated by the Javascript platform
            @param warning Warning condition encountered.
            @since v2.0
         */
-        onWarning(data: number[], warning: IFileDataLoadResultCallbackWarning): any;
+        onWarning(data: Array<number>, warning: IFileDataLoadResultCallbackWarning): any;
     }
     /**
        Interface for Managing the File store operations callback
@@ -1285,7 +1285,7 @@ in every platform. This id is populated by the Javascript platform
            @param files Array of resulting files/folders.
            @since v2.0
         */
-        onResult(files: FileDescriptor[]): any;
+        onResult(files: Array<FileDescriptor>): any;
         /**
            @method
            On partial result of a file operation, containing a warning.
@@ -1293,7 +1293,7 @@ in every platform. This id is populated by the Javascript platform
            @param warning Warning condition encountered.
            @since v2.0
         */
-        onWarning(files: FileDescriptor[], warning: IFileListResultCallbackWarning): any;
+        onWarning(files: Array<FileDescriptor>, warning: IFileListResultCallbackWarning): any;
     }
     /**
        Interface for Managing the File operations callback
@@ -1421,7 +1421,7 @@ in every platform. This id is populated by the Javascript platform
            @param keyValues key and values
            @since v2.0
         */
-        onResult(keyValues: SecureKeyPair[]): any;
+        onResult(keyValues: Array<SecureKeyPair>): any;
         /**
            @method
            Data received with warning - ie Found entries with existing key and values have been overriden
@@ -1429,7 +1429,7 @@ in every platform. This id is populated by the Javascript platform
            @param warning   Warning values
            @since v2.0
         */
-        onWarning(keyValues: SecureKeyPair[], warning: ISecurityResultCallbackWarning): any;
+        onWarning(keyValues: Array<SecureKeyPair>, warning: ISecurityResultCallbackWarning): any;
     }
     /**
        Interface for Managing the Services operations
@@ -1648,7 +1648,7 @@ configured in the platform's XML service definition file.
            @return {Adaptive.ServiceToken[]} Array of service tokens configured.
            @since v2.0.6
         */
-        getServicesRegistered(): ServiceToken[];
+        getServicesRegistered(): Array<ServiceToken>;
         /**
            @method
            Executes the given ServiceRequest and provides responses to the given callback handler.
@@ -1781,7 +1781,7 @@ should be passed as a parameter
            @param callback     DatabaseTable callback with the response.
            @since v2.0
         */
-        executeSqlStatement(database: Database, statement: string, replacements: string[], callback: IDatabaseTableResultCallback): any;
+        executeSqlStatement(database: Database, statement: string, replacements: Array<string>, callback: IDatabaseTableResultCallback): any;
         /**
            @method
            Executes SQL transaction (some statements chain) inside given database.
@@ -1792,7 +1792,7 @@ should be passed as a parameter
            @param callback     DatabaseTable callback with the response.
            @since v2.0
         */
-        executeSqlTransactions(database: Database, statements: string[], rollbackFlag: boolean, callback: IDatabaseTableResultCallback): any;
+        executeSqlTransactions(database: Database, statements: Array<string>, rollbackFlag: boolean, callback: IDatabaseTableResultCallback): any;
         /**
            @method
            Checks if database exists by given database name.
@@ -1952,7 +1952,7 @@ new destination file.
            @param callback   Result of the operation.
            @since v2.0
         */
-        setContent(descriptor: FileDescriptor, content: number[], callback: IFileDataStoreResultCallback): any;
+        setContent(descriptor: FileDescriptor, content: Array<number>, callback: IFileDataStoreResultCallback): any;
     }
     /**
        Interface for Managing the File System operations
@@ -2450,7 +2450,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param fields   to get for each Contact
            @since v2.0
         */
-        getContactsForFields(callback: IContactResultCallback, fields: IContactFieldGroup[]): any;
+        getContactsForFields(callback: IContactResultCallback, fields: Array<IContactFieldGroup>): any;
         /**
            @method
            Get marked fields of all contacts according to a filter
@@ -2459,7 +2459,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param filter   to search for
            @since v2.0
         */
-        getContactsWithFilter(callback: IContactResultCallback, fields: IContactFieldGroup[], filter: IContactFilter[]): any;
+        getContactsWithFilter(callback: IContactResultCallback, fields: Array<IContactFieldGroup>, filter: Array<IContactFilter>): any;
         /**
            @method
            Get all contacts
@@ -2475,7 +2475,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param filter   to search for
            @since v2.0
         */
-        searchContactsWithFilter(term: string, callback: IContactResultCallback, filter: IContactFilter[]): any;
+        searchContactsWithFilter(term: string, callback: IContactResultCallback, filter: Array<IContactFilter>): any;
         /**
            @method
            Search contacts according to a term and send it to the callback
@@ -2492,7 +2492,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {boolean} true if set is successful;false otherwise
            @since v2.0
         */
-        setContactPhoto(contact: ContactUid, pngImage: number[]): boolean;
+        setContactPhoto(contact: ContactUid, pngImage: Array<number>): boolean;
     }
     /**
        Interface for Managing the Mail operations
@@ -2626,7 +2626,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param callback         callback to be executed upon function result.
            @since v2.0
         */
-        deleteSecureKeyValuePairs(keys: string[], publicAccessName: string, callback: ISecurityResultCallback): any;
+        deleteSecureKeyValuePairs(keys: Array<string>, publicAccessName: string, callback: ISecurityResultCallback): any;
         /**
            @method
            Retrieves from the device internal storage the entry/entries containing the specified key names.
@@ -2635,7 +2635,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param callback         callback to be executed upon function result.
            @since v2.0
         */
-        getSecureKeyValuePairs(keys: string[], publicAccessName: string, callback: ISecurityResultCallback): any;
+        getSecureKeyValuePairs(keys: Array<string>, publicAccessName: string, callback: ISecurityResultCallback): any;
         /**
            @method
            Returns if the device has been modified in anyhow
@@ -2651,7 +2651,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param callback         callback to be executed upon function result.
            @since v2.0
         */
-        setSecureKeyValuePairs(keyValues: SecureKeyPair[], publicAccessName: string, callback: ISecurityResultCallback): any;
+        setSecureKeyValuePairs(keyValues: Array<SecureKeyPair>, publicAccessName: string, callback: ISecurityResultCallback): any;
     }
     /**
        Interface defining methods about the acceleration sensor
@@ -2864,7 +2864,7 @@ support at least one orientation. This is usually PortaitUp.
            @return {Adaptive.ICapabilitiesOrientation[]} The orientations supported by the device/display of the platform.
            @since v2.0.5
         */
-        getOrientationsSupported(): ICapabilitiesOrientation[];
+        getOrientationsSupported(): Array<ICapabilitiesOrientation>;
         /**
            @method
            Determines whether a specific hardware button is supported for interaction.
@@ -3329,12 +3329,12 @@ of the device. For device orientation, use the IDevice APIs.
            @property {string[]} parameters
            Parameters of the request as JSON formatted strings.
         */
-        parameters: string[];
+        parameters: Array<string>;
         /**
            @property {string[]} parameters
            Parameters of the request as JSON formatted strings. The 'parametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'parameters'.
         */
-        parametersProperty: string[];
+        parametersProperty: Array<string>;
         /**
            @method constructor
            Constructor with all the parameters
@@ -3345,7 +3345,7 @@ of the device. For device orientation, use the IDevice APIs.
            @param {number} asyncId    Id of callback or listener or zero if none for synchronous calls.
            @since v2.0
         */
-        constructor(bridgeType: string, methodName: string, parameters: string[], asyncId: number);
+        constructor(bridgeType: string, methodName: string, parameters: Array<string>, asyncId: number);
         /**
            @method
            Returns the request's API version. This should be the same or higher than the platform managing the
@@ -3416,7 +3416,7 @@ listener.
            @return {string[]} Parameters
            @since v2.0
         */
-        getParameters(): string[];
+        getParameters(): Array<string>;
         /**
            @method
            Parameters Setter
@@ -3424,7 +3424,7 @@ listener.
            @param {string[]} parameters Parameters, JSON formatted strings of objects.
            @since v2.0
         */
-        setParameters(parameters: string[]): void;
+        setParameters(parameters: Array<string>): void;
         /**
            @method
            @static
@@ -3599,12 +3599,12 @@ uncompressed/unencrypted/etc format. The 'cookedTypeProperty' is registered with
            @property {number[]} data
            The payload data of the resource in ready to consume format.
         */
-        data: number[];
+        data: Array<number>;
         /**
            @property {number[]} data
            The payload data of the resource in ready to consume format. The 'dataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'data'.
         */
-        dataProperty: number[];
+        dataProperty: Array<number>;
         /**
            @property {string} id
            The id or path identifier of the resource.
@@ -3650,7 +3650,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @param {number} cookedLength The cooked length in bytes of the resource.
            @since v2.1.3
         */
-        constructor(id: string, data: number[], rawType: string, rawLength: number, cooked: boolean, cookedType: string, cookedLength: number);
+        constructor(id: string, data: Array<number>, rawType: string, rawLength: number, cooked: boolean, cookedType: string, cookedLength: number);
         /**
            @method
            Attribute to denote whether the payload of the resource is cooked.
@@ -3706,7 +3706,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {number[]} Binary payload of the resource.
            @since v2.1.3
         */
-        getData(): number[];
+        getData(): Array<number>;
         /**
            @method
            Sets the payload of the resource.
@@ -3714,7 +3714,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @param {number[]} data Binary payload of the resource.
            @since v2.1.3
         */
-        setData(data: number[]): void;
+        setData(data: Array<number>): void;
         /**
            @method
            Gets The id or path identifier of the resource.
@@ -3802,12 +3802,12 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @property {Adaptive.ServiceEndpoint[]} serviceEndpoints
            Endpoint of the service
         */
-        serviceEndpoints: ServiceEndpoint[];
+        serviceEndpoints: Array<ServiceEndpoint>;
         /**
            @property {Adaptive.ServiceEndpoint[]} serviceEndpoints
            Endpoint of the service The 'serviceEndpointsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceEndpoints'.
         */
-        serviceEndpointsProperty: ServiceEndpoint[];
+        serviceEndpointsProperty: Array<ServiceEndpoint>;
         /**
            @method constructor
            Constructor used by the implementation
@@ -3816,7 +3816,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @param {string} name             Name of the service
            @since v2.0.6
         */
-        constructor(serviceEndpoints: ServiceEndpoint[], name: string);
+        constructor(serviceEndpoints: Array<ServiceEndpoint>, name: string);
         /**
            @method
            Returns the name
@@ -3840,7 +3840,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.ServiceEndpoint[]} serviceEndpoints
            @since v2.0
         */
-        getServiceEndpoints(): ServiceEndpoint[];
+        getServiceEndpoints(): Array<ServiceEndpoint>;
         /**
            @method
            Set the serviceEndpoints
@@ -3848,7 +3848,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoint of the service
            @since v2.0
         */
-        setServiceEndpoints(serviceEndpoints: ServiceEndpoint[]): void;
+        setServiceEndpoints(serviceEndpoints: Array<ServiceEndpoint>): void;
         /**
            @method
            @static
@@ -3899,12 +3899,12 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @property {Adaptive.ServicePath[]} paths
            The remote service paths (to be added to the hostURI and port url).
         */
-        paths: ServicePath[];
+        paths: Array<ServicePath>;
         /**
            @property {Adaptive.ServicePath[]} paths
            The remote service paths (to be added to the hostURI and port url). The 'pathsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'paths'.
         */
-        pathsProperty: ServicePath[];
+        pathsProperty: Array<ServicePath>;
         /**
            @method constructor
            Constructor with parameters
@@ -3913,7 +3913,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @param {Adaptive.ServicePath[]} paths   Remote service Paths
            @since v2.0.6
         */
-        constructor(hostURI: string, paths: ServicePath[]);
+        constructor(hostURI: string, paths: Array<ServicePath>);
         /**
            @method
            Gets the validation type for the certificate of a SSL host.
@@ -3953,7 +3953,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.ServicePath[]} Remote service Paths
            @since v2.0
         */
-        getPaths(): ServicePath[];
+        getPaths(): Array<ServicePath>;
         /**
            @method
            Set the Remote service Paths
@@ -3961,7 +3961,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @param {Adaptive.ServicePath[]} paths Remote service Paths
            @since v2.0
         */
-        setPaths(paths: ServicePath[]): void;
+        setPaths(paths: Array<ServicePath>): void;
         /**
            @method
            @static
@@ -4002,12 +4002,12 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @property {Adaptive.IServiceMethod[]} methods
            The methods for calling a path.
         */
-        methods: IServiceMethod[];
+        methods: Array<IServiceMethod>;
         /**
            @property {Adaptive.IServiceMethod[]} methods
            The methods for calling a path. The 'methodsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'methods'.
         */
-        methodsProperty: IServiceMethod[];
+        methodsProperty: Array<IServiceMethod>;
         /**
            @property {string} path
            The path for the endpoint.
@@ -4027,7 +4027,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @param {Adaptive.IServiceType} type    Protocol type.
            @since v2.0.6
         */
-        constructor(path: string, methods: IServiceMethod[], type: IServiceType);
+        constructor(path: string, methods: Array<IServiceMethod>, type: IServiceType);
         /**
            @method
            Gets the protocol for the path.
@@ -4051,7 +4051,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.IServiceMethod[]} Endpoint's path methods
            @since v2.0.4
         */
-        getMethods(): IServiceMethod[];
+        getMethods(): Array<IServiceMethod>;
         /**
            @method
            Endpoint's path methods setter
@@ -4059,7 +4059,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @param {Adaptive.IServiceMethod[]} methods Endpoint's path methods
            @since v2.0.4
         */
-        setMethods(methods: IServiceMethod[]): void;
+        setMethods(methods: Array<IServiceMethod>): void;
         /**
            @method
            Endpoint's Path Getter
@@ -5305,12 +5305,12 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @property {string[]} values
            The values of the row.
         */
-        values: string[];
+        values: Array<string>;
         /**
            @property {string[]} values
            The values of the row. The 'valuesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'values'.
         */
-        valuesProperty: string[];
+        valuesProperty: Array<string>;
         /**
            @method constructor
            Constructor for implementation using.
@@ -5318,7 +5318,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @param {string[]} values The values of the row
            @since v2.0
         */
-        constructor(values: string[]);
+        constructor(values: Array<string>);
         /**
            @method
            Returns the values of the row.
@@ -5326,7 +5326,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {string[]} The values of the row.
            @since v2.0
         */
-        getValues(): string[];
+        getValues(): Array<string>;
         /**
            @method
            Sets the values of the row.
@@ -5334,7 +5334,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @param {string[]} values The values of the row.
            @since v2.0
         */
-        setValues(values: string[]): void;
+        setValues(values: Array<string>): void;
         /**
            @method
            @static
@@ -5376,22 +5376,22 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @property {Adaptive.DatabaseColumn[]} databaseColumns
            Definition of databaseColumns.
         */
-        databaseColumns: DatabaseColumn[];
+        databaseColumns: Array<DatabaseColumn>;
         /**
            @property {Adaptive.DatabaseColumn[]} databaseColumns
            Definition of databaseColumns. The 'databaseColumnsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'databaseColumns'.
         */
-        databaseColumnsProperty: DatabaseColumn[];
+        databaseColumnsProperty: Array<DatabaseColumn>;
         /**
            @property {Adaptive.DatabaseRow[]} databaseRows
            Rows of the table containing the data.
         */
-        databaseRows: DatabaseRow[];
+        databaseRows: Array<DatabaseRow>;
         /**
            @property {Adaptive.DatabaseRow[]} databaseRows
            Rows of the table containing the data. The 'databaseRowsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'databaseRows'.
         */
-        databaseRowsProperty: DatabaseRow[];
+        databaseRowsProperty: Array<DatabaseRow>;
         /**
            @property {string} name
            Name of the table.
@@ -5423,7 +5423,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @param {Adaptive.DatabaseRow[]} databaseRows    The databaseRows of the table
            @since v2.0
         */
-        constructor(name: string, columnCount: number, rowCount: number, databaseColumns: DatabaseColumn[], databaseRows: DatabaseRow[]);
+        constructor(name: string, columnCount: number, rowCount: number, databaseColumns: Array<DatabaseColumn>, databaseRows: Array<DatabaseRow>);
         /**
            @method
            Get the number of databaseColumns
@@ -5447,7 +5447,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.DatabaseColumn[]} The databaseColumns
            @since v2.0
         */
-        getDatabaseColumns(): DatabaseColumn[];
+        getDatabaseColumns(): Array<DatabaseColumn>;
         /**
            @method
            Sets the databaseColumns of the table
@@ -5455,7 +5455,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
            @since v2.0
         */
-        setDatabaseColumns(databaseColumns: DatabaseColumn[]): void;
+        setDatabaseColumns(databaseColumns: Array<DatabaseColumn>): void;
         /**
            @method
            Get the databaseRows of the table
@@ -5463,7 +5463,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @return {Adaptive.DatabaseRow[]} The databaseRows of the table
            @since v2.0
         */
-        getDatabaseRows(): DatabaseRow[];
+        getDatabaseRows(): Array<DatabaseRow>;
         /**
            @method
            Sets the databaseRows of the table
@@ -5471,7 +5471,7 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @param {Adaptive.DatabaseRow[]} databaseRows The databaseRows of the table
            @since v2.0
         */
-        setDatabaseRows(databaseRows: DatabaseRow[]): void;
+        setDatabaseRows(databaseRows: Array<DatabaseRow>): void;
         /**
            @method
            Returns the name of the table
@@ -5677,32 +5677,32 @@ be unique for a specific instance of an application on a specific device.
            @property {Adaptive.EmailAddress[]} bccRecipients
            Array of Email Blind Carbon Copy recipients
         */
-        bccRecipients: EmailAddress[];
+        bccRecipients: Array<EmailAddress>;
         /**
            @property {Adaptive.EmailAddress[]} bccRecipients
            Array of Email Blind Carbon Copy recipients The 'bccRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'bccRecipients'.
         */
-        bccRecipientsProperty: EmailAddress[];
+        bccRecipientsProperty: Array<EmailAddress>;
         /**
            @property {Adaptive.EmailAddress[]} ccRecipients
            Array of Email Carbon Copy recipients
         */
-        ccRecipients: EmailAddress[];
+        ccRecipients: Array<EmailAddress>;
         /**
            @property {Adaptive.EmailAddress[]} ccRecipients
            Array of Email Carbon Copy recipients The 'ccRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'ccRecipients'.
         */
-        ccRecipientsProperty: EmailAddress[];
+        ccRecipientsProperty: Array<EmailAddress>;
         /**
            @property {Adaptive.EmailAttachmentData[]} emailAttachmentData
            Array of attatchments
         */
-        emailAttachmentData: EmailAttachmentData[];
+        emailAttachmentData: Array<EmailAttachmentData>;
         /**
            @property {Adaptive.EmailAttachmentData[]} emailAttachmentData
            Array of attatchments The 'emailAttachmentDataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'emailAttachmentData'.
         */
-        emailAttachmentDataProperty: EmailAttachmentData[];
+        emailAttachmentDataProperty: Array<EmailAttachmentData>;
         /**
            @property {string} messageBody
            Message body
@@ -5737,12 +5737,12 @@ be unique for a specific instance of an application on a specific device.
            @property {Adaptive.EmailAddress[]} toRecipients
            Array of Email recipients
         */
-        toRecipients: EmailAddress[];
+        toRecipients: Array<EmailAddress>;
         /**
            @property {Adaptive.EmailAddress[]} toRecipients
            Array of Email recipients The 'toRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'toRecipients'.
         */
-        toRecipientsProperty: EmailAddress[];
+        toRecipientsProperty: Array<EmailAddress>;
         /**
            @method constructor
            Constructor used by the implementation
@@ -5756,7 +5756,7 @@ be unique for a specific instance of an application on a specific device.
            @param {string} subject             of the email
            @since v2.0
         */
-        constructor(toRecipients: EmailAddress[], ccRecipients: EmailAddress[], bccRecipients: EmailAddress[], emailAttachmentData: EmailAttachmentData[], messageBody: string, messageBodyMimeType: string, subject: string);
+        constructor(toRecipients: Array<EmailAddress>, ccRecipients: Array<EmailAddress>, bccRecipients: Array<EmailAddress>, emailAttachmentData: Array<EmailAttachmentData>, messageBody: string, messageBodyMimeType: string, subject: string);
         /**
            @method
            Returns the array of recipients
@@ -5764,7 +5764,7 @@ be unique for a specific instance of an application on a specific device.
            @return {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
            @since v2.0
         */
-        getBccRecipients(): EmailAddress[];
+        getBccRecipients(): Array<EmailAddress>;
         /**
            @method
            Set the array of recipients
@@ -5772,7 +5772,7 @@ be unique for a specific instance of an application on a specific device.
            @param {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
            @since v2.0
         */
-        setBccRecipients(bccRecipients: EmailAddress[]): void;
+        setBccRecipients(bccRecipients: Array<EmailAddress>): void;
         /**
            @method
            Returns the array of recipients
@@ -5780,7 +5780,7 @@ be unique for a specific instance of an application on a specific device.
            @return {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
            @since v2.0
         */
-        getCcRecipients(): EmailAddress[];
+        getCcRecipients(): Array<EmailAddress>;
         /**
            @method
            Set the array of recipients
@@ -5788,7 +5788,7 @@ be unique for a specific instance of an application on a specific device.
            @param {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
            @since v2.0
         */
-        setCcRecipients(ccRecipients: EmailAddress[]): void;
+        setCcRecipients(ccRecipients: Array<EmailAddress>): void;
         /**
            @method
            Returns an array of attachments
@@ -5796,7 +5796,7 @@ be unique for a specific instance of an application on a specific device.
            @return {Adaptive.EmailAttachmentData[]} emailAttachmentData array with the email attachments
            @since v2.0
         */
-        getEmailAttachmentData(): EmailAttachmentData[];
+        getEmailAttachmentData(): Array<EmailAttachmentData>;
         /**
            @method
            Set the email attachment data array
@@ -5804,7 +5804,7 @@ be unique for a specific instance of an application on a specific device.
            @param {Adaptive.EmailAttachmentData[]} emailAttachmentData array of email attatchments
            @since v2.0
         */
-        setEmailAttachmentData(emailAttachmentData: EmailAttachmentData[]): void;
+        setEmailAttachmentData(emailAttachmentData: Array<EmailAttachmentData>): void;
         /**
            @method
            Returns the message body of the email
@@ -5860,7 +5860,7 @@ be unique for a specific instance of an application on a specific device.
            @return {Adaptive.EmailAddress[]} toRecipients array of recipients
            @since v2.0
         */
-        getToRecipients(): EmailAddress[];
+        getToRecipients(): Array<EmailAddress>;
         /**
            @method
            Set the array of recipients
@@ -5868,7 +5868,7 @@ be unique for a specific instance of an application on a specific device.
            @param {Adaptive.EmailAddress[]} toRecipients array of recipients
            @since v2.0
         */
-        setToRecipients(toRecipients: EmailAddress[]): void;
+        setToRecipients(toRecipients: Array<EmailAddress>): void;
         /**
            @method
            @static
@@ -5961,12 +5961,12 @@ be unique for a specific instance of an application on a specific device.
            @property {number[]} data
            The raw data for the current file attachment (byte array)
         */
-        data: number[];
+        data: Array<number>;
         /**
            @property {number[]} data
            The raw data for the current file attachment (byte array) The 'dataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'data'.
         */
-        dataProperty: number[];
+        dataProperty: Array<number>;
         /**
            @property {string} fileName
            The name of the current file attachment
@@ -6018,7 +6018,7 @@ be unique for a specific instance of an application on a specific device.
            @param {string} referenceUrl relative url of the file attachment
            @since v2.0
         */
-        constructor(data: number[], size: number, fileName: string, mimeType: string, referenceUrl: string);
+        constructor(data: Array<number>, size: number, fileName: string, mimeType: string, referenceUrl: string);
         /**
            @method
            Returns the raw data in byte[]
@@ -6026,7 +6026,7 @@ be unique for a specific instance of an application on a specific device.
            @return {number[]} data Octet-binary content of the attachment payload.
            @since v2.0
         */
-        getData(): number[];
+        getData(): Array<number>;
         /**
            @method
            Set the data of the attachment as a byte[]
@@ -6034,7 +6034,7 @@ be unique for a specific instance of an application on a specific device.
            @param {number[]} data Sets the octet-binary content of the attachment.
            @since v2.0
         */
-        setData(data: number[]): void;
+        setData(data: Array<number>): void;
         /**
            @method
            Returns the filename of the attachment
@@ -7171,13 +7171,13 @@ populates this field with defaults for the service. The 'contentEncodingProperty
            Body parameters to be included in the body of the request to a service. These may be applied
 during GET/POST operations. No body parameters are included if this array is null or length zero.
         */
-        bodyParameters: ServiceRequestParameter[];
+        bodyParameters: Array<ServiceRequestParameter>;
         /**
            @property {Adaptive.ServiceRequestParameter[]} bodyParameters
            Body parameters to be included in the body of the request to a service. These may be applied
 during GET/POST operations. No body parameters are included if this array is null or length zero. The 'bodyParametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'bodyParameters'.
         */
-        bodyParametersProperty: ServiceRequestParameter[];
+        bodyParametersProperty: Array<ServiceRequestParameter>;
         /**
            @property {string} content
            Request data content (plain text). This should be populated by the application. The content should be
@@ -7221,13 +7221,13 @@ populates this field with defaults for the service. The 'contentTypeProperty' is
            Query string parameters to be appended to the service URL when making the request. These may be applied
 during GET/POST operations. No query parameters are appended if this array is null or length zero.
         */
-        queryParameters: ServiceRequestParameter[];
+        queryParameters: Array<ServiceRequestParameter>;
         /**
            @property {Adaptive.ServiceRequestParameter[]} queryParameters
            Query string parameters to be appended to the service URL when making the request. These may be applied
 during GET/POST operations. No query parameters are appended if this array is null or length zero. The 'queryParametersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'queryParameters'.
         */
-        queryParametersProperty: ServiceRequestParameter[];
+        queryParametersProperty: Array<ServiceRequestParameter>;
         /**
            @property {string} refererHost
            This host indicates the origin host of the request. This, could be useful in case of redirected requests.
@@ -7244,14 +7244,14 @@ during GET/POST operations. No query parameters are appended if this array is nu
 application, the platform populates this field with defaults for the service and the previous headers.
 In specific, the platform maintains request and response state automatically.
         */
-        serviceHeaders: ServiceHeader[];
+        serviceHeaders: Array<ServiceHeader>;
         /**
            @property {Adaptive.ServiceHeader[]} serviceHeaders
            The serviceHeaders array (name,value pairs) to be included in the request. This may be populated by the
 application, the platform populates this field with defaults for the service and the previous headers.
 In specific, the platform maintains request and response state automatically. The 'serviceHeadersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceHeaders'.
         */
-        serviceHeadersProperty: ServiceHeader[];
+        serviceHeadersProperty: Array<ServiceHeader>;
         /**
            @property {Adaptive.ServiceSession} serviceSession
            Session attributes and cookies. This may be populated by the application, the platform populates
@@ -7320,7 +7320,7 @@ identifiers. This should not be manipulated by the application directly. The 'se
            @return {Adaptive.ServiceRequestParameter[]} ServiceRequestParameter array or null if none are specified.
            @since v2.0.6
         */
-        getBodyParameters(): ServiceRequestParameter[];
+        getBodyParameters(): Array<ServiceRequestParameter>;
         /**
            @method
            Sets the body parameters of the request.
@@ -7328,7 +7328,7 @@ identifiers. This should not be manipulated by the application directly. The 'se
            @param {Adaptive.ServiceRequestParameter[]} bodyParameters ServiceRequestParameter array or null if none are specified.
            @since v2.0.6
         */
-        setBodyParameters(bodyParameters: ServiceRequestParameter[]): void;
+        setBodyParameters(bodyParameters: Array<ServiceRequestParameter>): void;
         /**
            @method
            Returns the content
@@ -7384,7 +7384,7 @@ identifiers. This should not be manipulated by the application directly. The 'se
            @return {Adaptive.ServiceRequestParameter[]} ServiceRequestParameter array or null if none are specified.
            @since v2.0.6
         */
-        getQueryParameters(): ServiceRequestParameter[];
+        getQueryParameters(): Array<ServiceRequestParameter>;
         /**
            @method
            Sets the query parameters of the request.
@@ -7392,7 +7392,7 @@ identifiers. This should not be manipulated by the application directly. The 'se
            @param {Adaptive.ServiceRequestParameter[]} queryParameters ServiceRequestParameter array or null if none are specified.
            @since v2.0.6
         */
-        setQueryParameters(queryParameters: ServiceRequestParameter[]): void;
+        setQueryParameters(queryParameters: Array<ServiceRequestParameter>): void;
         /**
            @method
            Returns the referer host (origin) of the request.
@@ -7416,7 +7416,7 @@ identifiers. This should not be manipulated by the application directly. The 'se
            @return {Adaptive.ServiceHeader[]} serviceHeaders
            @since v2.0
         */
-        getServiceHeaders(): ServiceHeader[];
+        getServiceHeaders(): Array<ServiceHeader>;
         /**
            @method
            Set the array of ServiceHeader
@@ -7424,7 +7424,7 @@ identifiers. This should not be manipulated by the application directly. The 'se
            @param {Adaptive.ServiceHeader[]} serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
            @since v2.0
         */
-        setServiceHeaders(serviceHeaders: ServiceHeader[]): void;
+        setServiceHeaders(serviceHeaders: Array<ServiceHeader>): void;
         /**
            @method
            Getter for service session
@@ -7546,12 +7546,12 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @property {Adaptive.ServiceHeader[]} serviceHeaders
            The serviceHeaders array (name,value pairs) to be included on the I/O service request.
         */
-        serviceHeaders: ServiceHeader[];
+        serviceHeaders: Array<ServiceHeader>;
         /**
            @property {Adaptive.ServiceHeader[]} serviceHeaders
            The serviceHeaders array (name,value pairs) to be included on the I/O service request. The 'serviceHeadersProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceHeaders'.
         */
-        serviceHeadersProperty: ServiceHeader[];
+        serviceHeadersProperty: Array<ServiceHeader>;
         /**
            @property {Adaptive.ServiceSession} serviceSession
            Information about the session.
@@ -7585,7 +7585,7 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @param {number} statusCode      HTTP Status code of the response.
            @since v2.0
         */
-        constructor(content: string, contentType: string, contentEncoding: IServiceContentEncoding, contentLength: number, serviceHeaders: ServiceHeader[], serviceSession: ServiceSession, statusCode: number);
+        constructor(content: string, contentType: string, contentEncoding: IServiceContentEncoding, contentLength: number, serviceHeaders: Array<ServiceHeader>, serviceSession: ServiceSession, statusCode: number);
         /**
            @method
            Returns the content encoding
@@ -7657,7 +7657,7 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @return {Adaptive.ServiceHeader[]} serviceHeaders
            @since v2.0
         */
-        getServiceHeaders(): ServiceHeader[];
+        getServiceHeaders(): Array<ServiceHeader>;
         /**
            @method
            Set the array of ServiceHeader
@@ -7665,7 +7665,7 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @param {Adaptive.ServiceHeader[]} serviceHeaders The serviceHeaders array (name,value pairs) to be included on the I/O service request.
            @since v2.0
         */
-        setServiceHeaders(serviceHeaders: ServiceHeader[]): void;
+        setServiceHeaders(serviceHeaders: Array<ServiceHeader>): void;
         /**
            @method
            Getter for service session
@@ -7729,22 +7729,22 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @property {Adaptive.ServiceSessionAttribute[]} attributes
            The attributes of the request or response.
         */
-        attributes: ServiceSessionAttribute[];
+        attributes: Array<ServiceSessionAttribute>;
         /**
            @property {Adaptive.ServiceSessionAttribute[]} attributes
            The attributes of the request or response. The 'attributesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'attributes'.
         */
-        attributesProperty: ServiceSessionAttribute[];
+        attributesProperty: Array<ServiceSessionAttribute>;
         /**
            @property {Adaptive.ServiceSessionCookie[]} cookies
            The cookies of the request or response.
         */
-        cookies: ServiceSessionCookie[];
+        cookies: Array<ServiceSessionCookie>;
         /**
            @property {Adaptive.ServiceSessionCookie[]} cookies
            The cookies of the request or response. The 'cookiesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'cookies'.
         */
-        cookiesProperty: ServiceSessionCookie[];
+        cookiesProperty: Array<ServiceSessionCookie>;
         /**
            @method constructor
            Constructor with fields.
@@ -7753,7 +7753,7 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @param {Adaptive.ServiceSessionAttribute[]} attributes Attributes of the request or response.
            @since v2.0
         */
-        constructor(cookies: ServiceSessionCookie[], attributes: ServiceSessionAttribute[]);
+        constructor(cookies: Array<ServiceSessionCookie>, attributes: Array<ServiceSessionAttribute>);
         /**
            @method
            Gets the attributes of the request or response.
@@ -7761,7 +7761,7 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @return {Adaptive.ServiceSessionAttribute[]} Attributes of the request or response.
            @since v2.0
         */
-        getAttributes(): ServiceSessionAttribute[];
+        getAttributes(): Array<ServiceSessionAttribute>;
         /**
            @method
            Sets the attributes for the request or response.
@@ -7769,7 +7769,7 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @param {Adaptive.ServiceSessionAttribute[]} attributes Attributes of the request or response.
            @since v2.0
         */
-        setAttributes(attributes: ServiceSessionAttribute[]): void;
+        setAttributes(attributes: Array<ServiceSessionAttribute>): void;
         /**
            @method
            Returns the cookies of the request or response.
@@ -7777,7 +7777,7 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @return {Adaptive.ServiceSessionCookie[]} The cookies of the request or response.
            @since v2.0
         */
-        getCookies(): ServiceSessionCookie[];
+        getCookies(): Array<ServiceSessionCookie>;
         /**
            @method
            Sets the cookies of the request or response.
@@ -7785,7 +7785,7 @@ should be encoded in base64. The 'contentProperty' is registered with the ECMASc
            @param {Adaptive.ServiceSessionCookie[]} cookies The cookies of the request or response.
            @since v2.0
         */
-        setCookies(cookies: ServiceSessionCookie[]): void;
+        setCookies(cookies: Array<ServiceSessionCookie>): void;
         /**
            @method
            @static
@@ -8209,62 +8209,62 @@ to a relative path of a function published on a remote service. The 'functionNam
            @property {Adaptive.ContactAddress[]} contactAddresses
            The adresses from the contact
         */
-        contactAddresses: ContactAddress[];
+        contactAddresses: Array<ContactAddress>;
         /**
            @property {Adaptive.ContactAddress[]} contactAddresses
            The adresses from the contact The 'contactAddressesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactAddresses'.
         */
-        contactAddressesProperty: ContactAddress[];
+        contactAddressesProperty: Array<ContactAddress>;
         /**
            @property {Adaptive.ContactEmail[]} contactEmails
            The emails from the contact
         */
-        contactEmails: ContactEmail[];
+        contactEmails: Array<ContactEmail>;
         /**
            @property {Adaptive.ContactEmail[]} contactEmails
            The emails from the contact The 'contactEmailsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactEmails'.
         */
-        contactEmailsProperty: ContactEmail[];
+        contactEmailsProperty: Array<ContactEmail>;
         /**
            @property {Adaptive.ContactPhone[]} contactPhones
            The phones from the contact
         */
-        contactPhones: ContactPhone[];
+        contactPhones: Array<ContactPhone>;
         /**
            @property {Adaptive.ContactPhone[]} contactPhones
            The phones from the contact The 'contactPhonesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactPhones'.
         */
-        contactPhonesProperty: ContactPhone[];
+        contactPhonesProperty: Array<ContactPhone>;
         /**
            @property {Adaptive.ContactSocial[]} contactSocials
            The social network info from the contact
         */
-        contactSocials: ContactSocial[];
+        contactSocials: Array<ContactSocial>;
         /**
            @property {Adaptive.ContactSocial[]} contactSocials
            The social network info from the contact The 'contactSocialsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactSocials'.
         */
-        contactSocialsProperty: ContactSocial[];
+        contactSocialsProperty: Array<ContactSocial>;
         /**
            @property {Adaptive.ContactTag[]} contactTags
            The aditional tags from the contact
         */
-        contactTags: ContactTag[];
+        contactTags: Array<ContactTag>;
         /**
            @property {Adaptive.ContactTag[]} contactTags
            The aditional tags from the contact The 'contactTagsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactTags'.
         */
-        contactTagsProperty: ContactTag[];
+        contactTagsProperty: Array<ContactTag>;
         /**
            @property {Adaptive.ContactWebsite[]} contactWebsites
            The websites from the contact
         */
-        contactWebsites: ContactWebsite[];
+        contactWebsites: Array<ContactWebsite>;
         /**
            @property {Adaptive.ContactWebsite[]} contactWebsites
            The websites from the contact The 'contactWebsitesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactWebsites'.
         */
-        contactWebsitesProperty: ContactWebsite[];
+        contactWebsitesProperty: Array<ContactWebsite>;
         /**
            @property {Adaptive.ContactPersonalInfo} personalInfo
            The personal info from the contact
@@ -8300,7 +8300,7 @@ to a relative path of a function published on a remote service. The 'functionNam
            @return {Adaptive.ContactAddress[]} ContactAddress[]
            @since v2.0
         */
-        getContactAddresses(): ContactAddress[];
+        getContactAddresses(): Array<ContactAddress>;
         /**
            @method
            Set the addresses of the Contact
@@ -8308,7 +8308,7 @@ to a relative path of a function published on a remote service. The 'functionNam
            @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
            @since v2.0
         */
-        setContactAddresses(contactAddresses: ContactAddress[]): void;
+        setContactAddresses(contactAddresses: Array<ContactAddress>): void;
         /**
            @method
            Returns all the emails of the Contact
@@ -8316,7 +8316,7 @@ to a relative path of a function published on a remote service. The 'functionNam
            @return {Adaptive.ContactEmail[]} ContactEmail[]
            @since v2.0
         */
-        getContactEmails(): ContactEmail[];
+        getContactEmails(): Array<ContactEmail>;
         /**
            @method
            Set the emails of the Contact
@@ -8324,7 +8324,7 @@ to a relative path of a function published on a remote service. The 'functionNam
            @param {Adaptive.ContactEmail[]} contactEmails Emails of the contact
            @since v2.0
         */
-        setContactEmails(contactEmails: ContactEmail[]): void;
+        setContactEmails(contactEmails: Array<ContactEmail>): void;
         /**
            @method
            Returns all the phones of the Contact
@@ -8332,7 +8332,7 @@ to a relative path of a function published on a remote service. The 'functionNam
            @return {Adaptive.ContactPhone[]} ContactPhone[]
            @since v2.0
         */
-        getContactPhones(): ContactPhone[];
+        getContactPhones(): Array<ContactPhone>;
         /**
            @method
            Set the phones of the Contact
@@ -8340,7 +8340,7 @@ to a relative path of a function published on a remote service. The 'functionNam
            @param {Adaptive.ContactPhone[]} contactPhones Phones of the contact
            @since v2.0
         */
-        setContactPhones(contactPhones: ContactPhone[]): void;
+        setContactPhones(contactPhones: Array<ContactPhone>): void;
         /**
            @method
            Returns all the social network info of the Contact
@@ -8348,7 +8348,7 @@ to a relative path of a function published on a remote service. The 'functionNam
            @return {Adaptive.ContactSocial[]} ContactSocial[]
            @since v2.0
         */
-        getContactSocials(): ContactSocial[];
+        getContactSocials(): Array<ContactSocial>;
         /**
            @method
            Set the social network info of the Contact
@@ -8356,7 +8356,7 @@ to a relative path of a function published on a remote service. The 'functionNam
            @param {Adaptive.ContactSocial[]} contactSocials Social Networks of the contact
            @since v2.0
         */
-        setContactSocials(contactSocials: ContactSocial[]): void;
+        setContactSocials(contactSocials: Array<ContactSocial>): void;
         /**
            @method
            Returns the additional tags of the Contact
@@ -8364,7 +8364,7 @@ to a relative path of a function published on a remote service. The 'functionNam
            @return {Adaptive.ContactTag[]} ContactTag[]
            @since v2.0
         */
-        getContactTags(): ContactTag[];
+        getContactTags(): Array<ContactTag>;
         /**
            @method
            Set the additional tags of the Contact
@@ -8372,7 +8372,7 @@ to a relative path of a function published on a remote service. The 'functionNam
            @param {Adaptive.ContactTag[]} contactTags Tags of the contact
            @since v2.0
         */
-        setContactTags(contactTags: ContactTag[]): void;
+        setContactTags(contactTags: Array<ContactTag>): void;
         /**
            @method
            Returns all the websites of the Contact
@@ -8380,7 +8380,7 @@ to a relative path of a function published on a remote service. The 'functionNam
            @return {Adaptive.ContactWebsite[]} ContactWebsite[]
            @since v2.0
         */
-        getContactWebsites(): ContactWebsite[];
+        getContactWebsites(): Array<ContactWebsite>;
         /**
            @method
            Set the websites of the Contact
@@ -8388,7 +8388,7 @@ to a relative path of a function published on a remote service. The 'functionNam
            @param {Adaptive.ContactWebsite[]} contactWebsites Websites of the contact
            @since v2.0
         */
-        setContactWebsites(contactWebsites: ContactWebsite[]): void;
+        setContactWebsites(contactWebsites: Array<ContactWebsite>): void;
         /**
            @method
            Returns the personal info of the Contact
@@ -9247,7 +9247,7 @@ event may be fired if the application vetoes display rotation before rotation is
        @param {number} id
        @param {number[]} contactPhoto
     */
-    function handleContactPhotoResultCallbackResult(id: number, contactPhoto: number[]): void;
+    function handleContactPhotoResultCallbackResult(id: number, contactPhoto: Array<number>): void;
     /**
        @method
        @private
@@ -9256,7 +9256,7 @@ event may be fired if the application vetoes display rotation before rotation is
        @param {number[]} contactPhoto
        @param {Adaptive.IContactPhotoResultCallbackWarning} warning
     */
-    function handleContactPhotoResultCallbackWarning(id: number, contactPhoto: number[], warning: IContactPhotoResultCallbackWarning): void;
+    function handleContactPhotoResultCallbackWarning(id: number, contactPhoto: Array<number>, warning: IContactPhotoResultCallbackWarning): void;
     /**
        @class Adaptive.ContactPhotoResultCallback
        @extends Adaptive.BaseCallback
@@ -9271,12 +9271,12 @@ event may be fired if the application vetoes display rotation before rotation is
            @private
            @property
         */
-        onResultFunction: (contactPhoto: number[]) => void;
+        onResultFunction: (contactPhoto: Array<number>) => void;
         /**
            @private
            @property
         */
-        onWarningFunction: (contactPhoto: number[], warning: IContactPhotoResultCallbackWarning) => void;
+        onWarningFunction: (contactPhoto: Array<number>, warning: IContactPhotoResultCallbackWarning) => void;
         /**
            @method constructor
            Constructor with anonymous handler functions for callback.
@@ -9285,7 +9285,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param {Function} onResultFunction Function receiving parameters of type: number[]
            @param {Function} onWarningFunction Function receiving parameters of type: number[], Adaptive.IContactPhotoResultCallbackWarning
         */
-        constructor(onErrorFunction: (error: IContactPhotoResultCallbackError) => void, onResultFunction: (contactPhoto: number[]) => void, onWarningFunction: (contactPhoto: number[], warning: IContactPhotoResultCallbackWarning) => void);
+        constructor(onErrorFunction: (error: IContactPhotoResultCallbackError) => void, onResultFunction: (contactPhoto: Array<number>) => void, onWarningFunction: (contactPhoto: Array<number>, warning: IContactPhotoResultCallbackWarning) => void);
         /**
            @method
            This method is called on Error
@@ -9299,7 +9299,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param {number[]} contactPhoto contactPhoto returned by the platform
            @since v2.0
         */
-        onResult(contactPhoto: number[]): void;
+        onResult(contactPhoto: Array<number>): void;
         /**
            @method
            This method is called on Warning
@@ -9307,7 +9307,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param {Adaptive.IContactPhotoResultCallbackWarning} warning warning      returned by the platform
            @since v2.0
         */
-        onWarning(contactPhoto: number[], warning: IContactPhotoResultCallbackWarning): void;
+        onWarning(contactPhoto: Array<number>, warning: IContactPhotoResultCallbackWarning): void;
     }
     /**
        @property {Adaptive.Dictionary} registeredContactResultCallback
@@ -9331,7 +9331,7 @@ event may be fired if the application vetoes display rotation before rotation is
        @param {number} id
        @param {Adaptive.Contact[]} contacts
     */
-    function handleContactResultCallbackResult(id: number, contacts: Contact[]): void;
+    function handleContactResultCallbackResult(id: number, contacts: Array<Contact>): void;
     /**
        @method
        @private
@@ -9340,7 +9340,7 @@ event may be fired if the application vetoes display rotation before rotation is
        @param {Adaptive.Contact[]} contacts
        @param {Adaptive.IContactResultCallbackWarning} warning
     */
-    function handleContactResultCallbackWarning(id: number, contacts: Contact[], warning: IContactResultCallbackWarning): void;
+    function handleContactResultCallbackWarning(id: number, contacts: Array<Contact>, warning: IContactResultCallbackWarning): void;
     /**
        @class Adaptive.ContactResultCallback
        @extends Adaptive.BaseCallback
@@ -9355,12 +9355,12 @@ event may be fired if the application vetoes display rotation before rotation is
            @private
            @property
         */
-        onResultFunction: (contacts: Contact[]) => void;
+        onResultFunction: (contacts: Array<Contact>) => void;
         /**
            @private
            @property
         */
-        onWarningFunction: (contacts: Contact[], warning: IContactResultCallbackWarning) => void;
+        onWarningFunction: (contacts: Array<Contact>, warning: IContactResultCallbackWarning) => void;
         /**
            @method constructor
            Constructor with anonymous handler functions for callback.
@@ -9369,7 +9369,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Contact[]
            @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Contact[], Adaptive.IContactResultCallbackWarning
         */
-        constructor(onErrorFunction: (error: IContactResultCallbackError) => void, onResultFunction: (contacts: Contact[]) => void, onWarningFunction: (contacts: Contact[], warning: IContactResultCallbackWarning) => void);
+        constructor(onErrorFunction: (error: IContactResultCallbackError) => void, onResultFunction: (contacts: Array<Contact>) => void, onWarningFunction: (contacts: Array<Contact>, warning: IContactResultCallbackWarning) => void);
         /**
            @method
            This method is called on Error
@@ -9383,7 +9383,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param {Adaptive.Contact[]} contacts contacts returned by the platform
            @since v2.0
         */
-        onResult(contacts: Contact[]): void;
+        onResult(contacts: Array<Contact>): void;
         /**
            @method
            This method is called on Warning
@@ -9391,7 +9391,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param {Adaptive.IContactResultCallbackWarning} warning warning  returned by the platform
            @since v2.0
         */
-        onWarning(contacts: Contact[], warning: IContactResultCallbackWarning): void;
+        onWarning(contacts: Array<Contact>, warning: IContactResultCallbackWarning): void;
     }
     /**
        @property {Adaptive.Dictionary} registeredDatabaseResultCallback
@@ -9583,7 +9583,7 @@ event may be fired if the application vetoes display rotation before rotation is
        @param {number} id
        @param {number[]} data
     */
-    function handleFileDataLoadResultCallbackResult(id: number, data: number[]): void;
+    function handleFileDataLoadResultCallbackResult(id: number, data: Array<number>): void;
     /**
        @method
        @private
@@ -9592,7 +9592,7 @@ event may be fired if the application vetoes display rotation before rotation is
        @param {number[]} data
        @param {Adaptive.IFileDataLoadResultCallbackWarning} warning
     */
-    function handleFileDataLoadResultCallbackWarning(id: number, data: number[], warning: IFileDataLoadResultCallbackWarning): void;
+    function handleFileDataLoadResultCallbackWarning(id: number, data: Array<number>, warning: IFileDataLoadResultCallbackWarning): void;
     /**
        @class Adaptive.FileDataLoadResultCallback
        @extends Adaptive.BaseCallback
@@ -9607,12 +9607,12 @@ event may be fired if the application vetoes display rotation before rotation is
            @private
            @property
         */
-        onResultFunction: (data: number[]) => void;
+        onResultFunction: (data: Array<number>) => void;
         /**
            @private
            @property
         */
-        onWarningFunction: (data: number[], warning: IFileDataLoadResultCallbackWarning) => void;
+        onWarningFunction: (data: Array<number>, warning: IFileDataLoadResultCallbackWarning) => void;
         /**
            @method constructor
            Constructor with anonymous handler functions for callback.
@@ -9621,7 +9621,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param {Function} onResultFunction Function receiving parameters of type: number[]
            @param {Function} onWarningFunction Function receiving parameters of type: number[], Adaptive.IFileDataLoadResultCallbackWarning
         */
-        constructor(onErrorFunction: (error: IFileDataLoadResultCallbackError) => void, onResultFunction: (data: number[]) => void, onWarningFunction: (data: number[], warning: IFileDataLoadResultCallbackWarning) => void);
+        constructor(onErrorFunction: (error: IFileDataLoadResultCallbackError) => void, onResultFunction: (data: Array<number>) => void, onWarningFunction: (data: Array<number>, warning: IFileDataLoadResultCallbackWarning) => void);
         /**
            @method
            Error processing data retrieval/storage operation.
@@ -9635,7 +9635,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param {number[]} data data Data loaded.
            @since v2.0
         */
-        onResult(data: number[]): void;
+        onResult(data: Array<number>): void;
         /**
            @method
            Result with warning of data retrieval/storage operation.
@@ -9643,7 +9643,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param {Adaptive.IFileDataLoadResultCallbackWarning} warning warning Warning condition encountered.
            @since v2.0
         */
-        onWarning(data: number[], warning: IFileDataLoadResultCallbackWarning): void;
+        onWarning(data: Array<number>, warning: IFileDataLoadResultCallbackWarning): void;
     }
     /**
        @property {Adaptive.Dictionary} registeredFileDataStoreResultCallback
@@ -9751,7 +9751,7 @@ event may be fired if the application vetoes display rotation before rotation is
        @param {number} id
        @param {Adaptive.FileDescriptor[]} files
     */
-    function handleFileListResultCallbackResult(id: number, files: FileDescriptor[]): void;
+    function handleFileListResultCallbackResult(id: number, files: Array<FileDescriptor>): void;
     /**
        @method
        @private
@@ -9760,7 +9760,7 @@ event may be fired if the application vetoes display rotation before rotation is
        @param {Adaptive.FileDescriptor[]} files
        @param {Adaptive.IFileListResultCallbackWarning} warning
     */
-    function handleFileListResultCallbackWarning(id: number, files: FileDescriptor[], warning: IFileListResultCallbackWarning): void;
+    function handleFileListResultCallbackWarning(id: number, files: Array<FileDescriptor>, warning: IFileListResultCallbackWarning): void;
     /**
        @class Adaptive.FileListResultCallback
        @extends Adaptive.BaseCallback
@@ -9775,12 +9775,12 @@ event may be fired if the application vetoes display rotation before rotation is
            @private
            @property
         */
-        onResultFunction: (files: FileDescriptor[]) => void;
+        onResultFunction: (files: Array<FileDescriptor>) => void;
         /**
            @private
            @property
         */
-        onWarningFunction: (files: FileDescriptor[], warning: IFileListResultCallbackWarning) => void;
+        onWarningFunction: (files: Array<FileDescriptor>, warning: IFileListResultCallbackWarning) => void;
         /**
            @method constructor
            Constructor with anonymous handler functions for callback.
@@ -9789,7 +9789,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param {Function} onResultFunction Function receiving parameters of type: Adaptive.FileDescriptor[]
            @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.FileDescriptor[], Adaptive.IFileListResultCallbackWarning
         */
-        constructor(onErrorFunction: (error: IFileListResultCallbackError) => void, onResultFunction: (files: FileDescriptor[]) => void, onWarningFunction: (files: FileDescriptor[], warning: IFileListResultCallbackWarning) => void);
+        constructor(onErrorFunction: (error: IFileListResultCallbackError) => void, onResultFunction: (files: Array<FileDescriptor>) => void, onWarningFunction: (files: Array<FileDescriptor>, warning: IFileListResultCallbackWarning) => void);
         /**
            @method
            On error result of a file operation.
@@ -9803,7 +9803,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param {Adaptive.FileDescriptor[]} files files Array of resulting files/folders.
            @since v2.0
         */
-        onResult(files: FileDescriptor[]): void;
+        onResult(files: Array<FileDescriptor>): void;
         /**
            @method
            On partial result of a file operation, containing a warning.
@@ -9811,7 +9811,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param {Adaptive.IFileListResultCallbackWarning} warning warning Warning condition encountered.
            @since v2.0
         */
-        onWarning(files: FileDescriptor[], warning: IFileListResultCallbackWarning): void;
+        onWarning(files: Array<FileDescriptor>, warning: IFileListResultCallbackWarning): void;
     }
     /**
        @property {Adaptive.Dictionary} registeredFileResultCallback
@@ -10087,7 +10087,7 @@ event may be fired if the application vetoes display rotation before rotation is
        @param {number} id
        @param {Adaptive.SecureKeyPair[]} keyValues
     */
-    function handleSecurityResultCallbackResult(id: number, keyValues: SecureKeyPair[]): void;
+    function handleSecurityResultCallbackResult(id: number, keyValues: Array<SecureKeyPair>): void;
     /**
        @method
        @private
@@ -10096,7 +10096,7 @@ event may be fired if the application vetoes display rotation before rotation is
        @param {Adaptive.SecureKeyPair[]} keyValues
        @param {Adaptive.ISecurityResultCallbackWarning} warning
     */
-    function handleSecurityResultCallbackWarning(id: number, keyValues: SecureKeyPair[], warning: ISecurityResultCallbackWarning): void;
+    function handleSecurityResultCallbackWarning(id: number, keyValues: Array<SecureKeyPair>, warning: ISecurityResultCallbackWarning): void;
     /**
        @class Adaptive.SecurityResultCallback
        @extends Adaptive.BaseCallback
@@ -10111,12 +10111,12 @@ event may be fired if the application vetoes display rotation before rotation is
            @private
            @property
         */
-        onResultFunction: (keyValues: SecureKeyPair[]) => void;
+        onResultFunction: (keyValues: Array<SecureKeyPair>) => void;
         /**
            @private
            @property
         */
-        onWarningFunction: (keyValues: SecureKeyPair[], warning: ISecurityResultCallbackWarning) => void;
+        onWarningFunction: (keyValues: Array<SecureKeyPair>, warning: ISecurityResultCallbackWarning) => void;
         /**
            @method constructor
            Constructor with anonymous handler functions for callback.
@@ -10125,7 +10125,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param {Function} onResultFunction Function receiving parameters of type: Adaptive.SecureKeyPair[]
            @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.SecureKeyPair[], Adaptive.ISecurityResultCallbackWarning
         */
-        constructor(onErrorFunction: (error: ISecurityResultCallbackError) => void, onResultFunction: (keyValues: SecureKeyPair[]) => void, onWarningFunction: (keyValues: SecureKeyPair[], warning: ISecurityResultCallbackWarning) => void);
+        constructor(onErrorFunction: (error: ISecurityResultCallbackError) => void, onResultFunction: (keyValues: Array<SecureKeyPair>) => void, onWarningFunction: (keyValues: Array<SecureKeyPair>, warning: ISecurityResultCallbackWarning) => void);
         /**
            @method
            No data received - error condition, not authorized .
@@ -10139,7 +10139,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param {Adaptive.SecureKeyPair[]} keyValues keyValues key and values
            @since v2.0
         */
-        onResult(keyValues: SecureKeyPair[]): void;
+        onResult(keyValues: Array<SecureKeyPair>): void;
         /**
            @method
            Data received with warning - ie Found entries with existing key and values have been overriden
@@ -10147,7 +10147,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @param {Adaptive.ISecurityResultCallbackWarning} warning warning   Warning values
            @since v2.0
         */
-        onWarning(keyValues: SecureKeyPair[], warning: ISecurityResultCallbackWarning): void;
+        onWarning(keyValues: Array<SecureKeyPair>, warning: ISecurityResultCallbackWarning): void;
     }
     /**
        @property {Adaptive.Dictionary} registeredServiceResultCallback
@@ -10725,7 +10725,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {Adaptive.Locale[]} List of locales
            @since v2.0
         */
-        getLocaleSupportedDescriptors(): Locale[];
+        getLocaleSupportedDescriptors(): Array<Locale>;
         /**
            @method
            Gets the text/message corresponding to the given key and locale.
@@ -10744,7 +10744,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {Adaptive.KeyPair[]} Localized texts in the form of an object.
            @since v2.0
         */
-        getResourceLiterals(locale: Locale): KeyPair[];
+        getResourceLiterals(locale: Locale): Array<KeyPair>;
     }
     /**
        @class Adaptive.LifecycleBridge
@@ -11071,7 +11071,7 @@ configured in the platform's XML service definition file.
            @return {Adaptive.ServiceToken[]} Array of service tokens configured.
            @since v2.0.6
         */
-        getServicesRegistered(): ServiceToken[];
+        getServicesRegistered(): Array<ServiceToken>;
         /**
            @method
            Executes the given ServiceRequest and provides responses to the given callback handler.
@@ -11227,7 +11227,7 @@ should be passed as a parameter
            @param {Adaptive.DatabaseTableResultCallback} callback callback     DatabaseTable callback with the response.
            @since v2.0
         */
-        executeSqlStatement(database: Database, statement: string, replacements: string[], callback: IDatabaseTableResultCallback): void;
+        executeSqlStatement(database: Database, statement: string, replacements: Array<string>, callback: IDatabaseTableResultCallback): void;
         /**
            @method
            Executes SQL transaction (some statements chain) inside given database.
@@ -11239,7 +11239,7 @@ should be passed as a parameter
            @param {Adaptive.DatabaseTableResultCallback} callback callback     DatabaseTable callback with the response.
            @since v2.0
         */
-        executeSqlTransactions(database: Database, statements: string[], rollbackFlag: boolean, callback: IDatabaseTableResultCallback): void;
+        executeSqlTransactions(database: Database, statements: Array<string>, rollbackFlag: boolean, callback: IDatabaseTableResultCallback): void;
         /**
            @method
            Checks if database exists by given database name.
@@ -11419,7 +11419,7 @@ new destination file.
            @param {Adaptive.FileDataStoreResultCallback} callback callback   Result of the operation.
            @since v2.0
         */
-        setContent(descriptor: FileDescriptor, content: number[], callback: IFileDataStoreResultCallback): void;
+        setContent(descriptor: FileDescriptor, content: Array<number>, callback: IFileDataStoreResultCallback): void;
     }
     /**
        @class Adaptive.FileSystemBridge
@@ -11733,7 +11733,7 @@ This path may or may not be writable by the current application.
            @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
            @since v2.0
         */
-        getContactsForFields(callback: IContactResultCallback, fields: IContactFieldGroup[]): void;
+        getContactsForFields(callback: IContactResultCallback, fields: Array<IContactFieldGroup>): void;
         /**
            @method
            Get marked fields of all contacts according to a filter
@@ -11743,7 +11743,7 @@ This path may or may not be writable by the current application.
            @param {Adaptive.IContactFilter[]} filter filter   to search for
            @since v2.0
         */
-        getContactsWithFilter(callback: IContactResultCallback, fields: IContactFieldGroup[], filter: IContactFilter[]): void;
+        getContactsWithFilter(callback: IContactResultCallback, fields: Array<IContactFieldGroup>, filter: Array<IContactFilter>): void;
         /**
            @method
            Search contacts according to a term and send it to the callback
@@ -11762,7 +11762,7 @@ This path may or may not be writable by the current application.
            @param {Adaptive.IContactFilter[]} filter filter   to search for
            @since v2.0
         */
-        searchContactsWithFilter(term: string, callback: IContactResultCallback, filter: IContactFilter[]): void;
+        searchContactsWithFilter(term: string, callback: IContactResultCallback, filter: Array<IContactFilter>): void;
         /**
            @method
            Set the contact photo
@@ -11772,7 +11772,7 @@ This path may or may not be writable by the current application.
            @return {boolean} true if set is successful;false otherwise
            @since v2.0
         */
-        setContactPhoto(contact: ContactUid, pngImage: number[]): boolean;
+        setContactPhoto(contact: ContactUid, pngImage: Array<number>): boolean;
     }
     /**
        @class Adaptive.MailBridge
@@ -11936,7 +11936,7 @@ This path may or may not be writable by the current application.
            @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
            @since v2.0
         */
-        deleteSecureKeyValuePairs(keys: string[], publicAccessName: string, callback: ISecurityResultCallback): void;
+        deleteSecureKeyValuePairs(keys: Array<string>, publicAccessName: string, callback: ISecurityResultCallback): void;
         /**
            @method
            Retrieves from the device internal storage the entry/entries containing the specified key names.
@@ -11946,7 +11946,7 @@ This path may or may not be writable by the current application.
            @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
            @since v2.0
         */
-        getSecureKeyValuePairs(keys: string[], publicAccessName: string, callback: ISecurityResultCallback): void;
+        getSecureKeyValuePairs(keys: Array<string>, publicAccessName: string, callback: ISecurityResultCallback): void;
         /**
            @method
            Returns if the device has been modified in anyhow
@@ -11964,7 +11964,7 @@ This path may or may not be writable by the current application.
            @param {Adaptive.SecurityResultCallback} callback callback         callback to be executed upon function result.
            @since v2.0
         */
-        setSecureKeyValuePairs(keyValues: SecureKeyPair[], publicAccessName: string, callback: ISecurityResultCallback): void;
+        setSecureKeyValuePairs(keyValues: Array<SecureKeyPair>, publicAccessName: string, callback: ISecurityResultCallback): void;
     }
     /**
        @class Adaptive.AccelerationBridge
@@ -12224,7 +12224,7 @@ support at least one orientation. This is usually PortaitUp.
            @return {Adaptive.ICapabilitiesOrientation[]} The orientations supported by the device/display of the platform.
            @since v2.0.5
         */
-        getOrientationsSupported(): ICapabilitiesOrientation[];
+        getOrientationsSupported(): Array<ICapabilitiesOrientation>;
         /**
            @method
            Determines whether a specific hardware button is supported for interaction.

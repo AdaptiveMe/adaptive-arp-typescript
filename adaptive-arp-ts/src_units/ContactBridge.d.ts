@@ -94,7 +94,7 @@ declare module Adaptive {
            @param {Adaptive.IContactFieldGroup[]} fields fields   to get for each Contact
            @since v2.0
         */
-        getContactsForFields(callback: IContactResultCallback, fields: IContactFieldGroup[]): void;
+        getContactsForFields(callback: IContactResultCallback, fields: Array<IContactFieldGroup>): void;
         /**
            @method
            Get marked fields of all contacts according to a filter
@@ -104,7 +104,7 @@ declare module Adaptive {
            @param {Adaptive.IContactFilter[]} filter filter   to search for
            @since v2.0
         */
-        getContactsWithFilter(callback: IContactResultCallback, fields: IContactFieldGroup[], filter: IContactFilter[]): void;
+        getContactsWithFilter(callback: IContactResultCallback, fields: Array<IContactFieldGroup>, filter: Array<IContactFilter>): void;
         /**
            @method
            Search contacts according to a term and send it to the callback
@@ -123,7 +123,7 @@ declare module Adaptive {
            @param {Adaptive.IContactFilter[]} filter filter   to search for
            @since v2.0
         */
-        searchContactsWithFilter(term: string, callback: IContactResultCallback, filter: IContactFilter[]): void;
+        searchContactsWithFilter(term: string, callback: IContactResultCallback, filter: Array<IContactFilter>): void;
         /**
            @method
            Set the contact photo
@@ -133,6 +133,6 @@ declare module Adaptive {
            @return {boolean} true if set is successful;false otherwise
            @since v2.0
         */
-        setContactPhoto(contact: ContactUid, pngImage: number[]): boolean;
+        setContactPhoto(contact: ContactUid, pngImage: Array<number>): boolean;
     }
 }

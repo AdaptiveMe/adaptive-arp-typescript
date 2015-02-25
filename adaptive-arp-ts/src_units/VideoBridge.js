@@ -81,4 +81,7 @@ var Adaptive;
     })(Adaptive.BaseMediaBridge);
     Adaptive.VideoBridge = VideoBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=VideoBridge.js.map

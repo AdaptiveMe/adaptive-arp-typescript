@@ -56,12 +56,12 @@ declare module Adaptive {
            @property {Adaptive.ServiceEndpoint[]} serviceEndpoints
            Endpoint of the service
         */
-        serviceEndpoints: ServiceEndpoint[];
+        serviceEndpoints: Array<ServiceEndpoint>;
         /**
            @property {Adaptive.ServiceEndpoint[]} serviceEndpoints
            Endpoint of the service The 'serviceEndpointsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceEndpoints'.
         */
-        serviceEndpointsProperty: ServiceEndpoint[];
+        serviceEndpointsProperty: Array<ServiceEndpoint>;
         /**
            @method constructor
            Constructor used by the implementation
@@ -70,7 +70,7 @@ declare module Adaptive {
            @param {string} name             Name of the service
            @since v2.0.6
         */
-        constructor(serviceEndpoints: ServiceEndpoint[], name: string);
+        constructor(serviceEndpoints: Array<ServiceEndpoint>, name: string);
         /**
            @method
            Returns the name
@@ -94,7 +94,7 @@ declare module Adaptive {
            @return {Adaptive.ServiceEndpoint[]} serviceEndpoints
            @since v2.0
         */
-        getServiceEndpoints(): ServiceEndpoint[];
+        getServiceEndpoints(): Array<ServiceEndpoint>;
         /**
            @method
            Set the serviceEndpoints
@@ -102,7 +102,7 @@ declare module Adaptive {
            @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoint of the service
            @since v2.0
         */
-        setServiceEndpoints(serviceEndpoints: ServiceEndpoint[]): void;
+        setServiceEndpoints(serviceEndpoints: Array<ServiceEndpoint>): void;
         /**
            @method
            @static

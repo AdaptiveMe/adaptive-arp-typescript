@@ -35,4 +35,7 @@ Release:
 ///<reference path="IBaseSecurity.ts"/>
 ///<reference path="ISecurityResultCallback.ts"/>
 ///<reference path="SecureKeyPair.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ISecurity.js.map

@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseSocialBridge);
     Adaptive.LinkedInBridge = LinkedInBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=LinkedInBridge.js.map

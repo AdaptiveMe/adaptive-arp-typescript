@@ -194,4 +194,7 @@ var Adaptive;
     })(Adaptive.BaseCallback);
     Adaptive.DatabaseTableResultCallback = DatabaseTableResultCallback;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=DatabaseTableResultCallback.js.map

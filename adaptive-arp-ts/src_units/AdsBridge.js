@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseCommerceBridge);
     Adaptive.AdsBridge = AdsBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=AdsBridge.js.map

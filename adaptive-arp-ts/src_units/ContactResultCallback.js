@@ -194,4 +194,7 @@ var Adaptive;
     })(Adaptive.BaseCallback);
     Adaptive.ContactResultCallback = ContactResultCallback;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ContactResultCallback.js.map

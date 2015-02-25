@@ -35,4 +35,7 @@ Release:
 ///<reference path="IBaseCallback.ts"/>
 ///<reference path="INetworkReachabilityCallbackError.ts"/>
 ///<reference path="INetworkReachabilityCallbackWarning.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=INetworkReachabilityCallback.js.map

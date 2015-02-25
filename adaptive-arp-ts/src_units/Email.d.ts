@@ -49,32 +49,32 @@ declare module Adaptive {
            @property {Adaptive.EmailAddress[]} bccRecipients
            Array of Email Blind Carbon Copy recipients
         */
-        bccRecipients: EmailAddress[];
+        bccRecipients: Array<EmailAddress>;
         /**
            @property {Adaptive.EmailAddress[]} bccRecipients
            Array of Email Blind Carbon Copy recipients The 'bccRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'bccRecipients'.
         */
-        bccRecipientsProperty: EmailAddress[];
+        bccRecipientsProperty: Array<EmailAddress>;
         /**
            @property {Adaptive.EmailAddress[]} ccRecipients
            Array of Email Carbon Copy recipients
         */
-        ccRecipients: EmailAddress[];
+        ccRecipients: Array<EmailAddress>;
         /**
            @property {Adaptive.EmailAddress[]} ccRecipients
            Array of Email Carbon Copy recipients The 'ccRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'ccRecipients'.
         */
-        ccRecipientsProperty: EmailAddress[];
+        ccRecipientsProperty: Array<EmailAddress>;
         /**
            @property {Adaptive.EmailAttachmentData[]} emailAttachmentData
            Array of attatchments
         */
-        emailAttachmentData: EmailAttachmentData[];
+        emailAttachmentData: Array<EmailAttachmentData>;
         /**
            @property {Adaptive.EmailAttachmentData[]} emailAttachmentData
            Array of attatchments The 'emailAttachmentDataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'emailAttachmentData'.
         */
-        emailAttachmentDataProperty: EmailAttachmentData[];
+        emailAttachmentDataProperty: Array<EmailAttachmentData>;
         /**
            @property {string} messageBody
            Message body
@@ -109,12 +109,12 @@ declare module Adaptive {
            @property {Adaptive.EmailAddress[]} toRecipients
            Array of Email recipients
         */
-        toRecipients: EmailAddress[];
+        toRecipients: Array<EmailAddress>;
         /**
            @property {Adaptive.EmailAddress[]} toRecipients
            Array of Email recipients The 'toRecipientsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'toRecipients'.
         */
-        toRecipientsProperty: EmailAddress[];
+        toRecipientsProperty: Array<EmailAddress>;
         /**
            @method constructor
            Constructor used by the implementation
@@ -128,7 +128,7 @@ declare module Adaptive {
            @param {string} subject             of the email
            @since v2.0
         */
-        constructor(toRecipients: EmailAddress[], ccRecipients: EmailAddress[], bccRecipients: EmailAddress[], emailAttachmentData: EmailAttachmentData[], messageBody: string, messageBodyMimeType: string, subject: string);
+        constructor(toRecipients: Array<EmailAddress>, ccRecipients: Array<EmailAddress>, bccRecipients: Array<EmailAddress>, emailAttachmentData: Array<EmailAttachmentData>, messageBody: string, messageBodyMimeType: string, subject: string);
         /**
            @method
            Returns the array of recipients
@@ -136,7 +136,7 @@ declare module Adaptive {
            @return {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
            @since v2.0
         */
-        getBccRecipients(): EmailAddress[];
+        getBccRecipients(): Array<EmailAddress>;
         /**
            @method
            Set the array of recipients
@@ -144,7 +144,7 @@ declare module Adaptive {
            @param {Adaptive.EmailAddress[]} bccRecipients array of bcc recipients
            @since v2.0
         */
-        setBccRecipients(bccRecipients: EmailAddress[]): void;
+        setBccRecipients(bccRecipients: Array<EmailAddress>): void;
         /**
            @method
            Returns the array of recipients
@@ -152,7 +152,7 @@ declare module Adaptive {
            @return {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
            @since v2.0
         */
-        getCcRecipients(): EmailAddress[];
+        getCcRecipients(): Array<EmailAddress>;
         /**
            @method
            Set the array of recipients
@@ -160,7 +160,7 @@ declare module Adaptive {
            @param {Adaptive.EmailAddress[]} ccRecipients array of cc recipients
            @since v2.0
         */
-        setCcRecipients(ccRecipients: EmailAddress[]): void;
+        setCcRecipients(ccRecipients: Array<EmailAddress>): void;
         /**
            @method
            Returns an array of attachments
@@ -168,7 +168,7 @@ declare module Adaptive {
            @return {Adaptive.EmailAttachmentData[]} emailAttachmentData array with the email attachments
            @since v2.0
         */
-        getEmailAttachmentData(): EmailAttachmentData[];
+        getEmailAttachmentData(): Array<EmailAttachmentData>;
         /**
            @method
            Set the email attachment data array
@@ -176,7 +176,7 @@ declare module Adaptive {
            @param {Adaptive.EmailAttachmentData[]} emailAttachmentData array of email attatchments
            @since v2.0
         */
-        setEmailAttachmentData(emailAttachmentData: EmailAttachmentData[]): void;
+        setEmailAttachmentData(emailAttachmentData: Array<EmailAttachmentData>): void;
         /**
            @method
            Returns the message body of the email
@@ -232,7 +232,7 @@ declare module Adaptive {
            @return {Adaptive.EmailAddress[]} toRecipients array of recipients
            @since v2.0
         */
-        getToRecipients(): EmailAddress[];
+        getToRecipients(): Array<EmailAddress>;
         /**
            @method
            Set the array of recipients
@@ -240,7 +240,7 @@ declare module Adaptive {
            @param {Adaptive.EmailAddress[]} toRecipients array of recipients
            @since v2.0
         */
-        setToRecipients(toRecipients: EmailAddress[]): void;
+        setToRecipients(toRecipients: Array<EmailAddress>): void;
         /**
            @method
            @static

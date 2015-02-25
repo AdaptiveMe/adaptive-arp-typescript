@@ -99,4 +99,7 @@ var Adaptive;
     })(Adaptive.BaseSystemBridge);
     Adaptive.RuntimeBridge = RuntimeBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=RuntimeBridge.js.map

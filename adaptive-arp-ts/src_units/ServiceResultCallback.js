@@ -194,4 +194,7 @@ var Adaptive;
     })(Adaptive.BaseCallback);
     Adaptive.ServiceResultCallback = ServiceResultCallback;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ServiceResultCallback.js.map

@@ -60,7 +60,7 @@ declare module Adaptive {
            @param data Data loaded.
            @since v2.0
         */
-        onResult(data: number[]): any;
+        onResult(data: Array<number>): any;
         /**
            @method
            Result with warning of data retrieval/storage operation.
@@ -68,6 +68,6 @@ declare module Adaptive {
            @param warning Warning condition encountered.
            @since v2.0
         */
-        onWarning(data: number[], warning: IFileDataLoadResultCallbackWarning): any;
+        onWarning(data: Array<number>, warning: IFileDataLoadResultCallbackWarning): any;
     }
 }

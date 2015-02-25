@@ -191,4 +191,7 @@ var Adaptive;
     })(Adaptive.BaseListener);
     Adaptive.NetworkStatusListener = NetworkStatusListener;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=NetworkStatusListener.js.map

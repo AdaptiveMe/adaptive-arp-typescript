@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseDataBridge);
     Adaptive.InternalStorageBridge = InternalStorageBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=InternalStorageBridge.js.map

@@ -242,4 +242,7 @@ This path may or may not be writable by the current application.
     })(Adaptive.BaseDataBridge);
     Adaptive.FileSystemBridge = FileSystemBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=FileSystemBridge.js.map

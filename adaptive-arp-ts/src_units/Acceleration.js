@@ -242,4 +242,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.Acceleration = Acceleration;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=Acceleration.js.map

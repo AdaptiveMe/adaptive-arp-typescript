@@ -285,4 +285,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.EmailAttachmentData = EmailAttachmentData;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=EmailAttachmentData.js.map

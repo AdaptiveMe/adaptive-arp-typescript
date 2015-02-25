@@ -183,6 +183,6 @@ new destination file.
            @param callback   Result of the operation.
            @since v2.0
         */
-        setContent(descriptor: FileDescriptor, content: number[], callback: IFileDataStoreResultCallback): any;
+        setContent(descriptor: FileDescriptor, content: Array<number>, callback: IFileDataStoreResultCallback): any;
     }
 }

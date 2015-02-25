@@ -378,4 +378,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.ServiceSessionCookie = ServiceSessionCookie;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ServiceSessionCookie.js.map

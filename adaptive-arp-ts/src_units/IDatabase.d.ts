@@ -93,7 +93,7 @@ should be passed as a parameter
            @param callback     DatabaseTable callback with the response.
            @since v2.0
         */
-        executeSqlStatement(database: Database, statement: string, replacements: string[], callback: IDatabaseTableResultCallback): any;
+        executeSqlStatement(database: Database, statement: string, replacements: Array<string>, callback: IDatabaseTableResultCallback): any;
         /**
            @method
            Executes SQL transaction (some statements chain) inside given database.
@@ -104,7 +104,7 @@ should be passed as a parameter
            @param callback     DatabaseTable callback with the response.
            @since v2.0
         */
-        executeSqlTransactions(database: Database, statements: string[], rollbackFlag: boolean, callback: IDatabaseTableResultCallback): any;
+        executeSqlTransactions(database: Database, statements: Array<string>, rollbackFlag: boolean, callback: IDatabaseTableResultCallback): any;
         /**
            @method
            Checks if database exists by given database name.

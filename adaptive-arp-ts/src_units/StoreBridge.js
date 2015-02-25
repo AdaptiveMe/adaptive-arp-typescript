@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseCommerceBridge);
     Adaptive.StoreBridge = StoreBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=StoreBridge.js.map

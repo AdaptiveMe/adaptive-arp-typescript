@@ -47,12 +47,12 @@ declare module Adaptive {
            @property {string[]} values
            The values of the row.
         */
-        values: string[];
+        values: Array<string>;
         /**
            @property {string[]} values
            The values of the row. The 'valuesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'values'.
         */
-        valuesProperty: string[];
+        valuesProperty: Array<string>;
         /**
            @method constructor
            Constructor for implementation using.
@@ -60,7 +60,7 @@ declare module Adaptive {
            @param {string[]} values The values of the row
            @since v2.0
         */
-        constructor(values: string[]);
+        constructor(values: Array<string>);
         /**
            @method
            Returns the values of the row.
@@ -68,7 +68,7 @@ declare module Adaptive {
            @return {string[]} The values of the row.
            @since v2.0
         */
-        getValues(): string[];
+        getValues(): Array<string>;
         /**
            @method
            Sets the values of the row.
@@ -76,7 +76,7 @@ declare module Adaptive {
            @param {string[]} values The values of the row.
            @since v2.0
         */
-        setValues(values: string[]): void;
+        setValues(values: Array<string>): void;
         /**
            @method
            @static

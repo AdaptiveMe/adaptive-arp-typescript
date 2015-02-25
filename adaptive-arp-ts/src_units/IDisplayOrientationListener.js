@@ -36,4 +36,7 @@ Release:
 ///<reference path="IDisplayOrientationListenerError.ts"/>
 ///<reference path="IDisplayOrientationListenerWarning.ts"/>
 ///<reference path="RotationEvent.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IDisplayOrientationListener.js.map

@@ -75,4 +75,7 @@ var Adaptive;
     })();
     Adaptive.BaseNotificationBridge = BaseNotificationBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=BaseNotificationBridge.js.map

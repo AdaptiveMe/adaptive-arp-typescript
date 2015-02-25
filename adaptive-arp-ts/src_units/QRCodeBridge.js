@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseReaderBridge);
     Adaptive.QRCodeBridge = QRCodeBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=QRCodeBridge.js.map

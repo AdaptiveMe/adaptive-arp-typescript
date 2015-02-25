@@ -385,4 +385,7 @@ new destination file.
     })(Adaptive.BaseDataBridge);
     Adaptive.FileBridge = FileBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=FileBridge.js.map

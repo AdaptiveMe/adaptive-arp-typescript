@@ -219,4 +219,7 @@ XML service definition file.
     })(Adaptive.BaseCommunicationBridge);
     Adaptive.ServiceBridge = ServiceBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ServiceBridge.js.map

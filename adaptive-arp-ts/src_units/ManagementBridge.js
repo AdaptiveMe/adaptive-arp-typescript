@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseApplicationBridge);
     Adaptive.ManagementBridge = ManagementBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ManagementBridge.js.map

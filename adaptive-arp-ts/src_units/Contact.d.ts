@@ -55,62 +55,62 @@ declare module Adaptive {
            @property {Adaptive.ContactAddress[]} contactAddresses
            The adresses from the contact
         */
-        contactAddresses: ContactAddress[];
+        contactAddresses: Array<ContactAddress>;
         /**
            @property {Adaptive.ContactAddress[]} contactAddresses
            The adresses from the contact The 'contactAddressesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactAddresses'.
         */
-        contactAddressesProperty: ContactAddress[];
+        contactAddressesProperty: Array<ContactAddress>;
         /**
            @property {Adaptive.ContactEmail[]} contactEmails
            The emails from the contact
         */
-        contactEmails: ContactEmail[];
+        contactEmails: Array<ContactEmail>;
         /**
            @property {Adaptive.ContactEmail[]} contactEmails
            The emails from the contact The 'contactEmailsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactEmails'.
         */
-        contactEmailsProperty: ContactEmail[];
+        contactEmailsProperty: Array<ContactEmail>;
         /**
            @property {Adaptive.ContactPhone[]} contactPhones
            The phones from the contact
         */
-        contactPhones: ContactPhone[];
+        contactPhones: Array<ContactPhone>;
         /**
            @property {Adaptive.ContactPhone[]} contactPhones
            The phones from the contact The 'contactPhonesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactPhones'.
         */
-        contactPhonesProperty: ContactPhone[];
+        contactPhonesProperty: Array<ContactPhone>;
         /**
            @property {Adaptive.ContactSocial[]} contactSocials
            The social network info from the contact
         */
-        contactSocials: ContactSocial[];
+        contactSocials: Array<ContactSocial>;
         /**
            @property {Adaptive.ContactSocial[]} contactSocials
            The social network info from the contact The 'contactSocialsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactSocials'.
         */
-        contactSocialsProperty: ContactSocial[];
+        contactSocialsProperty: Array<ContactSocial>;
         /**
            @property {Adaptive.ContactTag[]} contactTags
            The aditional tags from the contact
         */
-        contactTags: ContactTag[];
+        contactTags: Array<ContactTag>;
         /**
            @property {Adaptive.ContactTag[]} contactTags
            The aditional tags from the contact The 'contactTagsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactTags'.
         */
-        contactTagsProperty: ContactTag[];
+        contactTagsProperty: Array<ContactTag>;
         /**
            @property {Adaptive.ContactWebsite[]} contactWebsites
            The websites from the contact
         */
-        contactWebsites: ContactWebsite[];
+        contactWebsites: Array<ContactWebsite>;
         /**
            @property {Adaptive.ContactWebsite[]} contactWebsites
            The websites from the contact The 'contactWebsitesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'contactWebsites'.
         */
-        contactWebsitesProperty: ContactWebsite[];
+        contactWebsitesProperty: Array<ContactWebsite>;
         /**
            @property {Adaptive.ContactPersonalInfo} personalInfo
            The personal info from the contact
@@ -146,7 +146,7 @@ declare module Adaptive {
            @return {Adaptive.ContactAddress[]} ContactAddress[]
            @since v2.0
         */
-        getContactAddresses(): ContactAddress[];
+        getContactAddresses(): Array<ContactAddress>;
         /**
            @method
            Set the addresses of the Contact
@@ -154,7 +154,7 @@ declare module Adaptive {
            @param {Adaptive.ContactAddress[]} contactAddresses Addresses of the contact
            @since v2.0
         */
-        setContactAddresses(contactAddresses: ContactAddress[]): void;
+        setContactAddresses(contactAddresses: Array<ContactAddress>): void;
         /**
            @method
            Returns all the emails of the Contact
@@ -162,7 +162,7 @@ declare module Adaptive {
            @return {Adaptive.ContactEmail[]} ContactEmail[]
            @since v2.0
         */
-        getContactEmails(): ContactEmail[];
+        getContactEmails(): Array<ContactEmail>;
         /**
            @method
            Set the emails of the Contact
@@ -170,7 +170,7 @@ declare module Adaptive {
            @param {Adaptive.ContactEmail[]} contactEmails Emails of the contact
            @since v2.0
         */
-        setContactEmails(contactEmails: ContactEmail[]): void;
+        setContactEmails(contactEmails: Array<ContactEmail>): void;
         /**
            @method
            Returns all the phones of the Contact
@@ -178,7 +178,7 @@ declare module Adaptive {
            @return {Adaptive.ContactPhone[]} ContactPhone[]
            @since v2.0
         */
-        getContactPhones(): ContactPhone[];
+        getContactPhones(): Array<ContactPhone>;
         /**
            @method
            Set the phones of the Contact
@@ -186,7 +186,7 @@ declare module Adaptive {
            @param {Adaptive.ContactPhone[]} contactPhones Phones of the contact
            @since v2.0
         */
-        setContactPhones(contactPhones: ContactPhone[]): void;
+        setContactPhones(contactPhones: Array<ContactPhone>): void;
         /**
            @method
            Returns all the social network info of the Contact
@@ -194,7 +194,7 @@ declare module Adaptive {
            @return {Adaptive.ContactSocial[]} ContactSocial[]
            @since v2.0
         */
-        getContactSocials(): ContactSocial[];
+        getContactSocials(): Array<ContactSocial>;
         /**
            @method
            Set the social network info of the Contact
@@ -202,7 +202,7 @@ declare module Adaptive {
            @param {Adaptive.ContactSocial[]} contactSocials Social Networks of the contact
            @since v2.0
         */
-        setContactSocials(contactSocials: ContactSocial[]): void;
+        setContactSocials(contactSocials: Array<ContactSocial>): void;
         /**
            @method
            Returns the additional tags of the Contact
@@ -210,7 +210,7 @@ declare module Adaptive {
            @return {Adaptive.ContactTag[]} ContactTag[]
            @since v2.0
         */
-        getContactTags(): ContactTag[];
+        getContactTags(): Array<ContactTag>;
         /**
            @method
            Set the additional tags of the Contact
@@ -218,7 +218,7 @@ declare module Adaptive {
            @param {Adaptive.ContactTag[]} contactTags Tags of the contact
            @since v2.0
         */
-        setContactTags(contactTags: ContactTag[]): void;
+        setContactTags(contactTags: Array<ContactTag>): void;
         /**
            @method
            Returns all the websites of the Contact
@@ -226,7 +226,7 @@ declare module Adaptive {
            @return {Adaptive.ContactWebsite[]} ContactWebsite[]
            @since v2.0
         */
-        getContactWebsites(): ContactWebsite[];
+        getContactWebsites(): Array<ContactWebsite>;
         /**
            @method
            Set the websites of the Contact
@@ -234,7 +234,7 @@ declare module Adaptive {
            @param {Adaptive.ContactWebsite[]} contactWebsites Websites of the contact
            @since v2.0
         */
-        setContactWebsites(contactWebsites: ContactWebsite[]): void;
+        setContactWebsites(contactWebsites: Array<ContactWebsite>): void;
         /**
            @method
            Returns the personal info of the Contact

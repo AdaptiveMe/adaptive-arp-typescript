@@ -100,4 +100,7 @@ var Adaptive;
     })(Adaptive.BaseUtilBridge);
     Adaptive.LoggingBridge = LoggingBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=LoggingBridge.js.map

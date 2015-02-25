@@ -203,4 +203,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.OSInfo = OSInfo;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=OSInfo.js.map

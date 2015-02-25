@@ -64,7 +64,7 @@ declare module Adaptive {
        @param {number} id
        @param {Adaptive.Contact[]} contacts
     */
-    function handleContactResultCallbackResult(id: number, contacts: Contact[]): void;
+    function handleContactResultCallbackResult(id: number, contacts: Array<Contact>): void;
     /**
        @method
        @private
@@ -73,7 +73,7 @@ declare module Adaptive {
        @param {Adaptive.Contact[]} contacts
        @param {Adaptive.IContactResultCallbackWarning} warning
     */
-    function handleContactResultCallbackWarning(id: number, contacts: Contact[], warning: IContactResultCallbackWarning): void;
+    function handleContactResultCallbackWarning(id: number, contacts: Array<Contact>, warning: IContactResultCallbackWarning): void;
     /**
        @class Adaptive.ContactResultCallback
        @extends Adaptive.BaseCallback
@@ -88,12 +88,12 @@ declare module Adaptive {
            @private
            @property
         */
-        onResultFunction: (contacts: Contact[]) => void;
+        onResultFunction: (contacts: Array<Contact>) => void;
         /**
            @private
            @property
         */
-        onWarningFunction: (contacts: Contact[], warning: IContactResultCallbackWarning) => void;
+        onWarningFunction: (contacts: Array<Contact>, warning: IContactResultCallbackWarning) => void;
         /**
            @method constructor
            Constructor with anonymous handler functions for callback.
@@ -102,7 +102,7 @@ declare module Adaptive {
            @param {Function} onResultFunction Function receiving parameters of type: Adaptive.Contact[]
            @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.Contact[], Adaptive.IContactResultCallbackWarning
         */
-        constructor(onErrorFunction: (error: IContactResultCallbackError) => void, onResultFunction: (contacts: Contact[]) => void, onWarningFunction: (contacts: Contact[], warning: IContactResultCallbackWarning) => void);
+        constructor(onErrorFunction: (error: IContactResultCallbackError) => void, onResultFunction: (contacts: Array<Contact>) => void, onWarningFunction: (contacts: Array<Contact>, warning: IContactResultCallbackWarning) => void);
         /**
            @method
            This method is called on Error
@@ -116,7 +116,7 @@ declare module Adaptive {
            @param {Adaptive.Contact[]} contacts contacts returned by the platform
            @since v2.0
         */
-        onResult(contacts: Contact[]): void;
+        onResult(contacts: Array<Contact>): void;
         /**
            @method
            This method is called on Warning
@@ -124,6 +124,6 @@ declare module Adaptive {
            @param {Adaptive.IContactResultCallbackWarning} warning warning  returned by the platform
            @since v2.0
         */
-        onWarning(contacts: Contact[], warning: IContactResultCallbackWarning): void;
+        onWarning(contacts: Array<Contact>, warning: IContactResultCallbackWarning): void;
     }
 }

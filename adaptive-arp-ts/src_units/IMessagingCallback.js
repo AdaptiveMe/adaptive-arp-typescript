@@ -35,4 +35,7 @@ Release:
 ///<reference path="IBaseCallback.ts"/>
 ///<reference path="IMessagingCallbackError.ts"/>
 ///<reference path="IMessagingCallbackWarning.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IMessagingCallback.js.map

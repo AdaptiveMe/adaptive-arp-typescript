@@ -102,7 +102,7 @@ configured in the platform's XML service definition file.
            @return {Adaptive.ServiceToken[]} Array of service tokens configured.
            @since v2.0.6
         */
-        getServicesRegistered(): ServiceToken[];
+        getServicesRegistered(): Array<ServiceToken>;
         /**
            @method
            Executes the given ServiceRequest and provides responses to the given callback handler.

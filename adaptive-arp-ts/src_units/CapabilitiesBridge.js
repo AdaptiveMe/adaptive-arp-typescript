@@ -302,4 +302,7 @@ device.
     })(Adaptive.BaseSystemBridge);
     Adaptive.CapabilitiesBridge = CapabilitiesBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=CapabilitiesBridge.js.map

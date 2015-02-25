@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BasePIMBridge);
     Adaptive.CalendarBridge = CalendarBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=CalendarBridge.js.map

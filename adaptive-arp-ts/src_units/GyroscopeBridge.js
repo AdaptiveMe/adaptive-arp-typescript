@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseSensorBridge);
     Adaptive.GyroscopeBridge = GyroscopeBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=GyroscopeBridge.js.map

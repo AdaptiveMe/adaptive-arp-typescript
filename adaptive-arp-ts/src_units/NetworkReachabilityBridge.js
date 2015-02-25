@@ -99,4 +99,7 @@ var Adaptive;
     })(Adaptive.BaseCommunicationBridge);
     Adaptive.NetworkReachabilityBridge = NetworkReachabilityBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=NetworkReachabilityBridge.js.map

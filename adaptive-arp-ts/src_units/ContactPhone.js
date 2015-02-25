@@ -169,4 +169,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.ContactPhone = ContactPhone;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ContactPhone.js.map

@@ -61,7 +61,7 @@ declare module Adaptive {
            @param keyValues key and values
            @since v2.0
         */
-        onResult(keyValues: SecureKeyPair[]): any;
+        onResult(keyValues: Array<SecureKeyPair>): any;
         /**
            @method
            Data received with warning - ie Found entries with existing key and values have been overriden
@@ -69,6 +69,6 @@ declare module Adaptive {
            @param warning   Warning values
            @since v2.0
         */
-        onWarning(keyValues: SecureKeyPair[], warning: ISecurityResultCallbackWarning): any;
+        onWarning(keyValues: Array<SecureKeyPair>, warning: ISecurityResultCallbackWarning): any;
     }
 }

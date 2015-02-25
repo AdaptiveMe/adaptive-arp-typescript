@@ -79,7 +79,7 @@ support at least one orientation. This is usually PortaitUp.
            @return {Adaptive.ICapabilitiesOrientation[]} The orientations supported by the device/display of the platform.
            @since v2.0.5
         */
-        getOrientationsSupported(): ICapabilitiesOrientation[];
+        getOrientationsSupported(): Array<ICapabilitiesOrientation>;
         /**
            @method
            Determines whether a specific hardware button is supported for interaction.

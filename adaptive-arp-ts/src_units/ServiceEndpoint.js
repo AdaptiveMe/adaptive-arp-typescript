@@ -195,4 +195,7 @@ var Adaptive;
     })();
     Adaptive.ServiceEndpoint = ServiceEndpoint;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=ServiceEndpoint.js.map

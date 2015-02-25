@@ -47,12 +47,12 @@ declare module Adaptive {
            @property {number[]} data
            The raw data for the current file attachment (byte array)
         */
-        data: number[];
+        data: Array<number>;
         /**
            @property {number[]} data
            The raw data for the current file attachment (byte array) The 'dataProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'data'.
         */
-        dataProperty: number[];
+        dataProperty: Array<number>;
         /**
            @property {string} fileName
            The name of the current file attachment
@@ -104,7 +104,7 @@ declare module Adaptive {
            @param {string} referenceUrl relative url of the file attachment
            @since v2.0
         */
-        constructor(data: number[], size: number, fileName: string, mimeType: string, referenceUrl: string);
+        constructor(data: Array<number>, size: number, fileName: string, mimeType: string, referenceUrl: string);
         /**
            @method
            Returns the raw data in byte[]
@@ -112,7 +112,7 @@ declare module Adaptive {
            @return {number[]} data Octet-binary content of the attachment payload.
            @since v2.0
         */
-        getData(): number[];
+        getData(): Array<number>;
         /**
            @method
            Set the data of the attachment as a byte[]
@@ -120,7 +120,7 @@ declare module Adaptive {
            @param {number[]} data Sets the octet-binary content of the attachment.
            @since v2.0
         */
-        setData(data: number[]): void;
+        setData(data: Array<number>): void;
         /**
            @method
            Returns the filename of the attachment

@@ -49,22 +49,22 @@ declare module Adaptive {
            @property {Adaptive.ServiceSessionAttribute[]} attributes
            The attributes of the request or response.
         */
-        attributes: ServiceSessionAttribute[];
+        attributes: Array<ServiceSessionAttribute>;
         /**
            @property {Adaptive.ServiceSessionAttribute[]} attributes
            The attributes of the request or response. The 'attributesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'attributes'.
         */
-        attributesProperty: ServiceSessionAttribute[];
+        attributesProperty: Array<ServiceSessionAttribute>;
         /**
            @property {Adaptive.ServiceSessionCookie[]} cookies
            The cookies of the request or response.
         */
-        cookies: ServiceSessionCookie[];
+        cookies: Array<ServiceSessionCookie>;
         /**
            @property {Adaptive.ServiceSessionCookie[]} cookies
            The cookies of the request or response. The 'cookiesProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'cookies'.
         */
-        cookiesProperty: ServiceSessionCookie[];
+        cookiesProperty: Array<ServiceSessionCookie>;
         /**
            @method constructor
            Constructor with fields.
@@ -73,7 +73,7 @@ declare module Adaptive {
            @param {Adaptive.ServiceSessionAttribute[]} attributes Attributes of the request or response.
            @since v2.0
         */
-        constructor(cookies: ServiceSessionCookie[], attributes: ServiceSessionAttribute[]);
+        constructor(cookies: Array<ServiceSessionCookie>, attributes: Array<ServiceSessionAttribute>);
         /**
            @method
            Gets the attributes of the request or response.
@@ -81,7 +81,7 @@ declare module Adaptive {
            @return {Adaptive.ServiceSessionAttribute[]} Attributes of the request or response.
            @since v2.0
         */
-        getAttributes(): ServiceSessionAttribute[];
+        getAttributes(): Array<ServiceSessionAttribute>;
         /**
            @method
            Sets the attributes for the request or response.
@@ -89,7 +89,7 @@ declare module Adaptive {
            @param {Adaptive.ServiceSessionAttribute[]} attributes Attributes of the request or response.
            @since v2.0
         */
-        setAttributes(attributes: ServiceSessionAttribute[]): void;
+        setAttributes(attributes: Array<ServiceSessionAttribute>): void;
         /**
            @method
            Returns the cookies of the request or response.
@@ -97,7 +97,7 @@ declare module Adaptive {
            @return {Adaptive.ServiceSessionCookie[]} The cookies of the request or response.
            @since v2.0
         */
-        getCookies(): ServiceSessionCookie[];
+        getCookies(): Array<ServiceSessionCookie>;
         /**
            @method
            Sets the cookies of the request or response.
@@ -105,7 +105,7 @@ declare module Adaptive {
            @param {Adaptive.ServiceSessionCookie[]} cookies The cookies of the request or response.
            @since v2.0
         */
-        setCookies(cookies: ServiceSessionCookie[]): void;
+        setCookies(cookies: Array<ServiceSessionCookie>): void;
         /**
            @method
            @static

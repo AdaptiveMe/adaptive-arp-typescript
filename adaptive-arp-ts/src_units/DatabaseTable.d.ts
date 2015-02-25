@@ -59,22 +59,22 @@ declare module Adaptive {
            @property {Adaptive.DatabaseColumn[]} databaseColumns
            Definition of databaseColumns.
         */
-        databaseColumns: DatabaseColumn[];
+        databaseColumns: Array<DatabaseColumn>;
         /**
            @property {Adaptive.DatabaseColumn[]} databaseColumns
            Definition of databaseColumns. The 'databaseColumnsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'databaseColumns'.
         */
-        databaseColumnsProperty: DatabaseColumn[];
+        databaseColumnsProperty: Array<DatabaseColumn>;
         /**
            @property {Adaptive.DatabaseRow[]} databaseRows
            Rows of the table containing the data.
         */
-        databaseRows: DatabaseRow[];
+        databaseRows: Array<DatabaseRow>;
         /**
            @property {Adaptive.DatabaseRow[]} databaseRows
            Rows of the table containing the data. The 'databaseRowsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'databaseRows'.
         */
-        databaseRowsProperty: DatabaseRow[];
+        databaseRowsProperty: Array<DatabaseRow>;
         /**
            @property {string} name
            Name of the table.
@@ -106,7 +106,7 @@ declare module Adaptive {
            @param {Adaptive.DatabaseRow[]} databaseRows    The databaseRows of the table
            @since v2.0
         */
-        constructor(name: string, columnCount: number, rowCount: number, databaseColumns: DatabaseColumn[], databaseRows: DatabaseRow[]);
+        constructor(name: string, columnCount: number, rowCount: number, databaseColumns: Array<DatabaseColumn>, databaseRows: Array<DatabaseRow>);
         /**
            @method
            Get the number of databaseColumns
@@ -130,7 +130,7 @@ declare module Adaptive {
            @return {Adaptive.DatabaseColumn[]} The databaseColumns
            @since v2.0
         */
-        getDatabaseColumns(): DatabaseColumn[];
+        getDatabaseColumns(): Array<DatabaseColumn>;
         /**
            @method
            Sets the databaseColumns of the table
@@ -138,7 +138,7 @@ declare module Adaptive {
            @param {Adaptive.DatabaseColumn[]} databaseColumns The databaseColumns of the table
            @since v2.0
         */
-        setDatabaseColumns(databaseColumns: DatabaseColumn[]): void;
+        setDatabaseColumns(databaseColumns: Array<DatabaseColumn>): void;
         /**
            @method
            Get the databaseRows of the table
@@ -146,7 +146,7 @@ declare module Adaptive {
            @return {Adaptive.DatabaseRow[]} The databaseRows of the table
            @since v2.0
         */
-        getDatabaseRows(): DatabaseRow[];
+        getDatabaseRows(): Array<DatabaseRow>;
         /**
            @method
            Sets the databaseRows of the table
@@ -154,7 +154,7 @@ declare module Adaptive {
            @param {Adaptive.DatabaseRow[]} databaseRows The databaseRows of the table
            @since v2.0
         */
-        setDatabaseRows(databaseRows: DatabaseRow[]): void;
+        setDatabaseRows(databaseRows: Array<DatabaseRow>): void;
         /**
            @method
            Returns the name of the table

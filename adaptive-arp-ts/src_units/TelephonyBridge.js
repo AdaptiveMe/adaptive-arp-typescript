@@ -90,4 +90,7 @@ var Adaptive;
     })(Adaptive.BaseCommunicationBridge);
     Adaptive.TelephonyBridge = TelephonyBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=TelephonyBridge.js.map

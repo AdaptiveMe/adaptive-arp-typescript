@@ -192,4 +192,7 @@ listener and subsequently, the listener will be deactivated and removed from the
     })(Adaptive.BaseListener);
     Adaptive.AccelerationListener = AccelerationListener;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=AccelerationListener.js.map

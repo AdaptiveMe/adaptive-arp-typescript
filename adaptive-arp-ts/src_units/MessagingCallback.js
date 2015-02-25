@@ -193,4 +193,7 @@ var Adaptive;
     })(Adaptive.BaseCallback);
     Adaptive.MessagingCallback = MessagingCallback;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=MessagingCallback.js.map

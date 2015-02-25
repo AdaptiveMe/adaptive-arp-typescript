@@ -1409,4 +1409,7 @@ var Adaptive;
     })();
     Adaptive.AppRegistryBridge = AppRegistryBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=AppRegistryBridge.js.map

@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseUIBridge);
     Adaptive.UIBridge = UIBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=UIBridge.js.map

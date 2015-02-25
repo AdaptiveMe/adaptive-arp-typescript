@@ -163,4 +163,7 @@ var Adaptive;
     })(Adaptive.BaseApplicationBridge);
     Adaptive.GlobalizationBridge = GlobalizationBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=GlobalizationBridge.js.map

@@ -38,4 +38,7 @@ Release:
 ///<reference path="IContactFilter.ts"/>
 ///<reference path="IContactPhotoResultCallback.ts"/>
 ///<reference path="IContactResultCallback.ts"/>
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=IContact.js.map

@@ -67,4 +67,7 @@ var Adaptive;
     })(Adaptive.BaseReaderBridge);
     Adaptive.OCRBridge = OCRBridge;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=OCRBridge.js.map

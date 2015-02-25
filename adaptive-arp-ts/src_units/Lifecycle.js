@@ -143,4 +143,7 @@ var Adaptive;
     })(Adaptive.APIBean);
     Adaptive.Lifecycle = Lifecycle;
 })(Adaptive || (Adaptive = {}));
+/**
+------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
+*/
 //# sourceMappingURL=Lifecycle.js.map
