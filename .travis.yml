@@ -1,9 +1,13 @@
 language: node_js
 before_install: cd adaptive-arp-ts
 node_js:
-  - "0.12"
+- '0.12'
 install:
-  - "npm install -g typescript"
-  - "npm install -g replace"
+- npm install -g typescript
+- npm install -g replace
 script:
-  - "./compile.sh"
+- echo $MYVAR
+- ./compile.sh
+env:
+  global:
+    secure: HUb54s8muetq1gLSBnBKg9z15Tzy/lCdFkQvOqsnu+DllvOAegHGnIVN4EvxhOTib8f7iX657ZSeqJ2wL9XRBHbe1OXyVLTXA+JqDLl8APJ/3tTfqA5y6ENOE+c8WxVA0H33ylwEm9IOc9ls1Nx74LdDcA5WGPi6Rz/EdvRtd7k=
