@@ -2,9 +2,8 @@
 echo "Post-processing TypeScript code."
 # npm install replace -g required!
 HOME_DIR=`pwd`
-cd $HOME_DIR/src_global
+cd $HOME_DIR
 # Compile main file
-rm -rf *.d.ts
 tsc -d -m commonjs --sourcemap --target ES5 Adaptive.ts
 RETVAL=$?
 [ $RETVAL -eq 0 ] && echo Success compiling main TS file.
@@ -18,7 +17,6 @@ RETVAL=$?
 cd $HOME_DIR/src_units
 
 # Compile unit files
-rm -rf *.d.ts
 tsc -d -m commonjs --sourcemap --target ES5 *.ts
 RETVAL=$?
 [ $RETVAL -eq 0 ] && echo Success compiling unit TS files.
@@ -33,7 +31,8 @@ rm $HOME_DIR/src_units/*.js
 rm $HOME_DIR/src_units/*.js.map
 rm $HOME_DIR/src_units/*.d.ts
 
-mv $HOME_DIR/src_global/Adaptive.ts $HOME_DIR
-mv $HOME_DIR/src_global/Adaptive.js $HOME_DIR/adaptive.js
+mv $HOME_DIR/Adaptive.js $HOME_DIR/adaptive.js
+mv $HOME_DIR/Adaptive.js.map $HOME_DIR/adaptive.js.map
+mv $HOME_DIR/Adaptive.d.ts $HOME_DIR/adaptive.d.ts
 
 exit 0
