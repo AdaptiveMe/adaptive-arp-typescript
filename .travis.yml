@@ -6,7 +6,10 @@ install:
 - npm install -g typescript
 - npm install -g replace
 script:
+- echo $TRAVIS_SECURE_ENV_VARS
+- echo $TRAVIS_PULL_REQUEST
 - echo $MYVAR
+- echo $REALLY_SECURE
 - ./compile.sh
 env:
   global:
