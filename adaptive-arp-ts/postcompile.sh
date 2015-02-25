@@ -14,7 +14,5 @@ RETVAL=$?
 cd adaptive-arp-api
 API_VERSION=`git describe --abbrev=0`
 
-echo $API_VERSION
-
 
 exit 0
