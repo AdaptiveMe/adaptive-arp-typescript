@@ -5,9 +5,11 @@ node_js:
 install:
 - npm install -g typescript
 - npm install -g replace
+before_script:
 script:
-- echo $MYVAR
 - ./compile.sh
-env:
-  global:
-    secure: HUb54s8muetq1gLSBnBKg9z15Tzy/lCdFkQvOqsnu+DllvOAegHGnIVN4EvxhOTib8f7iX657ZSeqJ2wL9XRBHbe1OXyVLTXA+JqDLl8APJ/3tTfqA5y6ENOE+c8WxVA0H33ylwEm9IOc9ls1Nx74LdDcA5WGPi6Rz/EdvRtd7k=
+after_success:
+- ./postcompile.sh
+after_failure:
+- echo "Having a bad moment..."
+
