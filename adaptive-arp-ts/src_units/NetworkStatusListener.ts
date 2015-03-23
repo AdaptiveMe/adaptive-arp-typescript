@@ -42,7 +42,7 @@ Release:
 module Adaptive {
 
      /**
-        Interface for Managing the Network status listener events
+        Interface for Managing the Network status listener networkEvents
         Auto-generated implementation of INetworkStatusListener specification.
      */
 
@@ -76,14 +76,14 @@ module Adaptive {
         @private
         @member Adaptive
         @param {number} id
-        @param {Adaptive.NetworkEvent} event
+        @param {Adaptive.NetworkEvent} networkEvent
      */
-     export function handleNetworkStatusListenerResult(id : number, event : NetworkEvent) : void {
+     export function handleNetworkStatusListenerResult(id : number, networkEvent : NetworkEvent) : void {
           var listener : INetworkStatusListener = registeredNetworkStatusListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
                console.error("ERROR: No listener with id "+id+" registered in registeredNetworkStatusListener dictionary.");
           } else {
-               listener.onResult(event);
+               listener.onResult(networkEvent);
           }
      }
      /**
@@ -91,15 +91,15 @@ module Adaptive {
         @private
         @member Adaptive
         @param {number} id
-        @param {Adaptive.NetworkEvent} event
+        @param {Adaptive.NetworkEvent} networkEvent
         @param {Adaptive.INetworkStatusListenerWarning} warning
      */
-     export function handleNetworkStatusListenerWarning(id : number, event : NetworkEvent, warning : INetworkStatusListenerWarning) : void {
+     export function handleNetworkStatusListenerWarning(id : number, networkEvent : NetworkEvent, warning : INetworkStatusListenerWarning) : void {
           var listener : INetworkStatusListener = registeredNetworkStatusListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
                console.error("ERROR: No listener with id "+id+" registered in registeredNetworkStatusListener dictionary.");
           } else {
-               listener.onWarning(event, warning);
+               listener.onWarning(networkEvent, warning);
           }
      }
 
@@ -118,12 +118,12 @@ module Adaptive {
              @private
              @property
           */
-          onResultFunction : (event : NetworkEvent) => void;
+          onResultFunction : (networkEvent : NetworkEvent) => void;
           /**
              @private
              @property
           */
-          onWarningFunction : (event : NetworkEvent, warning : INetworkStatusListenerWarning) => void;
+          onWarningFunction : (networkEvent : NetworkEvent, warning : INetworkStatusListenerWarning) => void;
 
           /**
              @method constructor
@@ -133,7 +133,7 @@ module Adaptive {
              @param {Function} onResultFunction Function receiving parameters of type: Adaptive.NetworkEvent
              @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.NetworkEvent, Adaptive.INetworkStatusListenerWarning
           */
-          constructor(onErrorFunction : (error : INetworkStatusListenerError) => void, onResultFunction : (event : NetworkEvent) => void, onWarningFunction : (event : NetworkEvent, warning : INetworkStatusListenerWarning) => void) {
+          constructor(onErrorFunction : (error : INetworkStatusListenerError) => void, onResultFunction : (networkEvent : NetworkEvent) => void, onWarningFunction : (networkEvent : NetworkEvent, warning : INetworkStatusListenerWarning) => void) {
                super(++registeredCounter);
                if (onErrorFunction == null) {
                     console.error("ERROR: NetworkStatusListener onErrorFunction is not defined.");
@@ -169,29 +169,29 @@ module Adaptive {
           /**
              @method
              Called when network connection changes somehow.
-             @param {Adaptive.NetworkEvent} event event Change to this network.
+             @param {Adaptive.NetworkEvent} networkEvent networkEvent Change to this network.
              @since v2.0
           */
-          public onResult(event : NetworkEvent) : void {
+          public onResult(networkEvent : NetworkEvent) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
                     console.warn("WARNING: NetworkStatusListener contains a null reference to onResultFunction.");
                } else {
-                    this.onResultFunction(event);
+                    this.onResultFunction(networkEvent);
                }
           }
 
           /**
              @method
              Status received with warning
-             @param {Adaptive.NetworkEvent} event event Change to this network.
+             @param {Adaptive.NetworkEvent} networkEvent networkEvent Change to this network.
              @param {Adaptive.INetworkStatusListenerWarning} warning warning Type of warning encountered during reading.
              @since v2.0
           */
-          public onWarning(event : NetworkEvent, warning : INetworkStatusListenerWarning) : void {
+          public onWarning(networkEvent : NetworkEvent, warning : INetworkStatusListenerWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
                     console.warn("WARNING: NetworkStatusListener contains a null reference to onWarningFunction.");
                } else {
-                    this.onWarningFunction(event, warning);
+                    this.onWarningFunction(networkEvent, warning);
                }
           }
 
