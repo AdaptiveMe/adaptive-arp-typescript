@@ -33,59 +33,37 @@ Release:
 */
 
 ///<reference path="APIBean.ts"/>
-///<reference path="LifecycleState.ts"/>
+///<reference path="ICapabilitiesNet.ts"/>
 
 module Adaptive {
 
      /**
-        @class Adaptive.Lifecycle
+        @class Adaptive.NetworkEvent
         @extends Adaptive.APIBean
-        Represents a specific application life-cycle stage.
+        Represents a network handover event on the system.
 
-        @author Francisco Javier Martin Bueno
-        @since v2.0
+        @author Ferran Vila Conesa
+        @since v2.2.1
         @version 1.0
      */
-     export class Lifecycle extends APIBean {
+     export class NetworkEvent extends APIBean {
 
           /**
-             @property {Adaptive.LifecycleState} state
-             Represent the state of the app
-<p>
-Possible lifecycle States:
-<p>
-1. Starting    - Before starting.
-2. Started     - Start concluded.
-3. Running     - Accepts user interaction - running in foreground.
-4. Pausing     - Before going to background.
-4.1 PausedIdle - In background, no scheduled background activity (passive).
-4.2 PausedRun  - In background, scheduled background activity (periodic network access, gps access, etc.)
-5. Resuming    - Before going to foreground, followed by Running state.
-6. Stopping    - Before stopping.
+             @property {Adaptive.ICapabilitiesNet} network
+             New type of network of the event
           */
-          state : LifecycleState;
+          network : ICapabilitiesNet;
 
           /**
-             @property {Adaptive.LifecycleState} state
-             Represent the state of the app
-<p>
-Possible lifecycle States:
-<p>
-1. Starting    - Before starting.
-2. Started     - Start concluded.
-3. Running     - Accepts user interaction - running in foreground.
-4. Pausing     - Before going to background.
-4.1 PausedIdle - In background, no scheduled background activity (passive).
-4.2 PausedRun  - In background, scheduled background activity (periodic network access, gps access, etc.)
-5. Resuming    - Before going to foreground, followed by Running state.
-6. Stopping    - Before stopping. The 'stateProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'state'.
+             @property {Adaptive.ICapabilitiesNet} network
+             New type of network of the event The 'networkProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'network'.
           */
-          get stateProperty() : LifecycleState {
-               return this.state;
+          get networkProperty() : ICapabilitiesNet {
+               return this.network;
           }
 
-          set stateProperty(state:LifecycleState) {
-               this.state = state;
+          set networkProperty(network:ICapabilitiesNet) {
+               this.network = network;
           }
 
           /**
@@ -110,43 +88,43 @@ Possible lifecycle States:
              @method constructor
              Constructor used by the implementation
 
-             @param {Adaptive.LifecycleState} state of the app
+             @param {Adaptive.ICapabilitiesNet} network   of the app
              @param {number} timestamp Timestamp of the event
-             @since v2.0
+             @since v2.2.1
           */
-          constructor(state: LifecycleState, timestamp: number) {
+          constructor(network: ICapabilitiesNet, timestamp: number) {
                super();
-               this.state = state;
+               this.network = network;
                this.timestamp = timestamp;
           }
 
           /**
              @method
-             Returns the state of the application
+             Network event getter
 
-             @return {Adaptive.LifecycleState} state of the app
-             @since v2.0
+             @return {Adaptive.ICapabilitiesNet} New network switched
+             @since v2.2.1
           */
-          getState() : LifecycleState {
-               return this.state;
+          getNetwork() : ICapabilitiesNet {
+               return this.network;
           }
 
           /**
              @method
-             Set the State of the application
+             Network setter
 
-             @param {Adaptive.LifecycleState} state of the app
-             @since v2.0
+             @param {Adaptive.ICapabilitiesNet} network New network switched
+             @since v2.2.1
           */
-          setState(state: LifecycleState) {
-               this.state = state;
+          setNetwork(network: ICapabilitiesNet) {
+               this.network = network;
           }
 
           /**
              @method
-             Gets the timestamp in milliseconds of the event.
+             Returns the timestamp of the event
 
-             @return {number} Timestamp of the event.
+             @return {number} Timestamp of the event
              @since v2.2.1
           */
           getTimestamp() : number {
@@ -155,9 +133,9 @@ Possible lifecycle States:
 
           /**
              @method
-             Sets the timestamp in milliseconds of the event.
+             Sets the timestamp of the event
 
-             @param {number} timestamp Timestamp of the event.
+             @param {number} timestamp Timestamp of the event
              @since v2.2.1
           */
           setTimestamp(timestamp: number) {
@@ -168,15 +146,15 @@ Possible lifecycle States:
              @method
              @static
              Convert JSON parsed object to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.Lifecycle.
-             @return {Adaptive.Lifecycle} Wrapped object instance.
+             @param {Object} object JSON parsed structure of type Adaptive.NetworkEvent.
+             @return {Adaptive.NetworkEvent} Wrapped object instance.
           */
-          static toObject(object : any) : Lifecycle {
-               var result : Lifecycle = new Lifecycle(null, null);
+          static toObject(object : any) : NetworkEvent {
+               var result : NetworkEvent = new NetworkEvent(null, null);
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    result.state = LifecycleState.toObject(object.state);
+                    result.network = ICapabilitiesNet.toObject(object.network);
                     result.timestamp = object.timestamp;
 
                }
@@ -187,14 +165,14 @@ Possible lifecycle States:
              @method
              @static
              Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.Lifecycle[].
-             @return {Adaptive.Lifecycle[]} Wrapped object array instance.
+             @param {Object} object JSON parsed structure of type Adaptive.NetworkEvent[].
+             @return {Adaptive.NetworkEvent[]} Wrapped object array instance.
           */
-          static toObjectArray(object : any) : Lifecycle[] {
-               var resultArray : Array<Lifecycle> = new Array<Lifecycle>();
+          static toObjectArray(object : any) : NetworkEvent[] {
+               var resultArray : Array<NetworkEvent> = new Array<NetworkEvent>();
                if (object != null) {
                     for (var i = 0; i < object.length; i++) {
-                         resultArray.push(Lifecycle.toObject(object[i]));
+                         resultArray.push(NetworkEvent.toObject(object[i]));
                     }
                }
                return resultArray;

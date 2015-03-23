@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.3
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,7 +52,7 @@ module Adaptive {
         @property {string} bridgeApiVersion
         The Adaptive Runtime Platform API specification version.
      */
-     export var bridgeApiVersion : string = "v2.2.0";
+     export var bridgeApiVersion : string = "v2.2.3";
 
      /**
         @class Adaptive.IDictionary
@@ -2486,7 +2486,7 @@ event may be fired if the application vetoes display rotation before rotation is
           onWarning(lifecycle:Lifecycle, warning:ILifecycleListenerWarning);
      }
      /**
-        Interface for Managing the Network status listener events
+        Interface for Managing the Network status listener networkEvents
 
         @author Carlos Lozano Diez
         @since v2.0
@@ -2506,18 +2506,18 @@ event may be fired if the application vetoes display rotation before rotation is
           /**
              @method
              Called when network connection changes somehow.
-             @param network Change to this network.
+             @param networkEvent Change to this network.
              @since v2.0
           */
-          onResult(network:ICapabilitiesNet);
+          onResult(networkEvent:NetworkEvent);
           /**
              @method
              Status received with warning
-             @param network Change to this network.
+             @param networkEvent Change to this network.
              @param warning Type of warning encountered during reading.
              @since v2.0
           */
-          onWarning(network:ICapabilitiesNet, warning:INetworkStatusListenerWarning);
+          onWarning(networkEvent:NetworkEvent, warning:INetworkStatusListenerWarning);
      }
      /**
         Interface for Audio purposes
@@ -5073,15 +5073,35 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
           }
 
           /**
+             @property {number} timestamp
+             Timestamp of the button event.
+          */
+          timestamp : number;
+
+          /**
+             @property {number} timestamp
+             Timestamp of the button event. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+          */
+          get timestampProperty() : number {
+               return this.timestamp;
+          }
+
+          set timestampProperty(timestamp:number) {
+               this.timestamp = timestamp;
+          }
+
+          /**
              @method constructor
              Constructor with fields
 
              @param {Adaptive.ICapabilitiesButton} type Button type.
+             @param {number} timestamp Timestamp of the event
              @since v2.0
           */
-          constructor(type: ICapabilitiesButton) {
+          constructor(type: ICapabilitiesButton, timestamp: number) {
                super();
                this.type = type;
+               this.timestamp = timestamp;
           }
           /**
              @method
@@ -5107,17 +5127,40 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
 
           /**
              @method
+             Timestamp Getter
+
+             @return {number} Timestamp
+             @since v2.2.1
+          */
+          getTimestamp() : number {
+               return this.timestamp;
+          }
+
+          /**
+             @method
+             Timestamp Setter
+
+             @param {number} timestamp Timestamp
+             @since v2.2.1
+          */
+          setTimestamp(timestamp: number) {
+               this.timestamp = timestamp;
+          }
+
+          /**
+             @method
              @static
              Convert JSON parsed object to typed equivalent.
              @param {Object} object JSON parsed structure of type Adaptive.Button.
              @return {Adaptive.Button} Wrapped object instance.
           */
           static toObject(object : any) : Button {
-               var result : Button = new Button(null);
+               var result : Button = new Button(null, null);
 
                if (object != null ) {
                     // Assign values to bean fields.
                     result.type = ICapabilitiesButton.toObject(object.type);
+                    result.timestamp = object.timestamp;
 
                }
                return result;
@@ -8911,15 +8954,35 @@ Possible lifecycle States:
           }
 
           /**
+             @property {number} timestamp
+             The timestamps in milliseconds when the event was fired.
+          */
+          timestamp : number;
+
+          /**
+             @property {number} timestamp
+             The timestamps in milliseconds when the event was fired. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+          */
+          get timestampProperty() : number {
+               return this.timestamp;
+          }
+
+          set timestampProperty(timestamp:number) {
+               this.timestamp = timestamp;
+          }
+
+          /**
              @method constructor
              Constructor used by the implementation
 
              @param {Adaptive.LifecycleState} state of the app
+             @param {number} timestamp Timestamp of the event
              @since v2.0
           */
-          constructor(state: LifecycleState) {
+          constructor(state: LifecycleState, timestamp: number) {
                super();
                this.state = state;
+               this.timestamp = timestamp;
           }
           /**
              @method
@@ -8945,17 +9008,40 @@ Possible lifecycle States:
 
           /**
              @method
+             Gets the timestamp in milliseconds of the event.
+
+             @return {number} Timestamp of the event.
+             @since v2.2.1
+          */
+          getTimestamp() : number {
+               return this.timestamp;
+          }
+
+          /**
+             @method
+             Sets the timestamp in milliseconds of the event.
+
+             @param {number} timestamp Timestamp of the event.
+             @since v2.2.1
+          */
+          setTimestamp(timestamp: number) {
+               this.timestamp = timestamp;
+          }
+
+          /**
+             @method
              @static
              Convert JSON parsed object to typed equivalent.
              @param {Object} object JSON parsed structure of type Adaptive.Lifecycle.
              @return {Adaptive.Lifecycle} Wrapped object instance.
           */
           static toObject(object : any) : Lifecycle {
-               var result : Lifecycle = new Lifecycle(null);
+               var result : Lifecycle = new Lifecycle(null, null);
 
                if (object != null ) {
                     // Assign values to bean fields.
                     result.state = LifecycleState.toObject(object.state);
+                    result.timestamp = object.timestamp;
 
                }
                return result;
@@ -9112,6 +9198,145 @@ Possible lifecycle States:
                if (object != null) {
                     for (var i = 0; i < object.length; i++) {
                          resultArray.push(Locale.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
+     }
+     /**
+        @class Adaptive.NetworkEvent
+        @extends Adaptive.APIBean
+        Represents a network handover event on the system.
+
+        @author Ferran Vila Conesa
+        @since v2.2.1
+        @version 1.0
+     */
+     export class NetworkEvent extends APIBean {
+          /**
+             @property {Adaptive.ICapabilitiesNet} network
+             New type of network of the event
+          */
+          network : ICapabilitiesNet;
+
+          /**
+             @property {Adaptive.ICapabilitiesNet} network
+             New type of network of the event The 'networkProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'network'.
+          */
+          get networkProperty() : ICapabilitiesNet {
+               return this.network;
+          }
+
+          set networkProperty(network:ICapabilitiesNet) {
+               this.network = network;
+          }
+
+          /**
+             @property {number} timestamp
+             The timestamps in milliseconds when the event was fired.
+          */
+          timestamp : number;
+
+          /**
+             @property {number} timestamp
+             The timestamps in milliseconds when the event was fired. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+          */
+          get timestampProperty() : number {
+               return this.timestamp;
+          }
+
+          set timestampProperty(timestamp:number) {
+               this.timestamp = timestamp;
+          }
+
+          /**
+             @method constructor
+             Constructor used by the implementation
+
+             @param {Adaptive.ICapabilitiesNet} network   of the app
+             @param {number} timestamp Timestamp of the event
+             @since v2.2.1
+          */
+          constructor(network: ICapabilitiesNet, timestamp: number) {
+               super();
+               this.network = network;
+               this.timestamp = timestamp;
+          }
+          /**
+             @method
+             Network event getter
+
+             @return {Adaptive.ICapabilitiesNet} New network switched
+             @since v2.2.1
+          */
+          getNetwork() : ICapabilitiesNet {
+               return this.network;
+          }
+
+          /**
+             @method
+             Network setter
+
+             @param {Adaptive.ICapabilitiesNet} network New network switched
+             @since v2.2.1
+          */
+          setNetwork(network: ICapabilitiesNet) {
+               this.network = network;
+          }
+
+          /**
+             @method
+             Returns the timestamp of the event
+
+             @return {number} Timestamp of the event
+             @since v2.2.1
+          */
+          getTimestamp() : number {
+               return this.timestamp;
+          }
+
+          /**
+             @method
+             Sets the timestamp of the event
+
+             @param {number} timestamp Timestamp of the event
+             @since v2.2.1
+          */
+          setTimestamp(timestamp: number) {
+               this.timestamp = timestamp;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.NetworkEvent.
+             @return {Adaptive.NetworkEvent} Wrapped object instance.
+          */
+          static toObject(object : any) : NetworkEvent {
+               var result : NetworkEvent = new NetworkEvent(null, null);
+
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    result.network = ICapabilitiesNet.toObject(object.network);
+                    result.timestamp = object.timestamp;
+
+               }
+               return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.NetworkEvent[].
+             @return {Adaptive.NetworkEvent[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : NetworkEvent[] {
+               var resultArray : Array<NetworkEvent> = new Array<NetworkEvent>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(NetworkEvent.toObject(object[i]));
                     }
                }
                return resultArray;
@@ -11916,7 +12141,7 @@ to a relative path of a function published on a remote service. The 'functionNam
              The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.0"
+               return "v2.2.3"
           }
 
           /**
@@ -12873,14 +13098,14 @@ event may be fired if the application vetoes display rotation before rotation is
         @private
         @member Adaptive
         @param {number} id
-        @param {Adaptive.ICapabilitiesNet} network
+        @param {Adaptive.NetworkEvent} networkEvent
      */
-     export function handleNetworkStatusListenerResult(id : number, network : ICapabilitiesNet) : void {
+     export function handleNetworkStatusListenerResult(id : number, networkEvent : NetworkEvent) : void {
           var listener : INetworkStatusListener = registeredNetworkStatusListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
                console.error("ERROR: No listener with id "+id+" registered in registeredNetworkStatusListener dictionary.");
           } else {
-               listener.onResult(network);
+               listener.onResult(networkEvent);
           }
      }
      /**
@@ -12888,15 +13113,15 @@ event may be fired if the application vetoes display rotation before rotation is
         @private
         @member Adaptive
         @param {number} id
-        @param {Adaptive.ICapabilitiesNet} network
+        @param {Adaptive.NetworkEvent} networkEvent
         @param {Adaptive.INetworkStatusListenerWarning} warning
      */
-     export function handleNetworkStatusListenerWarning(id : number, network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) : void {
+     export function handleNetworkStatusListenerWarning(id : number, networkEvent : NetworkEvent, warning : INetworkStatusListenerWarning) : void {
           var listener : INetworkStatusListener = registeredNetworkStatusListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
                console.error("ERROR: No listener with id "+id+" registered in registeredNetworkStatusListener dictionary.");
           } else {
-               listener.onWarning(network, warning);
+               listener.onWarning(networkEvent, warning);
           }
      }
 
@@ -12915,22 +13140,22 @@ event may be fired if the application vetoes display rotation before rotation is
              @private
              @property
           */
-          onResultFunction : (network : ICapabilitiesNet) => void;
+          onResultFunction : (networkEvent : NetworkEvent) => void;
           /**
              @private
              @property
           */
-          onWarningFunction : (network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) => void;
+          onWarningFunction : (networkEvent : NetworkEvent, warning : INetworkStatusListenerWarning) => void;
 
           /**
              @method constructor
              Constructor with anonymous handler functions for listener.
 
              @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
-             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
-             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.NetworkEvent
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.NetworkEvent, Adaptive.INetworkStatusListenerWarning
           */
-          constructor(onErrorFunction : (error : INetworkStatusListenerError) => void, onResultFunction : (network : ICapabilitiesNet) => void, onWarningFunction : (network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) => void) {
+          constructor(onErrorFunction : (error : INetworkStatusListenerError) => void, onResultFunction : (networkEvent : NetworkEvent) => void, onWarningFunction : (networkEvent : NetworkEvent, warning : INetworkStatusListenerWarning) => void) {
                super(++registeredCounter);
                if (onErrorFunction == null) {
                     console.error("ERROR: NetworkStatusListener onErrorFunction is not defined.");
@@ -12966,29 +13191,29 @@ event may be fired if the application vetoes display rotation before rotation is
           /**
              @method
              Called when network connection changes somehow.
-             @param {Adaptive.ICapabilitiesNet} network network Change to this network.
+             @param {Adaptive.NetworkEvent} networkEvent networkEvent Change to this network.
              @since v2.0
           */
-          public onResult(network : ICapabilitiesNet) : void {
+          public onResult(networkEvent : NetworkEvent) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
                     console.warn("WARNING: NetworkStatusListener contains a null reference to onResultFunction.");
                } else {
-                    this.onResultFunction(network);
+                    this.onResultFunction(networkEvent);
                }
           }
 
           /**
              @method
              Status received with warning
-             @param {Adaptive.ICapabilitiesNet} network network Change to this network.
+             @param {Adaptive.NetworkEvent} networkEvent networkEvent Change to this network.
              @param {Adaptive.INetworkStatusListenerWarning} warning warning Type of warning encountered during reading.
              @since v2.0
           */
-          public onWarning(network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) : void {
+          public onWarning(networkEvent : NetworkEvent, warning : INetworkStatusListenerWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
                     console.warn("WARNING: NetworkStatusListener contains a null reference to onWarningFunction.");
                } else {
-                    this.onWarningFunction(network, warning);
+                    this.onWarningFunction(networkEvent, warning);
                }
           }
 
@@ -13048,7 +13273,7 @@ event may be fired if the application vetoes display rotation before rotation is
              The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.0"
+               return "v2.2.3"
           }
 
      }
@@ -14976,7 +15201,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.0"
+               return "v2.2.3"
           }
      }
 
@@ -15019,7 +15244,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.0"
+               return "v2.2.3"
           }
      }
 
@@ -15062,7 +15287,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.0"
+               return "v2.2.3"
           }
      }
 
@@ -15105,7 +15330,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.0"
+               return "v2.2.3"
           }
      }
 
@@ -15148,7 +15373,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.0"
+               return "v2.2.3"
           }
      }
 
@@ -15191,7 +15416,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.0"
+               return "v2.2.3"
           }
      }
 
@@ -15234,7 +15459,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.0"
+               return "v2.2.3"
           }
      }
 
@@ -15277,7 +15502,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.0"
+               return "v2.2.3"
           }
      }
 
@@ -15320,7 +15545,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.0"
+               return "v2.2.3"
           }
      }
 
@@ -15363,7 +15588,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.0"
+               return "v2.2.3"
           }
      }
 
@@ -15406,7 +15631,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.0"
+               return "v2.2.3"
           }
      }
 
@@ -15449,7 +15674,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.0"
+               return "v2.2.3"
           }
      }
 
@@ -15492,7 +15717,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.0"
+               return "v2.2.3"
           }
      }
 
@@ -15535,7 +15760,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.0"
+               return "v2.2.3"
           }
      }
 
@@ -20195,7 +20420,7 @@ of the device. For device orientation, use the IDevice APIs.
              @return {string} The version of the API.
           */
           public getAPIVersion() : string {
-               return "v2.2.0"
+               return "v2.2.3"
           }
      }
      /**
