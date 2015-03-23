@@ -34,9 +34,9 @@ Release:
 
 ///<reference path="IAdaptiveRPGroup.ts"/>
 ///<reference path="IBaseListener.ts"/>
-///<reference path="ICapabilitiesNet.ts"/>
 ///<reference path="INetworkStatusListenerError.ts"/>
 ///<reference path="INetworkStatusListenerWarning.ts"/>
+///<reference path="NetworkEvent.ts"/>
 
 module Adaptive {
 
@@ -61,18 +61,18 @@ module Adaptive {
           /**
              @method
              Called when network connection changes somehow.
-             @param network Change to this network.
+             @param event Change to this network.
              @since v2.0
           */
-          onResult(network:ICapabilitiesNet);
+          onResult(event:NetworkEvent);
           /**
              @method
              Status received with warning
-             @param network Change to this network.
+             @param event Change to this network.
              @param warning Type of warning encountered during reading.
              @since v2.0
           */
-          onWarning(network:ICapabilitiesNet, warning:INetworkStatusListenerWarning);
+          onWarning(event:NetworkEvent, warning:INetworkStatusListenerWarning);
      }
 }
 

@@ -34,10 +34,10 @@ Release:
 
 ///<reference path="BaseListener.ts"/>
 ///<reference path="CommonUtil.ts"/>
-///<reference path="ICapabilitiesNet.ts"/>
 ///<reference path="INetworkStatusListener.ts"/>
 ///<reference path="INetworkStatusListenerError.ts"/>
 ///<reference path="INetworkStatusListenerWarning.ts"/>
+///<reference path="NetworkEvent.ts"/>
 
 module Adaptive {
 
@@ -76,14 +76,14 @@ module Adaptive {
         @private
         @member Adaptive
         @param {number} id
-        @param {Adaptive.ICapabilitiesNet} network
+        @param {Adaptive.NetworkEvent} event
      */
-     export function handleNetworkStatusListenerResult(id : number, network : ICapabilitiesNet) : void {
+     export function handleNetworkStatusListenerResult(id : number, event : NetworkEvent) : void {
           var listener : INetworkStatusListener = registeredNetworkStatusListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
                console.error("ERROR: No listener with id "+id+" registered in registeredNetworkStatusListener dictionary.");
           } else {
-               listener.onResult(network);
+               listener.onResult(event);
           }
      }
      /**
@@ -91,15 +91,15 @@ module Adaptive {
         @private
         @member Adaptive
         @param {number} id
-        @param {Adaptive.ICapabilitiesNet} network
+        @param {Adaptive.NetworkEvent} event
         @param {Adaptive.INetworkStatusListenerWarning} warning
      */
-     export function handleNetworkStatusListenerWarning(id : number, network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) : void {
+     export function handleNetworkStatusListenerWarning(id : number, event : NetworkEvent, warning : INetworkStatusListenerWarning) : void {
           var listener : INetworkStatusListener = registeredNetworkStatusListener[""+id];
           if (typeof listener === 'undefined' || listener == null) {
                console.error("ERROR: No listener with id "+id+" registered in registeredNetworkStatusListener dictionary.");
           } else {
-               listener.onWarning(network, warning);
+               listener.onWarning(event, warning);
           }
      }
 
@@ -118,22 +118,22 @@ module Adaptive {
              @private
              @property
           */
-          onResultFunction : (network : ICapabilitiesNet) => void;
+          onResultFunction : (event : NetworkEvent) => void;
           /**
              @private
              @property
           */
-          onWarningFunction : (network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) => void;
+          onWarningFunction : (event : NetworkEvent, warning : INetworkStatusListenerWarning) => void;
 
           /**
              @method constructor
              Constructor with anonymous handler functions for listener.
 
              @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
-             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
-             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
+             @param {Function} onResultFunction Function receiving parameters of type: Adaptive.NetworkEvent
+             @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.NetworkEvent, Adaptive.INetworkStatusListenerWarning
           */
-          constructor(onErrorFunction : (error : INetworkStatusListenerError) => void, onResultFunction : (network : ICapabilitiesNet) => void, onWarningFunction : (network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) => void) {
+          constructor(onErrorFunction : (error : INetworkStatusListenerError) => void, onResultFunction : (event : NetworkEvent) => void, onWarningFunction : (event : NetworkEvent, warning : INetworkStatusListenerWarning) => void) {
                super(++registeredCounter);
                if (onErrorFunction == null) {
                     console.error("ERROR: NetworkStatusListener onErrorFunction is not defined.");
@@ -169,29 +169,29 @@ module Adaptive {
           /**
              @method
              Called when network connection changes somehow.
-             @param {Adaptive.ICapabilitiesNet} network network Change to this network.
+             @param {Adaptive.NetworkEvent} event event Change to this network.
              @since v2.0
           */
-          public onResult(network : ICapabilitiesNet) : void {
+          public onResult(event : NetworkEvent) : void {
                if (typeof this.onResultFunction === 'undefined' || this.onResultFunction == null) {
                     console.warn("WARNING: NetworkStatusListener contains a null reference to onResultFunction.");
                } else {
-                    this.onResultFunction(network);
+                    this.onResultFunction(event);
                }
           }
 
           /**
              @method
              Status received with warning
-             @param {Adaptive.ICapabilitiesNet} network network Change to this network.
+             @param {Adaptive.NetworkEvent} event event Change to this network.
              @param {Adaptive.INetworkStatusListenerWarning} warning warning Type of warning encountered during reading.
              @since v2.0
           */
-          public onWarning(network : ICapabilitiesNet, warning : INetworkStatusListenerWarning) : void {
+          public onWarning(event : NetworkEvent, warning : INetworkStatusListenerWarning) : void {
                if (typeof this.onWarningFunction === 'undefined' || this.onWarningFunction == null) {
                     console.warn("WARNING: NetworkStatusListener contains a null reference to onWarningFunction.");
                } else {
-                    this.onWarningFunction(network, warning);
+                    this.onWarningFunction(event, warning);
                }
           }
 

@@ -33,48 +33,48 @@ Release:
 */
 
 ///<reference path="APIBean.ts"/>
-///<reference path="ICapabilitiesButton.ts"/>
+///<reference path="ICapabilitiesNet.ts"/>
 
 module Adaptive {
 
      /**
-        @class Adaptive.Button
+        @class Adaptive.NetworkEvent
         @extends Adaptive.APIBean
-        Structure representing the a physical or logical button on a device.
+        Represents a network handover event on the system.
 
-        @author Francisco Javier Martin Bueno
-        @since v2.0
+        @author Ferran Vila Conesa
+        @since v2.2.1
         @version 1.0
      */
-     export class Button extends APIBean {
+     export class NetworkEvent extends APIBean {
 
           /**
-             @property {Adaptive.ICapabilitiesButton} type
-             Button type
+             @property {Adaptive.ICapabilitiesNet} network
+             New type of network of the event
           */
-          type : ICapabilitiesButton;
+          network : ICapabilitiesNet;
 
           /**
-             @property {Adaptive.ICapabilitiesButton} type
-             Button type The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
+             @property {Adaptive.ICapabilitiesNet} network
+             New type of network of the event The 'networkProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'network'.
           */
-          get typeProperty() : ICapabilitiesButton {
-               return this.type;
+          get networkProperty() : ICapabilitiesNet {
+               return this.network;
           }
 
-          set typeProperty(type:ICapabilitiesButton) {
-               this.type = type;
+          set networkProperty(network:ICapabilitiesNet) {
+               this.network = network;
           }
 
           /**
              @property {number} timestamp
-             Timestamp of the button event.
+             The timestamps in milliseconds when the event was fired.
           */
           timestamp : number;
 
           /**
              @property {number} timestamp
-             Timestamp of the button event. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+             The timestamps in milliseconds when the event was fired. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
           */
           get timestampProperty() : number {
                return this.timestamp;
@@ -86,45 +86,45 @@ module Adaptive {
 
           /**
              @method constructor
-             Constructor with fields
+             Constructor used by the implementation
 
-             @param {Adaptive.ICapabilitiesButton} type Button type.
+             @param {Adaptive.ICapabilitiesNet} network   of the app
              @param {number} timestamp Timestamp of the event
-             @since v2.0
+             @since v2.2.1
           */
-          constructor(type: ICapabilitiesButton, timestamp: number) {
+          constructor(network: ICapabilitiesNet, timestamp: number) {
                super();
-               this.type = type;
+               this.network = network;
                this.timestamp = timestamp;
           }
 
           /**
              @method
-             Returns the button type
+             Network event getter
 
-             @return {Adaptive.ICapabilitiesButton} type Button type.
-             @since v2.0
+             @return {Adaptive.ICapabilitiesNet} New network switched
+             @since v2.2.1
           */
-          getType() : ICapabilitiesButton {
-               return this.type;
+          getNetwork() : ICapabilitiesNet {
+               return this.network;
           }
 
           /**
              @method
-             Setter for the button type
+             Network setter
 
-             @param {Adaptive.ICapabilitiesButton} type Button Type
-             @since v2.0
+             @param {Adaptive.ICapabilitiesNet} network New network switched
+             @since v2.2.1
           */
-          setType(type: ICapabilitiesButton) {
-               this.type = type;
+          setNetwork(network: ICapabilitiesNet) {
+               this.network = network;
           }
 
           /**
              @method
-             Timestamp Getter
+             Returns the timestamp of the event
 
-             @return {number} Timestamp
+             @return {number} Timestamp of the event
              @since v2.2.1
           */
           getTimestamp() : number {
@@ -133,9 +133,9 @@ module Adaptive {
 
           /**
              @method
-             Timestamp Setter
+             Sets the timestamp of the event
 
-             @param {number} timestamp Timestamp
+             @param {number} timestamp Timestamp of the event
              @since v2.2.1
           */
           setTimestamp(timestamp: number) {
@@ -146,15 +146,15 @@ module Adaptive {
              @method
              @static
              Convert JSON parsed object to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.Button.
-             @return {Adaptive.Button} Wrapped object instance.
+             @param {Object} object JSON parsed structure of type Adaptive.NetworkEvent.
+             @return {Adaptive.NetworkEvent} Wrapped object instance.
           */
-          static toObject(object : any) : Button {
-               var result : Button = new Button(null, null);
+          static toObject(object : any) : NetworkEvent {
+               var result : NetworkEvent = new NetworkEvent(null, null);
 
                if (object != null ) {
                     // Assign values to bean fields.
-                    result.type = ICapabilitiesButton.toObject(object.type);
+                    result.network = ICapabilitiesNet.toObject(object.network);
                     result.timestamp = object.timestamp;
 
                }
@@ -165,14 +165,14 @@ module Adaptive {
              @method
              @static
              Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.Button[].
-             @return {Adaptive.Button[]} Wrapped object array instance.
+             @param {Object} object JSON parsed structure of type Adaptive.NetworkEvent[].
+             @return {Adaptive.NetworkEvent[]} Wrapped object array instance.
           */
-          static toObjectArray(object : any) : Button[] {
-               var resultArray : Array<Button> = new Array<Button>();
+          static toObjectArray(object : any) : NetworkEvent[] {
+               var resultArray : Array<NetworkEvent> = new Array<NetworkEvent>();
                if (object != null) {
                     for (var i = 0; i < object.length; i++) {
-                         resultArray.push(Button.toObject(object[i]));
+                         resultArray.push(NetworkEvent.toObject(object[i]));
                     }
                }
                return resultArray;

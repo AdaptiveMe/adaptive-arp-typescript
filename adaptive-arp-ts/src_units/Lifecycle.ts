@@ -89,15 +89,35 @@ Possible lifecycle States:
           }
 
           /**
+             @property {number} timestamp
+             The timestamps in milliseconds when the event was fired.
+          */
+          timestamp : number;
+
+          /**
+             @property {number} timestamp
+             The timestamps in milliseconds when the event was fired. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+          */
+          get timestampProperty() : number {
+               return this.timestamp;
+          }
+
+          set timestampProperty(timestamp:number) {
+               this.timestamp = timestamp;
+          }
+
+          /**
              @method constructor
              Constructor used by the implementation
 
              @param {Adaptive.LifecycleState} state of the app
+             @param {number} timestamp Timestamp of the event
              @since v2.0
           */
-          constructor(state: LifecycleState) {
+          constructor(state: LifecycleState, timestamp: number) {
                super();
                this.state = state;
+               this.timestamp = timestamp;
           }
 
           /**
@@ -124,17 +144,40 @@ Possible lifecycle States:
 
           /**
              @method
+             Gets the timestamp in milliseconds of the event.
+
+             @return {number} Timestamp of the event.
+             @since v2.2.1
+          */
+          getTimestamp() : number {
+               return this.timestamp;
+          }
+
+          /**
+             @method
+             Sets the timestamp in milliseconds of the event.
+
+             @param {number} timestamp Timestamp of the event.
+             @since v2.2.1
+          */
+          setTimestamp(timestamp: number) {
+               this.timestamp = timestamp;
+          }
+
+          /**
+             @method
              @static
              Convert JSON parsed object to typed equivalent.
              @param {Object} object JSON parsed structure of type Adaptive.Lifecycle.
              @return {Adaptive.Lifecycle} Wrapped object instance.
           */
           static toObject(object : any) : Lifecycle {
-               var result : Lifecycle = new Lifecycle(null);
+               var result : Lifecycle = new Lifecycle(null, null);
 
                if (object != null ) {
                     // Assign values to bean fields.
                     result.state = LifecycleState.toObject(object.state);
+                    result.timestamp = object.timestamp;
 
                }
                return result;
