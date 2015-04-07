@@ -31,7 +31,7 @@ after_success: |-
   export API_TAG=`echo ${API_TAG//[v]/ }`
   rm -Rf temp
   cd $SOURCE_HOME
-  git remote set-url origin git@github.com:AdaptiveMe/adaptive-arp-typescript.git
+  git remote set-url origin https://github.com/AdaptiveMe/adaptive-arp-typescript.git
   git add -u
   git commit -m "API Specification ${API_TAG} at ${TIMESTAMP}."
   if [ "$GIT_TAG" != "$API_TAG" ]; then
