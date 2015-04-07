@@ -45,7 +45,7 @@ after_success: |-
   cp $SOURCE_HOME/*.js src_global/
   cp $SOURCE_HOME/*.js.map src_global/
   cp $SOURCE_HOME/*.d.ts src_global/
-  git add -u
+  git add -A
   git commit -m "API Specification ${API_TAG} at ${TIMESTAMP}."
   git push origin HEAD:master
   rm -Rf $SOURCE_HOME/temp
