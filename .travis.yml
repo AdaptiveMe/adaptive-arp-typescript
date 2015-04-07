@@ -32,6 +32,21 @@ after_success: |-
   export API_TAG=`echo ${API_TAG//[v]/ }`
   rm -Rf $SOURCE_HOME/temp
   cd $SOURCE_HOME
+  mkdir -p temp
+  cd temp
+  git clone https://github.com/AdaptiveMe/adaptive-arp-javascript.git
+  cd adaptive-arp-javascript/adaptive-arp-js
+  rm -f src_units/*.ts
+  cp $SOURCE_HOME/src_units/*.js src_units/
+  cp $SOURCE_HOME/src_units/*.js.map src_units/
+  cp $SOURCE_HOME/src_units/*.d.ts src_units/
+  rm -f src_global/*.*
+  cp $SOURCE_HOME/adaptive.* src_global/
+  git add -u
+  git commit -m "API Specification ${API_TAG} at ${TIMESTAMP}."
+  git push origin HEAD:master
+  rm -Rf $SOURCE_HOME/temp
+  cd $SOURCE_HOME
   ./postcompile.sh
   git remote set-url origin https://github.com/AdaptiveMe/adaptive-arp-typescript.git
   git add -u
