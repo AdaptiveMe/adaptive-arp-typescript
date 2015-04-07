@@ -40,11 +40,14 @@ after_success: |-
   cp $SOURCE_HOME/src_units/*.js src_units/
   cp $SOURCE_HOME/src_units/*.js.map src_units/
   cp $SOURCE_HOME/src_units/*.d.ts src_units/
-  rm -f src_global/*.*
-  mkdir -p src_global
-  cp $SOURCE_HOME/*.js src_global/
-  cp $SOURCE_HOME/*.js.map src_global/
-  cp $SOURCE_HOME/*.d.ts src_global/
+  rm -Rf src_global
+  rm -f *.js
+  rm -f *.js.map
+  rm -f *.d.ts
+  rm -f compile.sh
+  cp $SOURCE_HOME/*.js .
+  cp $SOURCE_HOME/*.js.map .
+  cp $SOURCE_HOME/*.d.ts .
   git add -A
   git commit -m "API Specification ${API_TAG} at ${TIMESTAMP}."
   git push origin HEAD:master
