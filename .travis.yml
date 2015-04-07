@@ -9,7 +9,7 @@ install:
 before_script:
 - export HOME=`pwd`
 - export TIMESTAMP=`date`
-- export CURRENT_TAG=`git describe --abbrev=0`
+- export GIT_TAG=`git describe --abbrev=0`
 - mkdir -p .git
 - git config --global credential.helper "store --file=$HOME/.git/credentials"
 - git config --global user.email "carlos@adaptive.me"
@@ -29,8 +29,7 @@ after_success: |-
   cd adaptive-arp-api
   export API_TAG=`git describe --abbrev=0`
   export API_TAG=`echo ${API_TAG//[v]/ }`
-  cd ..
-  rm -Rf temp
+  rm -Rf $SOURCE_HOME/temp
   cd $SOURCE_HOME
   git remote set-url origin https://github.com/AdaptiveMe/adaptive-arp-typescript.git
   git add -u
