@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.0
+    * @version v2.2.5
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -2268,7 +2268,7 @@ event may be fired if the application vetoes display rotation before rotation is
         onWarning(lifecycle: Lifecycle, warning: ILifecycleListenerWarning): any;
     }
     /**
-       Interface for Managing the Network status listener events
+       Interface for Managing the Network status listener networkEvents
 
        @author Carlos Lozano Diez
        @since v2.0
@@ -2288,18 +2288,18 @@ event may be fired if the application vetoes display rotation before rotation is
         /**
            @method
            Called when network connection changes somehow.
-           @param network Change to this network.
+           @param networkEvent Change to this network.
            @since v2.0
         */
-        onResult(network: ICapabilitiesNet): any;
+        onResult(networkEvent: NetworkEvent): any;
         /**
            @method
            Status received with warning
-           @param network Change to this network.
+           @param networkEvent Change to this network.
            @param warning Type of warning encountered during reading.
            @since v2.0
         */
-        onWarning(network: ICapabilitiesNet, warning: INetworkStatusListenerWarning): any;
+        onWarning(networkEvent: NetworkEvent, warning: INetworkStatusListenerWarning): any;
     }
     /**
        Interface for Audio purposes
@@ -4256,13 +4256,24 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
         */
         typeProperty: ICapabilitiesButton;
         /**
+           @property {number} timestamp
+           Timestamp of the button event.
+        */
+        timestamp: number;
+        /**
+           @property {number} timestamp
+           Timestamp of the button event. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+        */
+        timestampProperty: number;
+        /**
            @method constructor
            Constructor with fields
 
            @param {Adaptive.ICapabilitiesButton} type Button type.
+           @param {number} timestamp Timestamp of the event
            @since v2.0
         */
-        constructor(type: ICapabilitiesButton);
+        constructor(type: ICapabilitiesButton, timestamp: number);
         /**
            @method
            Returns the button type
@@ -4279,6 +4290,22 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
            @since v2.0
         */
         setType(type: ICapabilitiesButton): void;
+        /**
+           @method
+           Timestamp Getter
+
+           @return {number} Timestamp
+           @since v2.2.1
+        */
+        getTimestamp(): number;
+        /**
+           @method
+           Timestamp Setter
+
+           @param {number} timestamp Timestamp
+           @since v2.2.1
+        */
+        setTimestamp(timestamp: number): void;
         /**
            @method
            @static
@@ -6662,13 +6689,24 @@ Possible lifecycle States:
         */
         stateProperty: LifecycleState;
         /**
+           @property {number} timestamp
+           The timestamps in milliseconds when the event was fired.
+        */
+        timestamp: number;
+        /**
+           @property {number} timestamp
+           The timestamps in milliseconds when the event was fired. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+        */
+        timestampProperty: number;
+        /**
            @method constructor
            Constructor used by the implementation
 
            @param {Adaptive.LifecycleState} state of the app
+           @param {number} timestamp Timestamp of the event
            @since v2.0
         */
-        constructor(state: LifecycleState);
+        constructor(state: LifecycleState, timestamp: number);
         /**
            @method
            Returns the state of the application
@@ -6685,6 +6723,22 @@ Possible lifecycle States:
            @since v2.0
         */
         setState(state: LifecycleState): void;
+        /**
+           @method
+           Gets the timestamp in milliseconds of the event.
+
+           @return {number} Timestamp of the event.
+           @since v2.2.1
+        */
+        getTimestamp(): number;
+        /**
+           @method
+           Sets the timestamp in milliseconds of the event.
+
+           @param {number} timestamp Timestamp of the event.
+           @since v2.2.1
+        */
+        setTimestamp(timestamp: number): void;
         /**
            @method
            @static
@@ -6789,6 +6843,94 @@ Possible lifecycle States:
            @return {Adaptive.Locale[]} Wrapped object array instance.
         */
         static toObjectArray(object: any): Locale[];
+    }
+    /**
+       @class Adaptive.NetworkEvent
+       @extends Adaptive.APIBean
+       Represents a network handover event on the system.
+
+       @author Ferran Vila Conesa
+       @since v2.2.1
+       @version 1.0
+    */
+    class NetworkEvent extends APIBean {
+        /**
+           @property {Adaptive.ICapabilitiesNet} network
+           New type of network of the event
+        */
+        network: ICapabilitiesNet;
+        /**
+           @property {Adaptive.ICapabilitiesNet} network
+           New type of network of the event The 'networkProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'network'.
+        */
+        networkProperty: ICapabilitiesNet;
+        /**
+           @property {number} timestamp
+           The timestamps in milliseconds when the event was fired.
+        */
+        timestamp: number;
+        /**
+           @property {number} timestamp
+           The timestamps in milliseconds when the event was fired. The 'timestampProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'timestamp'.
+        */
+        timestampProperty: number;
+        /**
+           @method constructor
+           Constructor used by the implementation
+
+           @param {Adaptive.ICapabilitiesNet} network   of the app
+           @param {number} timestamp Timestamp of the event
+           @since v2.2.1
+        */
+        constructor(network: ICapabilitiesNet, timestamp: number);
+        /**
+           @method
+           Network event getter
+
+           @return {Adaptive.ICapabilitiesNet} New network switched
+           @since v2.2.1
+        */
+        getNetwork(): ICapabilitiesNet;
+        /**
+           @method
+           Network setter
+
+           @param {Adaptive.ICapabilitiesNet} network New network switched
+           @since v2.2.1
+        */
+        setNetwork(network: ICapabilitiesNet): void;
+        /**
+           @method
+           Returns the timestamp of the event
+
+           @return {number} Timestamp of the event
+           @since v2.2.1
+        */
+        getTimestamp(): number;
+        /**
+           @method
+           Sets the timestamp of the event
+
+           @param {number} timestamp Timestamp of the event
+           @since v2.2.1
+        */
+        setTimestamp(timestamp: number): void;
+        /**
+           @method
+           @static
+           Convert JSON parsed object to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.NetworkEvent.
+           @return {Adaptive.NetworkEvent} Wrapped object instance.
+        */
+        static toObject(object: any): NetworkEvent;
+        /**
+           @method
+           @static
+           Convert JSON parsed object array to typed equivalent.
+           @param {Object} object JSON parsed structure of type Adaptive.NetworkEvent[].
+           @return {Adaptive.NetworkEvent[]} Wrapped object array instance.
+        */
+        static toObjectArray(object: any): NetworkEvent[];
     }
     /**
        @class Adaptive.OSInfo
@@ -9119,18 +9261,18 @@ event may be fired if the application vetoes display rotation before rotation is
        @private
        @member Adaptive
        @param {number} id
-       @param {Adaptive.ICapabilitiesNet} network
+       @param {Adaptive.NetworkEvent} networkEvent
     */
-    function handleNetworkStatusListenerResult(id: number, network: ICapabilitiesNet): void;
+    function handleNetworkStatusListenerResult(id: number, networkEvent: NetworkEvent): void;
     /**
        @method
        @private
        @member Adaptive
        @param {number} id
-       @param {Adaptive.ICapabilitiesNet} network
+       @param {Adaptive.NetworkEvent} networkEvent
        @param {Adaptive.INetworkStatusListenerWarning} warning
     */
-    function handleNetworkStatusListenerWarning(id: number, network: ICapabilitiesNet, warning: INetworkStatusListenerWarning): void;
+    function handleNetworkStatusListenerWarning(id: number, networkEvent: NetworkEvent, warning: INetworkStatusListenerWarning): void;
     /**
        @class Adaptive.NetworkStatusListener
        @extends Adaptive.BaseListener
@@ -9145,21 +9287,21 @@ event may be fired if the application vetoes display rotation before rotation is
            @private
            @property
         */
-        onResultFunction: (network: ICapabilitiesNet) => void;
+        onResultFunction: (networkEvent: NetworkEvent) => void;
         /**
            @private
            @property
         */
-        onWarningFunction: (network: ICapabilitiesNet, warning: INetworkStatusListenerWarning) => void;
+        onWarningFunction: (networkEvent: NetworkEvent, warning: INetworkStatusListenerWarning) => void;
         /**
            @method constructor
            Constructor with anonymous handler functions for listener.
 
            @param {Function} onErrorFunction Function receiving parameters of type: Adaptive.INetworkStatusListenerError
-           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet
-           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.ICapabilitiesNet, Adaptive.INetworkStatusListenerWarning
+           @param {Function} onResultFunction Function receiving parameters of type: Adaptive.NetworkEvent
+           @param {Function} onWarningFunction Function receiving parameters of type: Adaptive.NetworkEvent, Adaptive.INetworkStatusListenerWarning
         */
-        constructor(onErrorFunction: (error: INetworkStatusListenerError) => void, onResultFunction: (network: ICapabilitiesNet) => void, onWarningFunction: (network: ICapabilitiesNet, warning: INetworkStatusListenerWarning) => void);
+        constructor(onErrorFunction: (error: INetworkStatusListenerError) => void, onResultFunction: (networkEvent: NetworkEvent) => void, onWarningFunction: (networkEvent: NetworkEvent, warning: INetworkStatusListenerWarning) => void);
         /**
            @method
            No data received - error condition, not authorized or hardware not available.
@@ -9170,18 +9312,18 @@ event may be fired if the application vetoes display rotation before rotation is
         /**
            @method
            Called when network connection changes somehow.
-           @param {Adaptive.ICapabilitiesNet} network network Change to this network.
+           @param {Adaptive.NetworkEvent} networkEvent networkEvent Change to this network.
            @since v2.0
         */
-        onResult(network: ICapabilitiesNet): void;
+        onResult(networkEvent: NetworkEvent): void;
         /**
            @method
            Status received with warning
-           @param {Adaptive.ICapabilitiesNet} network network Change to this network.
+           @param {Adaptive.NetworkEvent} networkEvent networkEvent Change to this network.
            @param {Adaptive.INetworkStatusListenerWarning} warning warning Type of warning encountered during reading.
            @since v2.0
         */
-        onWarning(network: ICapabilitiesNet, warning: INetworkStatusListenerWarning): void;
+        onWarning(networkEvent: NetworkEvent, warning: INetworkStatusListenerWarning): void;
     }
     /**
        @class Adaptive.BaseCallback
