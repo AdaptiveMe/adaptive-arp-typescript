@@ -5,7 +5,7 @@ node_js:
 install:
 - npm install -g typescript
 - npm install -g replace
-before_script: 
+before_script:
 - export HOME=`pwd`
 - export TIMESTAMP=`date`
 - export CURRENT_TAG=`git describe --abbrev=0`
@@ -17,49 +17,29 @@ before_script:
 - echo "https://${GH_TOKEN}:@github.com" > $HOME/.git/credentials
 script:
 - ./compile.sh
-after_success:
-    if [ "$TRAVIS_BRANCH" == "$TRAVIS_TAG" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-
-        echo Tagged version.
-
-    elif [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-    
-        export SOURCE_HOME=`pwd`
-        
-        mkdir -p temp
-        
-        cd temp
-        
-        git clone https://github.com/AdaptiveMe/adaptive-arp-api.git
-        
-        cd adaptive-arp-api
-        
-        export API_TAG=`git describe --abbrev=0`
-        
-        export API_TAG=`echo ${API_TAG//[v]/ }`
-        
-        rm -Rf temp
-        
-        cd $SOURCE_HOME
-        
-        git remote set-url origin git@github.com:AdaptiveMe/adaptive-arp-typescript.git
-        
-        git add -u
-    
-        git commit -m "API Specification ${API_TAG} at ${TIMESTAMP}."
-        
-        if [ "$GIT_TAG" != "$API_TAG" ]; then
-        
-            git tag -a "${API_TAG}" -m "API Specification ${API_TAG}"
-            
-            git push origin HEAD:master --tags
-            
-        fi
-        
-    fi
-    
+after_success: |-
+  if [ "$TRAVIS_BRANCH" == "$TRAVIS_TAG" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+  echo Tagged version.
+  elif [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+  export SOURCE_HOME=`pwd`
+  mkdir -p temp
+  cd temp
+  git clone https://github.com/AdaptiveMe/adaptive-arp-api.git
+  cd adaptive-arp-api
+  export API_TAG=`git describe --abbrev=0`
+  export API_TAG=`echo ${API_TAG//[v]/ }`
+  rm -Rf temp
+  cd $SOURCE_HOME
+  git remote set-url origin git@github.com:AdaptiveMe/adaptive-arp-typescript.git
+  git add -u
+  git commit -m "API Specification ${API_TAG} at ${TIMESTAMP}."
+  if [ "$GIT_TAG" != "$API_TAG" ]; then
+  git tag -a "${API_TAG}" -m "API Specification ${API_TAG}"
+  git push origin HEAD:master --tags
+  fi
+  fi
 after_failure:
 - echo "Having a bad moment..."
 env:
   global:
-    secure: LFHO9dsUi1A+0WHXwFPXeHfiJirmQyjw5h9K9cIPjyCM2E9ao6qEiLwCamXdSJg9oL4A0sgQiQCYZgFznyxJ4n3TM5gDR8dAZvueogdG5BcLeFZts5PpL4iU90OXDBAz/ElBMr2CA1toVpbXYp6aB1yGDaqt6cXUty/5U8KoB1s=
+    secure: R6YMkvyKY1rZEt5mvmRWWI4uSTxy7/lIso6uIZpFm4/DLMOm5SOGmM9MPxc9yMechoEH7+Wpd84Dk7vZBQKPQ8oTeMh1jTd1d3nkN5JvWvKTNOuZSTNJAZyhXf7DA8SF3S54qaiW1pZqbrqLN4uUu+WSnDMxMWPmjBxUT+UhyFc=
