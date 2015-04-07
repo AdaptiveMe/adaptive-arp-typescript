@@ -34,6 +34,7 @@ after_success: |-
   git remote set-url origin https://github.com/AdaptiveMe/adaptive-arp-typescript.git
   git add -u
   git commit -m "API Specification ${API_TAG} at ${TIMESTAMP}."
+  git push origin HEAD:master
   if [ "$GIT_TAG" != "$API_TAG" ]; then
   git tag -a "${API_TAG}" -m "API Specification ${API_TAG}"
   git push origin HEAD:master --tags

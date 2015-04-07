@@ -2,3 +2,4 @@
 adaptive-arp-ts/src_units/*.d.ts
 adaptive-arp-ts/src_units/*.js.map
 adaptive-arp-ts/src_units/*.js
+.gitconfig
