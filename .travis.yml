@@ -29,6 +29,7 @@ after_success: |-
   cd adaptive-arp-api
   export API_TAG=`git describe --abbrev=0`
   export API_TAG=`echo ${API_TAG//[v]/ }`
+  cd ..
   rm -Rf temp
   cd $SOURCE_HOME
   git remote set-url origin https://github.com/AdaptiveMe/adaptive-arp-typescript.git
