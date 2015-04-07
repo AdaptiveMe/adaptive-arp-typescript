@@ -9,7 +9,7 @@ before_script:
 script:
 - ./compile.sh
 after_success:
-- ./postcompile.sh
+- git ls-files --others --exclude-standard
 after_failure:
 - echo "Having a bad moment..."
 
