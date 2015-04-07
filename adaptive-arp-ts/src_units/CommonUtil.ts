@@ -153,7 +153,13 @@ module Adaptive {
             listenerDictionary.add("" + listener.getId(), listener);
         }
 
-        xhr.send(JSON.stringify(apiRequest));
+        if (typeof window['quirksMode'] !== "undefined") {
+            xhr.setRequestHeader("Content-Body",JSON.stringify(apiRequest));
+            xhr.send();
+        } else {
+            xhr.send(JSON.stringify(apiRequest));
+        }
+
         // Check response.
         if (xhr.status === 200 ) {
             if (xhr.responseText != null && xhr.responseText !== '') {
@@ -202,7 +208,14 @@ module Adaptive {
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         // Add callback reference to local dictionary.
         callbackDictionary.add(""+callback.getId(), callback);
-        xhr.send(JSON.stringify(apiRequest));
+
+        if (typeof window['quirksMode'] !== "undefined") {
+            xhr.setRequestHeader("Content-Body",JSON.stringify(apiRequest));
+            xhr.send();
+        } else {
+            xhr.send(JSON.stringify(apiRequest));
+        }
+
         // Check response.
         if (xhr.status === 200 ) {
             if (xhr.responseText != null && xhr.responseText !== '') {
@@ -239,7 +252,14 @@ module Adaptive {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", bridgePath, false);
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        xhr.send(JSON.stringify(apiRequest));
+
+        if (typeof window['quirksMode'] !== "undefined") {
+            xhr.setRequestHeader("Content-Body",JSON.stringify(apiRequest));
+            xhr.send();
+        } else {
+            xhr.send(JSON.stringify(apiRequest));
+        }
+
         // Check response.
         if (xhr.status === 200 ) {
             if (xhr.responseText != null && xhr.responseText !== '') {
