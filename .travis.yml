@@ -20,6 +20,8 @@ script:
 after_success:
     if [ "$TRAVIS_BRANCH" == "$TRAVIS_TAG" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
 
+        echo Tagged version.
+
     elif [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
     
         export SOURCE_HOME=`pwd`
@@ -41,6 +43,10 @@ after_success:
         cd $SOURCE_HOME
         
         git remote set-url origin git@github.com:AdaptiveMe/adaptive-arp-typescript.git
+        
+        git add -u
+    
+        git commit -m "API Specification ${API_TAG} at ${TIMESTAMP}."
         
         if [ "$GIT_TAG" != "$API_TAG" ]; then
         
