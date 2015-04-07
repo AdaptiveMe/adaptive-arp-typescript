@@ -1,18 +1,13 @@
 #!/bin/bash
-
+echo "Removing redundant files."
 HOME_DIR=`pwd`
-REPO_PATH=$HOME_DIR/tmp
-REPO_API=https://github.com/AdaptiveMe/adaptive-arp-api.git
 
-mkdir -p $REPO_PATH
-cd $REPO_PATH
-git clone --depth 1 $REPO_API
-RETVAL=$?
-[ $RETVAL -eq 0 ] && echo Cloned API Specifications.
-[ $RETVAL -ne 0 ] && exit $?
+rm $HOME_DIR/src_units/*.js
+rm $HOME_DIR/src_units/*.js.map
+rm $HOME_DIR/src_units/*.d.ts
 
-cd adaptive-arp-api
-API_VERSION=`git describe --abbrev=0`
-
+mv $HOME_DIR/Adaptive.js $HOME_DIR/adaptive.js
+mv $HOME_DIR/Adaptive.js.map $HOME_DIR/adaptive.js.map
+mv $HOME_DIR/Adaptive.d.ts $HOME_DIR/adaptive.d.ts
 
 exit 0
