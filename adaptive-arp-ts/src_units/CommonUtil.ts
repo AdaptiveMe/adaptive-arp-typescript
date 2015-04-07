@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.3
+    * @version v2.2.4
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -57,7 +57,7 @@ module Adaptive {
         @property {string} bridgeApiVersion
         The Adaptive Runtime Platform API specification version.
      */
-     export var bridgeApiVersion : string = "v2.2.3";
+     export var bridgeApiVersion : string = "v2.2.4";
 
      /**
         @class Adaptive.IDictionary
@@ -153,7 +153,13 @@ module Adaptive {
             listenerDictionary.add("" + listener.getId(), listener);
         }
 
-        xhr.send(JSON.stringify(apiRequest));
+        if (typeof window['quirksMode'] !== "undefined") {
+            xhr.setRequestHeader("Content-Body",JSON.stringify(apiRequest));
+            xhr.send();
+        } else {
+            xhr.send(JSON.stringify(apiRequest));
+        }
+
         // Check response.
         if (xhr.status === 200 ) {
             if (xhr.responseText != null && xhr.responseText !== '') {
@@ -202,7 +208,14 @@ module Adaptive {
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
         // Add callback reference to local dictionary.
         callbackDictionary.add(""+callback.getId(), callback);
-        xhr.send(JSON.stringify(apiRequest));
+
+        if (typeof window['quirksMode'] !== "undefined") {
+            xhr.setRequestHeader("Content-Body",JSON.stringify(apiRequest));
+            xhr.send();
+        } else {
+            xhr.send(JSON.stringify(apiRequest));
+        }
+
         // Check response.
         if (xhr.status === 200 ) {
             if (xhr.responseText != null && xhr.responseText !== '') {
@@ -239,7 +252,14 @@ module Adaptive {
         var xhr = new XMLHttpRequest();
         xhr.open("POST", bridgePath, false);
         xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-        xhr.send(JSON.stringify(apiRequest));
+
+        if (typeof window['quirksMode'] !== "undefined") {
+            xhr.setRequestHeader("Content-Body",JSON.stringify(apiRequest));
+            xhr.send();
+        } else {
+            xhr.send(JSON.stringify(apiRequest));
+        }
+
         // Check response.
         if (xhr.status === 200 ) {
             if (xhr.responseText != null && xhr.responseText !== '') {
