@@ -16,6 +16,7 @@ before_script:
 - git config --global user.name "carloslozano"
 - git config --global push.default simple
 - echo "https://${GH_TOKEN}:@github.com" > $HOME/.git/credentials
+- git checkout master
 script:
 - ./compile.sh
 after_success: |-
