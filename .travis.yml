@@ -40,11 +40,9 @@ after_success: |-
   cp $SOURCE_HOME/src_units/*.js src_units/
   cp $SOURCE_HOME/src_units/*.js.map src_units/
   cp $SOURCE_HOME/src_units/*.d.ts src_units/
-  rm -Rf src_global
   rm -f *.js
   rm -f *.js.map
   rm -f *.d.ts
-  rm -f compile.sh
   cp $SOURCE_HOME/*.js .
   cp $SOURCE_HOME/*.js.map .
   cp $SOURCE_HOME/*.d.ts .
