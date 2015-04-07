@@ -32,6 +32,7 @@ after_success: |-
   export API_TAG=`echo ${API_TAG//[v]/ }`
   rm -Rf $SOURCE_HOME/temp
   cd $SOURCE_HOME
+  ./postcompile.sh
   git remote set-url origin https://github.com/AdaptiveMe/adaptive-arp-typescript.git
   git add -u
   git commit -m "API Specification ${API_TAG} at ${TIMESTAMP}."
