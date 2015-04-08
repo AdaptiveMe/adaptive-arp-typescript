@@ -22,7 +22,6 @@ after_success: |-
   if [ "$TRAVIS_BRANCH" == "$TRAVIS_TAG" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
   echo Tagged version.
   elif [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-  git checkout master
   export SOURCE_HOME=`pwd`
   mkdir -p temp
   cd temp
