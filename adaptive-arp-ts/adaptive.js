@@ -8024,7 +8024,7 @@ doesn't exist, this will be -1. Used internally.
            The version of the API.
         */
         BaseListener.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         /**
            @method
@@ -9069,7 +9069,7 @@ event may be fired if the application vetoes display rotation before rotation is
            The version of the API.
         */
         BaseCallback.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseCallback;
     })();
@@ -10832,7 +10832,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseApplicationBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseApplicationBridge;
     })();
@@ -10867,7 +10867,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseCommerceBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseCommerceBridge;
     })();
@@ -10902,7 +10902,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseCommunicationBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseCommunicationBridge;
     })();
@@ -10937,7 +10937,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseDataBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseDataBridge;
     })();
@@ -10972,7 +10972,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseMediaBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseMediaBridge;
     })();
@@ -11007,7 +11007,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseNotificationBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseNotificationBridge;
     })();
@@ -11042,7 +11042,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BasePIMBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BasePIMBridge;
     })();
@@ -11077,7 +11077,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseReaderBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseReaderBridge;
     })();
@@ -11112,7 +11112,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSecurityBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseSecurityBridge;
     })();
@@ -11147,7 +11147,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSensorBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseSensorBridge;
     })();
@@ -11182,7 +11182,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSocialBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseSocialBridge;
     })();
@@ -11217,7 +11217,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSystemBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseSystemBridge;
     })();
@@ -11252,7 +11252,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseUIBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseUIBridge;
     })();
@@ -11287,7 +11287,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseUtilBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseUtilBridge;
     })();
@@ -15486,7 +15486,7 @@ of the device. For device orientation, use the IDevice APIs.
            @return {string} The version of the API.
         */
         AppRegistryBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         /**
            @private
