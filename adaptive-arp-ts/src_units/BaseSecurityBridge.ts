@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.6
+    * @version v2.2.8
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -79,7 +79,7 @@ module Adaptive {
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
      }
 }

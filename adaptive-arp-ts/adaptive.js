@@ -33,7 +33,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.6
+    * @version v2.2.8
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -56,7 +56,7 @@ var Adaptive;
        @property {string} bridgeApiVersion
        The Adaptive Runtime Platform API specification version.
     */
-    Adaptive.bridgeApiVersion = "v2.2.6";
+    Adaptive.bridgeApiVersion = "v2.2.8";
     /**
        @private
        @class Adaptive.Dictionary
@@ -8024,7 +8024,7 @@ doesn't exist, this will be -1. Used internally.
            The version of the API.
         */
         BaseListener.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         /**
            @method
@@ -9069,7 +9069,7 @@ event may be fired if the application vetoes display rotation before rotation is
            The version of the API.
         */
         BaseCallback.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseCallback;
     })();
@@ -10832,7 +10832,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseApplicationBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseApplicationBridge;
     })();
@@ -10867,7 +10867,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseCommerceBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseCommerceBridge;
     })();
@@ -10902,7 +10902,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseCommunicationBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseCommunicationBridge;
     })();
@@ -10937,7 +10937,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseDataBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseDataBridge;
     })();
@@ -10972,7 +10972,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseMediaBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseMediaBridge;
     })();
@@ -11007,7 +11007,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseNotificationBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseNotificationBridge;
     })();
@@ -11042,7 +11042,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BasePIMBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BasePIMBridge;
     })();
@@ -11077,7 +11077,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseReaderBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseReaderBridge;
     })();
@@ -11112,7 +11112,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSecurityBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseSecurityBridge;
     })();
@@ -11147,7 +11147,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSensorBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseSensorBridge;
     })();
@@ -11182,7 +11182,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSocialBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseSocialBridge;
     })();
@@ -11217,7 +11217,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseSystemBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseSystemBridge;
     })();
@@ -11252,7 +11252,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseUIBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseUIBridge;
     })();
@@ -11287,7 +11287,7 @@ event may be fired if the application vetoes display rotation before rotation is
            @return {string} The version of the API.
         */
         BaseUtilBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         return BaseUtilBridge;
     })();
@@ -11339,7 +11339,7 @@ event may be fired if the application vetoes display rotation before rotation is
         GlobalizationBridge.prototype.getDefaultLocale = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("IGlobalization", "getDefaultLocale", arParams, -1);
+            var apiRequest = new APIRequest("IGlobalization", "getDefaultLocale", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -11359,7 +11359,7 @@ event may be fired if the application vetoes display rotation before rotation is
         GlobalizationBridge.prototype.getLocaleSupportedDescriptors = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("IGlobalization", "getLocaleSupportedDescriptors", arParams, -1);
+            var apiRequest = new APIRequest("IGlobalization", "getLocaleSupportedDescriptors", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -11387,7 +11387,7 @@ event may be fired if the application vetoes display rotation before rotation is
             var arParams = [];
             arParams.push(JSON.stringify(key));
             arParams.push(JSON.stringify(locale));
-            var apiRequest = new APIRequest("IGlobalization", "getResourceLiteral", arParams, -1);
+            var apiRequest = new APIRequest("IGlobalization", "getResourceLiteral", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -11409,7 +11409,7 @@ event may be fired if the application vetoes display rotation before rotation is
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(locale));
-            var apiRequest = new APIRequest("IGlobalization", "getResourceLiterals", arParams, -1);
+            var apiRequest = new APIRequest("IGlobalization", "getResourceLiterals", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -11466,7 +11466,7 @@ event may be fired if the application vetoes display rotation before rotation is
         LifecycleBridge.prototype.isBackground = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("ILifecycle", "isBackground", arParams, -1);
+            var apiRequest = new APIRequest("ILifecycle", "isBackground", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -11844,7 +11844,7 @@ manipulated as needed by the application before submitting the ServiceRequest vi
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(serviceToken));
-            var apiRequest = new APIRequest("IService", "getServiceRequest", arParams, -1);
+            var apiRequest = new APIRequest("IService", "getServiceRequest", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -11873,7 +11873,7 @@ configured in the platform's XML service definition file.
             arParams.push(JSON.stringify(endpointName));
             arParams.push(JSON.stringify(functionName));
             arParams.push(JSON.stringify(method));
-            var apiRequest = new APIRequest("IService", "getServiceToken", arParams, -1);
+            var apiRequest = new APIRequest("IService", "getServiceToken", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -11898,7 +11898,7 @@ configured in the platform's XML service definition file.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(uri));
-            var apiRequest = new APIRequest("IService", "getServiceTokenByUri", arParams, -1);
+            var apiRequest = new APIRequest("IService", "getServiceTokenByUri", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -11918,7 +11918,7 @@ configured in the platform's XML service definition file.
         ServiceBridge.prototype.getServicesRegistered = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("IService", "getServicesRegistered", arParams, -1);
+            var apiRequest = new APIRequest("IService", "getServicesRegistered", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -11966,7 +11966,7 @@ XML service definition file.
             arParams.push(JSON.stringify(endpointName));
             arParams.push(JSON.stringify(functionName));
             arParams.push(JSON.stringify(method));
-            var apiRequest = new APIRequest("IService", "isServiceRegistered", arParams, -1);
+            var apiRequest = new APIRequest("IService", "isServiceRegistered", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -12028,7 +12028,7 @@ XML service definition file.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(number));
-            var apiRequest = new APIRequest("ITelephony", "call", arParams, -1);
+            var apiRequest = new APIRequest("ITelephony", "call", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -12214,7 +12214,7 @@ should be passed as a parameter
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(database));
-            var apiRequest = new APIRequest("IDatabase", "existsDatabase", arParams, -1);
+            var apiRequest = new APIRequest("IDatabase", "existsDatabase", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -12238,7 +12238,7 @@ should be passed as a parameter
             var arParams = [];
             arParams.push(JSON.stringify(database));
             arParams.push(JSON.stringify(databaseTable));
-            var apiRequest = new APIRequest("IDatabase", "existsTable", arParams, -1);
+            var apiRequest = new APIRequest("IDatabase", "existsTable", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -12280,7 +12280,7 @@ should be passed as a parameter
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var apiRequest = new APIRequest("IFile", "canRead", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "canRead", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -12302,7 +12302,7 @@ should be passed as a parameter
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var apiRequest = new APIRequest("IFile", "canWrite", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "canWrite", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -12342,7 +12342,7 @@ deleted if the cascade parameter is set to true.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(cascade));
-            var apiRequest = new APIRequest("IFile", "delete", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "delete", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -12364,7 +12364,7 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var apiRequest = new APIRequest("IFile", "exists", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "exists", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -12401,7 +12401,7 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var apiRequest = new APIRequest("IFile", "getFileStorageType", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "getFileStorageType", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -12423,7 +12423,7 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var apiRequest = new APIRequest("IFile", "getFileType", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "getFileType", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -12445,7 +12445,7 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var apiRequest = new APIRequest("IFile", "getSecurityType", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "getSecurityType", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -12467,7 +12467,7 @@ deleted if the cascade parameter is set to true.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
-            var apiRequest = new APIRequest("IFile", "isDirectory", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "isDirectory", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -12525,7 +12525,7 @@ is a file, it will not yield any results.
             var arParams = [];
             arParams.push(JSON.stringify(descriptor));
             arParams.push(JSON.stringify(recursive));
-            var apiRequest = new APIRequest("IFile", "mkDir", arParams, -1);
+            var apiRequest = new APIRequest("IFile", "mkDir", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -12609,7 +12609,7 @@ This method does not create the actual file in the specified folder.
             var arParams = [];
             arParams.push(JSON.stringify(parent));
             arParams.push(JSON.stringify(name));
-            var apiRequest = new APIRequest("IFileSystem", "createFileDescriptor", arParams, -1);
+            var apiRequest = new APIRequest("IFileSystem", "createFileDescriptor", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -12631,7 +12631,7 @@ This path is volatile and may be cleaned by the OS periodically.
         FileSystemBridge.prototype.getApplicationCacheFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("IFileSystem", "getApplicationCacheFolder", arParams, -1);
+            var apiRequest = new APIRequest("IFileSystem", "getApplicationCacheFolder", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -12652,7 +12652,7 @@ This path must always be writable by the current application.
         FileSystemBridge.prototype.getApplicationCloudFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("IFileSystem", "getApplicationCloudFolder", arParams, -1);
+            var apiRequest = new APIRequest("IFileSystem", "getApplicationCloudFolder", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -12673,7 +12673,7 @@ This path must always be writable by the current application.
         FileSystemBridge.prototype.getApplicationDocumentsFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("IFileSystem", "getApplicationDocumentsFolder", arParams, -1);
+            var apiRequest = new APIRequest("IFileSystem", "getApplicationDocumentsFolder", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -12694,7 +12694,7 @@ This path may or may not be directly readable or writable - it usually contains 
         FileSystemBridge.prototype.getApplicationFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("IFileSystem", "getApplicationFolder", arParams, -1);
+            var apiRequest = new APIRequest("IFileSystem", "getApplicationFolder", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -12715,7 +12715,7 @@ This path must always be writable by the current application.
         FileSystemBridge.prototype.getApplicationProtectedFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("IFileSystem", "getApplicationProtectedFolder", arParams, -1);
+            var apiRequest = new APIRequest("IFileSystem", "getApplicationProtectedFolder", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -12735,7 +12735,7 @@ This path must always be writable by the current application.
         FileSystemBridge.prototype.getSeparator = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("IFileSystem", "getSeparator", arParams, -1);
+            var apiRequest = new APIRequest("IFileSystem", "getSeparator", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -12758,7 +12758,7 @@ This path may or may not be writable by the current application.
         FileSystemBridge.prototype.getSystemExternalFolder = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("IFileSystem", "getSystemExternalFolder", arParams, -1);
+            var apiRequest = new APIRequest("IFileSystem", "getSystemExternalFolder", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -12899,7 +12899,7 @@ This path may or may not be writable by the current application.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(url));
-            var apiRequest = new APIRequest("IVideo", "playStream", arParams, -1);
+            var apiRequest = new APIRequest("IVideo", "playStream", arParams, -1 /* = synchronous call */);
             postRequest(apiRequest);
         };
         return VideoBridge;
@@ -13143,7 +13143,7 @@ This path may or may not be writable by the current application.
             var arParams = [];
             arParams.push(JSON.stringify(contact));
             arParams.push(JSON.stringify(pngImage));
-            var apiRequest = new APIRequest("IContact", "setContactPhoto", arParams, -1);
+            var apiRequest = new APIRequest("IContact", "setContactPhoto", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -13409,7 +13409,7 @@ This path may or may not be writable by the current application.
         SecurityBridge.prototype.isDeviceModified = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("ISecurity", "isDeviceModified", arParams, -1);
+            var apiRequest = new APIRequest("ISecurity", "isDeviceModified", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -13784,7 +13784,7 @@ changes please use the IDevice and IDisplay functions and listeners API respecti
         CapabilitiesBridge.prototype.getOrientationDefault = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("ICapabilities", "getOrientationDefault", arParams, -1);
+            var apiRequest = new APIRequest("ICapabilities", "getOrientationDefault", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -13805,7 +13805,7 @@ support at least one orientation. This is usually PortaitUp.
         CapabilitiesBridge.prototype.getOrientationsSupported = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("ICapabilities", "getOrientationsSupported", arParams, -1);
+            var apiRequest = new APIRequest("ICapabilities", "getOrientationsSupported", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -13831,7 +13831,7 @@ support at least one orientation. This is usually PortaitUp.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var apiRequest = new APIRequest("ICapabilities", "hasButtonSupport", arParams, -1);
+            var apiRequest = new APIRequest("ICapabilities", "hasButtonSupport", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -13854,7 +13854,7 @@ the device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var apiRequest = new APIRequest("ICapabilities", "hasCommunicationSupport", arParams, -1);
+            var apiRequest = new APIRequest("ICapabilities", "hasCommunicationSupport", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -13876,7 +13876,7 @@ the device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var apiRequest = new APIRequest("ICapabilities", "hasDataSupport", arParams, -1);
+            var apiRequest = new APIRequest("ICapabilities", "hasDataSupport", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -13899,7 +13899,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var apiRequest = new APIRequest("ICapabilities", "hasMediaSupport", arParams, -1);
+            var apiRequest = new APIRequest("ICapabilities", "hasMediaSupport", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -13921,7 +13921,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var apiRequest = new APIRequest("ICapabilities", "hasNetSupport", arParams, -1);
+            var apiRequest = new APIRequest("ICapabilities", "hasNetSupport", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -13944,7 +13944,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var apiRequest = new APIRequest("ICapabilities", "hasNotificationSupport", arParams, -1);
+            var apiRequest = new APIRequest("ICapabilities", "hasNotificationSupport", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -13966,7 +13966,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(orientation));
-            var apiRequest = new APIRequest("ICapabilities", "hasOrientationSupport", arParams, -1);
+            var apiRequest = new APIRequest("ICapabilities", "hasOrientationSupport", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -13989,7 +13989,7 @@ device.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(type));
-            var apiRequest = new APIRequest("ICapabilities", "hasSensorSupport", arParams, -1);
+            var apiRequest = new APIRequest("ICapabilities", "hasSensorSupport", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -14055,7 +14055,7 @@ device.
         DeviceBridge.prototype.getDeviceInfo = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("IDevice", "getDeviceInfo", arParams, -1);
+            var apiRequest = new APIRequest("IDevice", "getDeviceInfo", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -14075,7 +14075,7 @@ device.
         DeviceBridge.prototype.getLocaleCurrent = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("IDevice", "getLocaleCurrent", arParams, -1);
+            var apiRequest = new APIRequest("IDevice", "getLocaleCurrent", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -14096,7 +14096,7 @@ of the display. For display orientation, use the IDisplay APIs.
         DeviceBridge.prototype.getOrientationCurrent = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("IDevice", "getOrientationCurrent", arParams, -1);
+            var apiRequest = new APIRequest("IDevice", "getOrientationCurrent", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -14200,7 +14200,7 @@ of the device. For device orientation, use the IDevice APIs.
         DisplayBridge.prototype.getOrientationCurrent = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("IDisplay", "getOrientationCurrent", arParams, -1);
+            var apiRequest = new APIRequest("IDisplay", "getOrientationCurrent", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -14265,7 +14265,7 @@ of the device. For device orientation, use the IDevice APIs.
         OSBridge.prototype.getOSInfo = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("IOS", "getOSInfo", arParams, -1);
+            var apiRequest = new APIRequest("IOS", "getOSInfo", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = null;
@@ -14304,7 +14304,7 @@ of the device. For device orientation, use the IDevice APIs.
         RuntimeBridge.prototype.dismissApplication = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("IRuntime", "dismissApplication", arParams, -1);
+            var apiRequest = new APIRequest("IRuntime", "dismissApplication", arParams, -1 /* = synchronous call */);
             postRequest(apiRequest);
         };
         /**
@@ -14317,7 +14317,7 @@ of the device. For device orientation, use the IDevice APIs.
         RuntimeBridge.prototype.dismissSplashScreen = function () {
             // Create and populate API request.
             var arParams = [];
-            var apiRequest = new APIRequest("IRuntime", "dismissSplashScreen", arParams, -1);
+            var apiRequest = new APIRequest("IRuntime", "dismissSplashScreen", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -14359,7 +14359,7 @@ of the device. For device orientation, use the IDevice APIs.
             // Create and populate API request.
             var arParams = [];
             arParams.push(JSON.stringify(url));
-            var apiRequest = new APIRequest("IBrowser", "openExtenalBrowser", arParams, -1);
+            var apiRequest = new APIRequest("IBrowser", "openExtenalBrowser", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -14385,7 +14385,7 @@ of the device. For device orientation, use the IDevice APIs.
             arParams.push(JSON.stringify(url));
             arParams.push(JSON.stringify(title));
             arParams.push(JSON.stringify(backButtonText));
-            var apiRequest = new APIRequest("IBrowser", "openInternalBrowser", arParams, -1);
+            var apiRequest = new APIRequest("IBrowser", "openInternalBrowser", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -14411,7 +14411,7 @@ of the device. For device orientation, use the IDevice APIs.
             arParams.push(JSON.stringify(url));
             arParams.push(JSON.stringify(title));
             arParams.push(JSON.stringify(backButtonText));
-            var apiRequest = new APIRequest("IBrowser", "openInternalBrowserModal", arParams, -1);
+            var apiRequest = new APIRequest("IBrowser", "openInternalBrowserModal", arParams, -1 /* = synchronous call */);
             var apiResponse = postRequest(apiRequest);
             // Prepare response.
             var response = false;
@@ -14573,7 +14573,7 @@ of the device. For device orientation, use the IDevice APIs.
             var arParams = [];
             arParams.push(JSON.stringify(level));
             arParams.push(JSON.stringify(message));
-            var apiRequest = new APIRequest("ILogging", "logLevelMessage", arParams, -1);
+            var apiRequest = new APIRequest("ILogging", "logLevelMessage", arParams, -1 /* = synchronous call */);
             postRequest(apiRequest);
         };
         /**
@@ -14590,7 +14590,7 @@ of the device. For device orientation, use the IDevice APIs.
             arParams.push(JSON.stringify(level));
             arParams.push(JSON.stringify(category));
             arParams.push(JSON.stringify(message));
-            var apiRequest = new APIRequest("ILogging", "logLevelCategoryMessage", arParams, -1);
+            var apiRequest = new APIRequest("ILogging", "logLevelCategoryMessage", arParams, -1 /* = synchronous call */);
             postRequest(apiRequest);
         };
         return LoggingBridge;
@@ -15486,7 +15486,7 @@ of the device. For device orientation, use the IDevice APIs.
            @return {string} The version of the API.
         */
         AppRegistryBridge.prototype.getAPIVersion = function () {
-            return "v2.2.6";
+            return Adaptive.bridgeApiVersion;
         };
         /**
            @private
@@ -15856,9 +15856,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ContactAddressType(value) {
             this.value = value;
         }
-        ContactAddressType.prototype.toString = function () {
-            return this.value;
-        };
+        ContactAddressType.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -15899,9 +15897,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ContactEmailType(value) {
             this.value = value;
         }
-        ContactEmailType.prototype.toString = function () {
-            return this.value;
-        };
+        ContactEmailType.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -15942,9 +15938,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ContactPersonalInfoTitle(value) {
             this.value = value;
         }
-        ContactPersonalInfoTitle.prototype.toString = function () {
-            return this.value;
-        };
+        ContactPersonalInfoTitle.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -15989,9 +15983,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ContactPhoneType(value) {
             this.value = value;
         }
-        ContactPhoneType.prototype.toString = function () {
-            return this.value;
-        };
+        ContactPhoneType.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16048,9 +16040,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ContactSocialNetwork(value) {
             this.value = value;
         }
-        ContactSocialNetwork.prototype.toString = function () {
-            return this.value;
-        };
+        ContactSocialNetwork.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16099,9 +16089,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IAccelerationListenerError(value) {
             this.value = value;
         }
-        IAccelerationListenerError.prototype.toString = function () {
-            return this.value;
-        };
+        IAccelerationListenerError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16138,9 +16126,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IAccelerationListenerWarning(value) {
             this.value = value;
         }
-        IAccelerationListenerWarning.prototype.toString = function () {
-            return this.value;
-        };
+        IAccelerationListenerWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16177,9 +16163,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IAdaptiveRPGroup(value) {
             this.value = value;
         }
-        IAdaptiveRPGroup.prototype.toString = function () {
-            return this.value;
-        };
+        IAdaptiveRPGroup.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16268,9 +16252,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IButtonListenerError(value) {
             this.value = value;
         }
-        IButtonListenerError.prototype.toString = function () {
-            return this.value;
-        };
+        IButtonListenerError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16303,9 +16285,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IButtonListenerWarning(value) {
             this.value = value;
         }
-        IButtonListenerWarning.prototype.toString = function () {
-            return this.value;
-        };
+        IButtonListenerWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16338,9 +16318,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ICapabilitiesButton(value) {
             this.value = value;
         }
-        ICapabilitiesButton.prototype.toString = function () {
-            return this.value;
-        };
+        ICapabilitiesButton.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16381,9 +16359,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ICapabilitiesCommunication(value) {
             this.value = value;
         }
-        ICapabilitiesCommunication.prototype.toString = function () {
-            return this.value;
-        };
+        ICapabilitiesCommunication.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16432,9 +16408,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ICapabilitiesData(value) {
             this.value = value;
         }
-        ICapabilitiesData.prototype.toString = function () {
-            return this.value;
-        };
+        ICapabilitiesData.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16475,9 +16449,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ICapabilitiesMedia(value) {
             this.value = value;
         }
-        ICapabilitiesMedia.prototype.toString = function () {
-            return this.value;
-        };
+        ICapabilitiesMedia.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16526,9 +16498,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ICapabilitiesNet(value) {
             this.value = value;
         }
-        ICapabilitiesNet.prototype.toString = function () {
-            return this.value;
-        };
+        ICapabilitiesNet.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16585,9 +16555,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ICapabilitiesNotification(value) {
             this.value = value;
         }
-        ICapabilitiesNotification.prototype.toString = function () {
-            return this.value;
-        };
+        ICapabilitiesNotification.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16632,9 +16600,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ICapabilitiesOrientation(value) {
             this.value = value;
         }
-        ICapabilitiesOrientation.prototype.toString = function () {
-            return this.value;
-        };
+        ICapabilitiesOrientation.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16679,9 +16645,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ICapabilitiesSensor(value) {
             this.value = value;
         }
-        ICapabilitiesSensor.prototype.toString = function () {
-            return this.value;
-        };
+        ICapabilitiesSensor.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16738,9 +16702,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IContactFieldGroup(value) {
             this.value = value;
         }
-        IContactFieldGroup.prototype.toString = function () {
-            return this.value;
-        };
+        IContactFieldGroup.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16801,9 +16763,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IContactFilter(value) {
             this.value = value;
         }
-        IContactFilter.prototype.toString = function () {
-            return this.value;
-        };
+        IContactFilter.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16844,9 +16804,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IContactPhotoResultCallbackError(value) {
             this.value = value;
         }
-        IContactPhotoResultCallbackError.prototype.toString = function () {
-            return this.value;
-        };
+        IContactPhotoResultCallbackError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16887,9 +16845,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IContactPhotoResultCallbackWarning(value) {
             this.value = value;
         }
-        IContactPhotoResultCallbackWarning.prototype.toString = function () {
-            return this.value;
-        };
+        IContactPhotoResultCallbackWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16926,9 +16882,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IContactResultCallbackError(value) {
             this.value = value;
         }
-        IContactResultCallbackError.prototype.toString = function () {
-            return this.value;
-        };
+        IContactResultCallbackError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -16965,9 +16919,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IContactResultCallbackWarning(value) {
             this.value = value;
         }
-        IContactResultCallbackWarning.prototype.toString = function () {
-            return this.value;
-        };
+        IContactResultCallbackWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17004,9 +16956,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IDatabaseResultCallbackError(value) {
             this.value = value;
         }
-        IDatabaseResultCallbackError.prototype.toString = function () {
-            return this.value;
-        };
+        IDatabaseResultCallbackError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17047,9 +16997,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IDatabaseResultCallbackWarning(value) {
             this.value = value;
         }
-        IDatabaseResultCallbackWarning.prototype.toString = function () {
-            return this.value;
-        };
+        IDatabaseResultCallbackWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17086,9 +17034,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IDatabaseTableResultCallbackError(value) {
             this.value = value;
         }
-        IDatabaseTableResultCallbackError.prototype.toString = function () {
-            return this.value;
-        };
+        IDatabaseTableResultCallbackError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17137,9 +17083,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IDatabaseTableResultCallbackWarning(value) {
             this.value = value;
         }
-        IDatabaseTableResultCallbackWarning.prototype.toString = function () {
-            return this.value;
-        };
+        IDatabaseTableResultCallbackWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17180,9 +17124,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IDeviceOrientationListenerError(value) {
             this.value = value;
         }
-        IDeviceOrientationListenerError.prototype.toString = function () {
-            return this.value;
-        };
+        IDeviceOrientationListenerError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17211,9 +17153,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IDeviceOrientationListenerWarning(value) {
             this.value = value;
         }
-        IDeviceOrientationListenerWarning.prototype.toString = function () {
-            return this.value;
-        };
+        IDeviceOrientationListenerWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17242,9 +17182,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IDisplayOrientationListenerError(value) {
             this.value = value;
         }
-        IDisplayOrientationListenerError.prototype.toString = function () {
-            return this.value;
-        };
+        IDisplayOrientationListenerError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17273,9 +17211,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IDisplayOrientationListenerWarning(value) {
             this.value = value;
         }
-        IDisplayOrientationListenerWarning.prototype.toString = function () {
-            return this.value;
-        };
+        IDisplayOrientationListenerWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17308,9 +17244,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IFileDataLoadResultCallbackError(value) {
             this.value = value;
         }
-        IFileDataLoadResultCallbackError.prototype.toString = function () {
-            return this.value;
-        };
+        IFileDataLoadResultCallbackError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17351,9 +17285,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IFileDataLoadResultCallbackWarning(value) {
             this.value = value;
         }
-        IFileDataLoadResultCallbackWarning.prototype.toString = function () {
-            return this.value;
-        };
+        IFileDataLoadResultCallbackWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17386,9 +17318,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IFileDataStoreResultCallbackError(value) {
             this.value = value;
         }
-        IFileDataStoreResultCallbackError.prototype.toString = function () {
-            return this.value;
-        };
+        IFileDataStoreResultCallbackError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17429,9 +17359,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IFileDataStoreResultCallbackWarning(value) {
             this.value = value;
         }
-        IFileDataStoreResultCallbackWarning.prototype.toString = function () {
-            return this.value;
-        };
+        IFileDataStoreResultCallbackWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17464,9 +17392,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IFileListResultCallbackError(value) {
             this.value = value;
         }
-        IFileListResultCallbackError.prototype.toString = function () {
-            return this.value;
-        };
+        IFileListResultCallbackError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17503,9 +17429,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IFileListResultCallbackWarning(value) {
             this.value = value;
         }
-        IFileListResultCallbackWarning.prototype.toString = function () {
-            return this.value;
-        };
+        IFileListResultCallbackWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17538,9 +17462,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IFileResultCallbackError(value) {
             this.value = value;
         }
-        IFileResultCallbackError.prototype.toString = function () {
-            return this.value;
-        };
+        IFileResultCallbackError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17589,9 +17511,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IFileResultCallbackWarning(value) {
             this.value = value;
         }
-        IFileResultCallbackWarning.prototype.toString = function () {
-            return this.value;
-        };
+        IFileResultCallbackWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17628,9 +17548,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IFileSystemSecurity(value) {
             this.value = value;
         }
-        IFileSystemSecurity.prototype.toString = function () {
-            return this.value;
-        };
+        IFileSystemSecurity.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17671,9 +17589,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IFileSystemStorageType(value) {
             this.value = value;
         }
-        IFileSystemStorageType.prototype.toString = function () {
-            return this.value;
-        };
+        IFileSystemStorageType.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17726,9 +17642,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IFileSystemType(value) {
             this.value = value;
         }
-        IFileSystemType.prototype.toString = function () {
-            return this.value;
-        };
+        IFileSystemType.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17765,9 +17679,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IGeolocationListenerError(value) {
             this.value = value;
         }
-        IGeolocationListenerError.prototype.toString = function () {
-            return this.value;
-        };
+        IGeolocationListenerError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17812,9 +17724,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IGeolocationListenerWarning(value) {
             this.value = value;
         }
-        IGeolocationListenerWarning.prototype.toString = function () {
-            return this.value;
-        };
+        IGeolocationListenerWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17851,9 +17761,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ILifecycleListenerError(value) {
             this.value = value;
         }
-        ILifecycleListenerError.prototype.toString = function () {
-            return this.value;
-        };
+        ILifecycleListenerError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17894,9 +17802,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ILifecycleListenerWarning(value) {
             this.value = value;
         }
-        ILifecycleListenerWarning.prototype.toString = function () {
-            return this.value;
-        };
+        ILifecycleListenerWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17933,9 +17839,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ILoggingLogLevel(value) {
             this.value = value;
         }
-        ILoggingLogLevel.prototype.toString = function () {
-            return this.value;
-        };
+        ILoggingLogLevel.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -17980,9 +17884,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IMessagingCallbackError(value) {
             this.value = value;
         }
-        IMessagingCallbackError.prototype.toString = function () {
-            return this.value;
-        };
+        IMessagingCallbackError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -18031,9 +17933,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IMessagingCallbackWarning(value) {
             this.value = value;
         }
-        IMessagingCallbackWarning.prototype.toString = function () {
-            return this.value;
-        };
+        IMessagingCallbackWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -18070,9 +17970,7 @@ of the device. For device orientation, use the IDevice APIs.
         function INetworkReachabilityCallbackError(value) {
             this.value = value;
         }
-        INetworkReachabilityCallbackError.prototype.toString = function () {
-            return this.value;
-        };
+        INetworkReachabilityCallbackError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -18145,9 +18043,7 @@ of the device. For device orientation, use the IDevice APIs.
         function INetworkReachabilityCallbackWarning(value) {
             this.value = value;
         }
-        INetworkReachabilityCallbackWarning.prototype.toString = function () {
-            return this.value;
-        };
+        INetworkReachabilityCallbackWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -18196,9 +18092,7 @@ of the device. For device orientation, use the IDevice APIs.
         function INetworkStatusListenerError(value) {
             this.value = value;
         }
-        INetworkStatusListenerError.prototype.toString = function () {
-            return this.value;
-        };
+        INetworkStatusListenerError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -18235,9 +18129,7 @@ of the device. For device orientation, use the IDevice APIs.
         function INetworkStatusListenerWarning(value) {
             this.value = value;
         }
-        INetworkStatusListenerWarning.prototype.toString = function () {
-            return this.value;
-        };
+        INetworkStatusListenerWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -18274,9 +18166,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IOSType(value) {
             this.value = value;
         }
-        IOSType.prototype.toString = function () {
-            return this.value;
-        };
+        IOSType.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -18349,9 +18239,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ISecurityResultCallbackError(value) {
             this.value = value;
         }
-        ISecurityResultCallbackError.prototype.toString = function () {
-            return this.value;
-        };
+        ISecurityResultCallbackError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -18388,9 +18276,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ISecurityResultCallbackWarning(value) {
             this.value = value;
         }
-        ISecurityResultCallbackWarning.prototype.toString = function () {
-            return this.value;
-        };
+        ISecurityResultCallbackWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -18423,9 +18309,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IServiceCertificateValidation(value) {
             this.value = value;
         }
-        IServiceCertificateValidation.prototype.toString = function () {
-            return this.value;
-        };
+        IServiceCertificateValidation.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -18470,9 +18354,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IServiceContentEncoding(value) {
             this.value = value;
         }
-        IServiceContentEncoding.prototype.toString = function () {
-            return this.value;
-        };
+        IServiceContentEncoding.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -18517,9 +18399,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IServiceMethod(value) {
             this.value = value;
         }
-        IServiceMethod.prototype.toString = function () {
-            return this.value;
-        };
+        IServiceMethod.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -18560,9 +18440,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IServiceType(value) {
             this.value = value;
         }
-        IServiceType.prototype.toString = function () {
-            return this.value;
-        };
+        IServiceType.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -18607,9 +18485,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IServiceResultCallbackError(value) {
             this.value = value;
         }
-        IServiceResultCallbackError.prototype.toString = function () {
-            return this.value;
-        };
+        IServiceResultCallbackError.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -18658,9 +18534,7 @@ of the device. For device orientation, use the IDevice APIs.
         function IServiceResultCallbackWarning(value) {
             this.value = value;
         }
-        IServiceResultCallbackWarning.prototype.toString = function () {
-            return this.value;
-        };
+        IServiceResultCallbackWarning.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -18733,9 +18607,7 @@ of the device. For device orientation, use the IDevice APIs.
         function ITelephonyStatus(value) {
             this.value = value;
         }
-        ITelephonyStatus.prototype.toString = function () {
-            return this.value;
-        };
+        ITelephonyStatus.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -18772,9 +18644,7 @@ of the device. For device orientation, use the IDevice APIs.
         function LifecycleState(value) {
             this.value = value;
         }
-        LifecycleState.prototype.toString = function () {
-            return this.value;
-        };
+        LifecycleState.prototype.toString = function () { return this.value; };
         /**
            @method
            @static
@@ -18835,9 +18705,7 @@ of the device. For device orientation, use the IDevice APIs.
         function RotationEventState(value) {
             this.value = value;
         }
-        RotationEventState.prototype.toString = function () {
-            return this.value;
-        };
+        RotationEventState.prototype.toString = function () { return this.value; };
         /**
            @method
            @static

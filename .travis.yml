@@ -1,3 +1,4 @@
+sudo: false
 language: node_js
 before_install: cd adaptive-arp-ts
 node_js:
@@ -6,10 +7,77 @@ install:
 - npm install -g typescript
 - npm install -g replace
 before_script:
+- export HOME=`pwd`
+- export TIMESTAMP=`date`
+- export GIT_TAG=`git describe --abbrev=0`
+- mkdir -p .git
+- git config --global credential.helper "store --file=$HOME/.git/credentials"
+- git config --global user.email "carlos@adaptive.me"
+- git config --global user.name "carloslozano"
+- git config --global push.default simple
+- echo "https://${GH_TOKEN}:@github.com" > $HOME/.git/credentials
 script:
 - ./compile.sh
-after_success:
-- ./postcompile.sh
+after_success: |-
+  if [ "$TRAVIS_BRANCH" == "$TRAVIS_TAG" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    echo Tagged version.
+  elif [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+    export SOURCE_HOME=`pwd`
+    mkdir -p temp
+    cd temp
+    git clone https://github.com/AdaptiveMe/adaptive-arp-api.git
+    cd adaptive-arp-api
+    export API_TAG=`git describe --abbrev=0`
+    export API_TAG=`echo ${API_TAG//[v]/ }`
+    rm -Rf $SOURCE_HOME/temp
+    
+    cd $SOURCE_HOME
+    mkdir -p temp
+    cd temp
+    git clone https://github.com/AdaptiveMe/adaptive-arp-javascript.git
+    cd adaptive-arp-javascript/adaptive-arp-js
+    rm -f src_units/*.ts
+    cp $SOURCE_HOME/src_units/*.js src_units/
+    cp $SOURCE_HOME/src_units/*.js.map src_units/
+    cp $SOURCE_HOME/src_units/*.d.ts src_units/
+    rm -f *.js
+    rm -f *.js.map
+    rm -f *.d.ts
+    cp $SOURCE_HOME/*.js .
+    cp $SOURCE_HOME/*.js.map .
+    cp $SOURCE_HOME/*.d.ts .
+    git add -A
+    git commit -m "API Specification ${API_TAG} at ${TIMESTAMP}."
+    git push origin HEAD:master
+    rm -Rf $SOURCE_HOME/temp
+  
+    cd $SOURCE_HOME
+    mkdir -p temp
+    cd temp
+    git clone https://github.com/AdaptiveMe/bower-adaptiveme.git
+    cd bower-adaptiveme
+    rm -f adaptive*
+    cp $SOURCE_HOME/*.js .
+    cp $SOURCE_HOME/*.js.map .
+    cp $SOURCE_HOME/*.d.ts .
+    git add -A
+    git commit -m "API Specification ${API_TAG} at ${TIMESTAMP}."
+    git push origin HEAD:master
+    rm -Rf $SOURCE_HOME/temp
+  
+    cd $SOURCE_HOME
+    ./postcompile.sh
+    git remote set-url origin https://github.com/AdaptiveMe/adaptive-arp-typescript.git
+    git add -u
+    git commit -m "API Specification ${API_TAG} at ${TIMESTAMP}."
+    git push origin HEAD:master
+    if [ "$GIT_TAG" != "$API_TAG" ]; then
+        git tag -a "${API_TAG}" -m "API Specification ${API_TAG}"
+        git push origin HEAD:master --tags
+    fi
+  fi
 after_failure:
 - echo "Having a bad moment..."
-
+env:
+  global:
+    secure: R6YMkvyKY1rZEt5mvmRWWI4uSTxy7/lIso6uIZpFm4/DLMOm5SOGmM9MPxc9yMechoEH7+Wpd84Dk7vZBQKPQ8oTeMh1jTd1d3nkN5JvWvKTNOuZSTNJAZyhXf7DA8SF3S54qaiW1pZqbrqLN4uUu+WSnDMxMWPmjBxUT+UhyFc=

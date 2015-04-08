@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.6
+    * @version v2.2.8
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -52,7 +52,7 @@ module Adaptive {
         @property {string} bridgeApiVersion
         The Adaptive Runtime Platform API specification version.
      */
-     export var bridgeApiVersion : string = "v2.2.6";
+     export var bridgeApiVersion : string = "v2.2.8";
 
      /**
         @class Adaptive.IDictionary
@@ -12161,7 +12161,7 @@ to a relative path of a function published on a remote service. The 'functionNam
              The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
 
           /**
@@ -13293,7 +13293,7 @@ event may be fired if the application vetoes display rotation before rotation is
              The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
 
      }
@@ -15221,7 +15221,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
      }
 
@@ -15264,7 +15264,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
      }
 
@@ -15307,7 +15307,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
      }
 
@@ -15350,7 +15350,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
      }
 
@@ -15393,7 +15393,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
      }
 
@@ -15436,7 +15436,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
      }
 
@@ -15479,7 +15479,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
      }
 
@@ -15522,7 +15522,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
      }
 
@@ -15565,7 +15565,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
      }
 
@@ -15608,7 +15608,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
      }
 
@@ -15651,7 +15651,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
      }
 
@@ -15694,7 +15694,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
      }
 
@@ -15737,7 +15737,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
      }
 
@@ -15780,7 +15780,7 @@ event may be fired if the application vetoes display rotation before rotation is
              @return {string} The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
      }
 
@@ -20440,7 +20440,7 @@ of the device. For device orientation, use the IDevice APIs.
              @return {string} The version of the API.
           */
           public getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
      }
      /**
