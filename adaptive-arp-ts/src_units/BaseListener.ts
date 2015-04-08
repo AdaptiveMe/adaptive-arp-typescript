@@ -86,7 +86,7 @@ module Adaptive {
              The version of the API.
           */
           getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
 
           /**

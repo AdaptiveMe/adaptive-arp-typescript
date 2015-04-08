@@ -1476,7 +1476,7 @@ module Adaptive {
              @return {string} The version of the API.
           */
           public getAPIVersion() : string {
-               return "v2.2.6"
+               return bridgeApiVersion;
           }
      }
 }
