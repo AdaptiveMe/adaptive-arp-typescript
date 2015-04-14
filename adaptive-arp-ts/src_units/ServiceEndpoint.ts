@@ -32,6 +32,7 @@ Release:
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
+///<reference path="APIBean.ts"/>
 ///<reference path="IServiceCertificateValidation.ts"/>
 ///<reference path="ServicePath.ts"/>
 
@@ -39,13 +40,14 @@ module Adaptive {
 
      /**
         @class Adaptive.ServiceEndpoint
+        @extends Adaptive.APIBean
         Structure representing a remote or local service access end-point.
 
         @author Aryslan
         @since v2.0
         @version 1.0
      */
-     export class ServiceEndpoint {
+     export class ServiceEndpoint extends APIBean {
 
           /**
              @property {Adaptive.IServiceCertificateValidation} validationType
@@ -110,6 +112,7 @@ module Adaptive {
              @since v2.0.6
           */
           constructor(hostURI: string, paths: Array<ServicePath>) {
+               super();
                this.hostURI = hostURI;
                this.paths = paths;
           }

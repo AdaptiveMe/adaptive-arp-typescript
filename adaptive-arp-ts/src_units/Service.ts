@@ -32,19 +32,21 @@ Release:
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
+///<reference path="APIBean.ts"/>
 ///<reference path="ServiceEndpoint.ts"/>
 
 module Adaptive {
 
      /**
         @class Adaptive.Service
+        @extends Adaptive.APIBean
         Represents an instance of a service.
 
         @author Aryslan
         @since v2.0
         @version 1.0
      */
-     export class Service {
+     export class Service extends APIBean {
 
           /**
              @property {string} name
@@ -91,6 +93,7 @@ module Adaptive {
              @since v2.0.6
           */
           constructor(serviceEndpoints: Array<ServiceEndpoint>, name: string) {
+               super();
                this.serviceEndpoints = serviceEndpoints;
                this.name = name;
           }

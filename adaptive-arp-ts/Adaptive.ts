@@ -4339,507 +4339,6 @@ after uncompressing and unencrypting. The 'rawLengthProperty' is registered with
           }
      }
      /**
-        @class Adaptive.Service
-        Represents an instance of a service.
-
-        @author Aryslan
-        @since v2.0
-        @version 1.0
-     */
-     export class Service {
-          /**
-             @property {string} name
-             The service name
-          */
-          name : string;
-
-          /**
-             @property {string} name
-             The service name The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
-          */
-          get nameProperty() : string {
-               return this.name;
-          }
-
-          set nameProperty(name:string) {
-               this.name = name;
-          }
-
-          /**
-             @property {Adaptive.ServiceEndpoint[]} serviceEndpoints
-             Endpoint of the service
-          */
-          serviceEndpoints : Array<ServiceEndpoint>;
-
-          /**
-             @property {Adaptive.ServiceEndpoint[]} serviceEndpoints
-             Endpoint of the service The 'serviceEndpointsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceEndpoints'.
-          */
-          get serviceEndpointsProperty() : Array<ServiceEndpoint> {
-               return this.serviceEndpoints;
-          }
-
-          set serviceEndpointsProperty(serviceEndpoints:Array<ServiceEndpoint>) {
-               this.serviceEndpoints = serviceEndpoints;
-          }
-
-          /**
-             @method constructor
-             Constructor used by the implementation
-
-             @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoints of the service
-             @param {string} name             Name of the service
-             @since v2.0.6
-          */
-          constructor(serviceEndpoints: Array<ServiceEndpoint>, name: string) {
-               this.serviceEndpoints = serviceEndpoints;
-               this.name = name;
-          }
-          /**
-             @method
-             Returns the name
-
-             @return {string} name
-             @since v2.0
-          */
-          getName() : string {
-               return this.name;
-          }
-
-          /**
-             @method
-             Set the name
-
-             @param {string} name Name of the service
-             @since v2.0
-          */
-          setName(name: string) {
-               this.name = name;
-          }
-
-          /**
-             @method
-             Returns the serviceEndpoints
-
-             @return {Adaptive.ServiceEndpoint[]} serviceEndpoints
-             @since v2.0
-          */
-          getServiceEndpoints() : Array<ServiceEndpoint> {
-               return this.serviceEndpoints;
-          }
-
-          /**
-             @method
-             Set the serviceEndpoints
-
-             @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoint of the service
-             @since v2.0
-          */
-          setServiceEndpoints(serviceEndpoints: Array<ServiceEndpoint>) {
-               this.serviceEndpoints = serviceEndpoints;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.Service.
-             @return {Adaptive.Service} Wrapped object instance.
-          */
-          static toObject(object : any) : Service {
-               var result : Service = new Service(null, null);
-
-               if (object != null ) {
-                    // Assign values to bean fields.
-                    result.serviceEndpoints = ServiceEndpoint.toObjectArray(object.serviceEndpoints);
-                    result.name = object.name;
-
-               }
-               return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.Service[].
-             @return {Adaptive.Service[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : Service[] {
-               var resultArray : Array<Service> = new Array<Service>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(Service.toObject(object[i]));
-                    }
-               }
-               return resultArray;
-          }
-     }
-     /**
-        @class Adaptive.ServiceEndpoint
-        Structure representing a remote or local service access end-point.
-
-        @author Aryslan
-        @since v2.0
-        @version 1.0
-     */
-     export class ServiceEndpoint {
-          /**
-             @property {Adaptive.IServiceCertificateValidation} validationType
-             Type of validation to be performed for SSL hosts.
-          */
-          validationType : IServiceCertificateValidation;
-
-          /**
-             @property {Adaptive.IServiceCertificateValidation} validationType
-             Type of validation to be performed for SSL hosts. The 'validationTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'validationType'.
-          */
-          get validationTypeProperty() : IServiceCertificateValidation {
-               return this.validationType;
-          }
-
-          set validationTypeProperty(validationType:IServiceCertificateValidation) {
-               this.validationType = validationType;
-          }
-
-          /**
-             @property {string} hostURI
-             The remote service hostURI URI (alias or IP) composed of scheme://hostURI:port (http://hostURI:8080).
-          */
-          hostURI : string;
-
-          /**
-             @property {string} hostURI
-             The remote service hostURI URI (alias or IP) composed of scheme://hostURI:port (http://hostURI:8080). The 'hostURIProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'hostURI'.
-          */
-          get hostURIProperty() : string {
-               return this.hostURI;
-          }
-
-          set hostURIProperty(hostURI:string) {
-               this.hostURI = hostURI;
-          }
-
-          /**
-             @property {Adaptive.ServicePath[]} paths
-             The remote service paths (to be added to the hostURI and port url).
-          */
-          paths : Array<ServicePath>;
-
-          /**
-             @property {Adaptive.ServicePath[]} paths
-             The remote service paths (to be added to the hostURI and port url). The 'pathsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'paths'.
-          */
-          get pathsProperty() : Array<ServicePath> {
-               return this.paths;
-          }
-
-          set pathsProperty(paths:Array<ServicePath>) {
-               this.paths = paths;
-          }
-
-          /**
-             @method constructor
-             Constructor with parameters
-
-             @param {string} hostURI Remote service hostURI
-             @param {Adaptive.ServicePath[]} paths   Remote service Paths
-             @since v2.0.6
-          */
-          constructor(hostURI: string, paths: Array<ServicePath>) {
-               this.hostURI = hostURI;
-               this.paths = paths;
-          }
-          /**
-             @method
-             Gets the validation type for the certificate of a SSL host.
-
-             @return {Adaptive.IServiceCertificateValidation} Type of validation.
-             @since v2.0.6
-          */
-          getValidationType() : IServiceCertificateValidation {
-               return this.validationType;
-          }
-
-          /**
-             @method
-             Sets the validation type for the certificate of a SSL host.
-
-             @param {Adaptive.IServiceCertificateValidation} validationType Type of validation.
-             @since v2.0.6
-          */
-          setValidationType(validationType: IServiceCertificateValidation) {
-               this.validationType = validationType;
-          }
-
-          /**
-             @method
-             Returns the Remote service hostURI
-
-             @return {string} Remote service hostURI
-             @since v2.0
-          */
-          getHostURI() : string {
-               return this.hostURI;
-          }
-
-          /**
-             @method
-             Set the Remote service hostURI
-
-             @param {string} hostURI Remote service hostURI
-             @since v2.0
-          */
-          setHostURI(hostURI: string) {
-               this.hostURI = hostURI;
-          }
-
-          /**
-             @method
-             Returns the Remote service Paths
-
-             @return {Adaptive.ServicePath[]} Remote service Paths
-             @since v2.0
-          */
-          getPaths() : Array<ServicePath> {
-               return this.paths;
-          }
-
-          /**
-             @method
-             Set the Remote service Paths
-
-             @param {Adaptive.ServicePath[]} paths Remote service Paths
-             @since v2.0
-          */
-          setPaths(paths: Array<ServicePath>) {
-               this.paths = paths;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.ServiceEndpoint.
-             @return {Adaptive.ServiceEndpoint} Wrapped object instance.
-          */
-          static toObject(object : any) : ServiceEndpoint {
-               var result : ServiceEndpoint = new ServiceEndpoint(null, null);
-
-               if (object != null ) {
-                    // Assign values to bean fields.
-                    result.validationType = IServiceCertificateValidation.toObject(object.validationType);
-                    result.hostURI = object.hostURI;
-                    result.paths = ServicePath.toObjectArray(object.paths);
-
-               }
-               return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.ServiceEndpoint[].
-             @return {Adaptive.ServiceEndpoint[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : ServiceEndpoint[] {
-               var resultArray : Array<ServiceEndpoint> = new Array<ServiceEndpoint>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(ServiceEndpoint.toObject(object[i]));
-                    }
-               }
-               return resultArray;
-          }
-     }
-     /**
-        @class Adaptive.ServicePath
-        Structure representing a service path for one endpoint
-
-        @author fnva
-        @since v2.0.4
-        @version 1.0
-     */
-     export class ServicePath {
-          /**
-             @property {Adaptive.IServiceType} type
-             Service endpoint type.
-          */
-          type : IServiceType;
-
-          /**
-             @property {Adaptive.IServiceType} type
-             Service endpoint type. The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
-          */
-          get typeProperty() : IServiceType {
-               return this.type;
-          }
-
-          set typeProperty(type:IServiceType) {
-               this.type = type;
-          }
-
-          /**
-             @property {Adaptive.IServiceMethod[]} methods
-             The methods for calling a path.
-          */
-          methods : Array<IServiceMethod>;
-
-          /**
-             @property {Adaptive.IServiceMethod[]} methods
-             The methods for calling a path. The 'methodsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'methods'.
-          */
-          get methodsProperty() : Array<IServiceMethod> {
-               return this.methods;
-          }
-
-          set methodsProperty(methods:Array<IServiceMethod>) {
-               this.methods = methods;
-          }
-
-          /**
-             @property {string} path
-             The path for the endpoint.
-          */
-          path : string;
-
-          /**
-             @property {string} path
-             The path for the endpoint. The 'pathProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'path'.
-          */
-          get pathProperty() : string {
-               return this.path;
-          }
-
-          set pathProperty(path:string) {
-               this.path = path;
-          }
-
-          /**
-             @method constructor
-             Constructor with parameters.
-
-             @param {string} path    The path for the endpoint
-             @param {Adaptive.IServiceMethod[]} methods The methods for calling a path
-             @param {Adaptive.IServiceType} type    Protocol type.
-             @since v2.0.6
-          */
-          constructor(path: string, methods: Array<IServiceMethod>, type: IServiceType) {
-               this.path = path;
-               this.methods = methods;
-               this.type = type;
-          }
-          /**
-             @method
-             Gets the protocol for the path.
-
-             @return {Adaptive.IServiceType} Type of protocol.
-             @since v2.0.6
-          */
-          getType() : IServiceType {
-               return this.type;
-          }
-
-          /**
-             @method
-             Sets the protocol for the path.
-
-             @param {Adaptive.IServiceType} type Type of protocol.
-             @since v2.0.6
-          */
-          setType(type: IServiceType) {
-               this.type = type;
-          }
-
-          /**
-             @method
-             Endpoint's path methods setter
-
-             @return {Adaptive.IServiceMethod[]} Endpoint's path methods
-             @since v2.0.4
-          */
-          getMethods() : Array<IServiceMethod> {
-               return this.methods;
-          }
-
-          /**
-             @method
-             Endpoint's path methods setter
-
-             @param {Adaptive.IServiceMethod[]} methods Endpoint's path methods
-             @since v2.0.4
-          */
-          setMethods(methods: Array<IServiceMethod>) {
-               this.methods = methods;
-          }
-
-          /**
-             @method
-             Endpoint's Path Getter
-
-             @return {string} Endpoint's Path
-             @since v2.0.4
-          */
-          getPath() : string {
-               return this.path;
-          }
-
-          /**
-             @method
-             Endpoint's path setter
-
-             @param {string} path Endpoint's path
-             @since v2.0.4
-          */
-          setPath(path: string) {
-               this.path = path;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.ServicePath.
-             @return {Adaptive.ServicePath} Wrapped object instance.
-          */
-          static toObject(object : any) : ServicePath {
-               var result : ServicePath = new ServicePath(null, null, null);
-
-               if (object != null ) {
-                    // Assign values to bean fields.
-                    result.path = object.path;
-                    if (object.methods != null) {
-                         result.methods = new Array<IServiceMethod>();
-                         for(var imethods = 0; imethods < object.methods.length; imethods++) {
-                              var vmethods = object.methods[imethods];
-                              result.methods.push(IServiceMethod.toObject(vmethods));
-                         }
-                    }
-                    result.type = IServiceType.toObject(object.type);
-
-               }
-               return result;
-          }
-
-          /**
-             @method
-             @static
-             Convert JSON parsed object array to typed equivalent.
-             @param {Object} object JSON parsed structure of type Adaptive.ServicePath[].
-             @return {Adaptive.ServicePath[]} Wrapped object array instance.
-          */
-          static toObjectArray(object : any) : ServicePath[] {
-               var resultArray : Array<ServicePath> = new Array<ServicePath>();
-               if (object != null) {
-                    for (var i = 0; i < object.length; i++) {
-                         resultArray.push(ServicePath.toObject(object[i]));
-                    }
-               }
-               return resultArray;
-          }
-     }
-     /**
         @class Adaptive.Acceleration
         @extends Adaptive.APIBean
         Structure representing the data of a single acceleration reading.
@@ -9912,6 +9411,513 @@ concluded. The 'stateProperty' is registered with the ECMAScript 5 Object.define
                if (object != null) {
                     for (var i = 0; i < object.length; i++) {
                          resultArray.push(SecureKeyPair.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
+     }
+     /**
+        @class Adaptive.Service
+        @extends Adaptive.APIBean
+        Represents an instance of a service.
+
+        @author Aryslan
+        @since v2.0
+        @version 1.0
+     */
+     export class Service extends APIBean {
+          /**
+             @property {string} name
+             The service name
+          */
+          name : string;
+
+          /**
+             @property {string} name
+             The service name The 'nameProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'name'.
+          */
+          get nameProperty() : string {
+               return this.name;
+          }
+
+          set nameProperty(name:string) {
+               this.name = name;
+          }
+
+          /**
+             @property {Adaptive.ServiceEndpoint[]} serviceEndpoints
+             Endpoint of the service
+          */
+          serviceEndpoints : Array<ServiceEndpoint>;
+
+          /**
+             @property {Adaptive.ServiceEndpoint[]} serviceEndpoints
+             Endpoint of the service The 'serviceEndpointsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'serviceEndpoints'.
+          */
+          get serviceEndpointsProperty() : Array<ServiceEndpoint> {
+               return this.serviceEndpoints;
+          }
+
+          set serviceEndpointsProperty(serviceEndpoints:Array<ServiceEndpoint>) {
+               this.serviceEndpoints = serviceEndpoints;
+          }
+
+          /**
+             @method constructor
+             Constructor used by the implementation
+
+             @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoints of the service
+             @param {string} name             Name of the service
+             @since v2.0.6
+          */
+          constructor(serviceEndpoints: Array<ServiceEndpoint>, name: string) {
+               super();
+               this.serviceEndpoints = serviceEndpoints;
+               this.name = name;
+          }
+          /**
+             @method
+             Returns the name
+
+             @return {string} name
+             @since v2.0
+          */
+          getName() : string {
+               return this.name;
+          }
+
+          /**
+             @method
+             Set the name
+
+             @param {string} name Name of the service
+             @since v2.0
+          */
+          setName(name: string) {
+               this.name = name;
+          }
+
+          /**
+             @method
+             Returns the serviceEndpoints
+
+             @return {Adaptive.ServiceEndpoint[]} serviceEndpoints
+             @since v2.0
+          */
+          getServiceEndpoints() : Array<ServiceEndpoint> {
+               return this.serviceEndpoints;
+          }
+
+          /**
+             @method
+             Set the serviceEndpoints
+
+             @param {Adaptive.ServiceEndpoint[]} serviceEndpoints Endpoint of the service
+             @since v2.0
+          */
+          setServiceEndpoints(serviceEndpoints: Array<ServiceEndpoint>) {
+               this.serviceEndpoints = serviceEndpoints;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Service.
+             @return {Adaptive.Service} Wrapped object instance.
+          */
+          static toObject(object : any) : Service {
+               var result : Service = new Service(null, null);
+
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    result.serviceEndpoints = ServiceEndpoint.toObjectArray(object.serviceEndpoints);
+                    result.name = object.name;
+
+               }
+               return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.Service[].
+             @return {Adaptive.Service[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : Service[] {
+               var resultArray : Array<Service> = new Array<Service>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(Service.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
+     }
+     /**
+        @class Adaptive.ServiceEndpoint
+        @extends Adaptive.APIBean
+        Structure representing a remote or local service access end-point.
+
+        @author Aryslan
+        @since v2.0
+        @version 1.0
+     */
+     export class ServiceEndpoint extends APIBean {
+          /**
+             @property {Adaptive.IServiceCertificateValidation} validationType
+             Type of validation to be performed for SSL hosts.
+          */
+          validationType : IServiceCertificateValidation;
+
+          /**
+             @property {Adaptive.IServiceCertificateValidation} validationType
+             Type of validation to be performed for SSL hosts. The 'validationTypeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'validationType'.
+          */
+          get validationTypeProperty() : IServiceCertificateValidation {
+               return this.validationType;
+          }
+
+          set validationTypeProperty(validationType:IServiceCertificateValidation) {
+               this.validationType = validationType;
+          }
+
+          /**
+             @property {string} hostURI
+             The remote service hostURI URI (alias or IP) composed of scheme://hostURI:port (http://hostURI:8080).
+          */
+          hostURI : string;
+
+          /**
+             @property {string} hostURI
+             The remote service hostURI URI (alias or IP) composed of scheme://hostURI:port (http://hostURI:8080). The 'hostURIProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'hostURI'.
+          */
+          get hostURIProperty() : string {
+               return this.hostURI;
+          }
+
+          set hostURIProperty(hostURI:string) {
+               this.hostURI = hostURI;
+          }
+
+          /**
+             @property {Adaptive.ServicePath[]} paths
+             The remote service paths (to be added to the hostURI and port url).
+          */
+          paths : Array<ServicePath>;
+
+          /**
+             @property {Adaptive.ServicePath[]} paths
+             The remote service paths (to be added to the hostURI and port url). The 'pathsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'paths'.
+          */
+          get pathsProperty() : Array<ServicePath> {
+               return this.paths;
+          }
+
+          set pathsProperty(paths:Array<ServicePath>) {
+               this.paths = paths;
+          }
+
+          /**
+             @method constructor
+             Constructor with parameters
+
+             @param {string} hostURI Remote service hostURI
+             @param {Adaptive.ServicePath[]} paths   Remote service Paths
+             @since v2.0.6
+          */
+          constructor(hostURI: string, paths: Array<ServicePath>) {
+               super();
+               this.hostURI = hostURI;
+               this.paths = paths;
+          }
+          /**
+             @method
+             Gets the validation type for the certificate of a SSL host.
+
+             @return {Adaptive.IServiceCertificateValidation} Type of validation.
+             @since v2.0.6
+          */
+          getValidationType() : IServiceCertificateValidation {
+               return this.validationType;
+          }
+
+          /**
+             @method
+             Sets the validation type for the certificate of a SSL host.
+
+             @param {Adaptive.IServiceCertificateValidation} validationType Type of validation.
+             @since v2.0.6
+          */
+          setValidationType(validationType: IServiceCertificateValidation) {
+               this.validationType = validationType;
+          }
+
+          /**
+             @method
+             Returns the Remote service hostURI
+
+             @return {string} Remote service hostURI
+             @since v2.0
+          */
+          getHostURI() : string {
+               return this.hostURI;
+          }
+
+          /**
+             @method
+             Set the Remote service hostURI
+
+             @param {string} hostURI Remote service hostURI
+             @since v2.0
+          */
+          setHostURI(hostURI: string) {
+               this.hostURI = hostURI;
+          }
+
+          /**
+             @method
+             Returns the Remote service Paths
+
+             @return {Adaptive.ServicePath[]} Remote service Paths
+             @since v2.0
+          */
+          getPaths() : Array<ServicePath> {
+               return this.paths;
+          }
+
+          /**
+             @method
+             Set the Remote service Paths
+
+             @param {Adaptive.ServicePath[]} paths Remote service Paths
+             @since v2.0
+          */
+          setPaths(paths: Array<ServicePath>) {
+               this.paths = paths;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceEndpoint.
+             @return {Adaptive.ServiceEndpoint} Wrapped object instance.
+          */
+          static toObject(object : any) : ServiceEndpoint {
+               var result : ServiceEndpoint = new ServiceEndpoint(null, null);
+
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    result.validationType = IServiceCertificateValidation.toObject(object.validationType);
+                    result.hostURI = object.hostURI;
+                    result.paths = ServicePath.toObjectArray(object.paths);
+
+               }
+               return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServiceEndpoint[].
+             @return {Adaptive.ServiceEndpoint[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServiceEndpoint[] {
+               var resultArray : Array<ServiceEndpoint> = new Array<ServiceEndpoint>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServiceEndpoint.toObject(object[i]));
+                    }
+               }
+               return resultArray;
+          }
+     }
+     /**
+        @class Adaptive.ServicePath
+        @extends Adaptive.APIBean
+        Structure representing a service path for one endpoint
+
+        @author fnva
+        @since v2.0.4
+        @version 1.0
+     */
+     export class ServicePath extends APIBean {
+          /**
+             @property {Adaptive.IServiceType} type
+             Service endpoint type.
+          */
+          type : IServiceType;
+
+          /**
+             @property {Adaptive.IServiceType} type
+             Service endpoint type. The 'typeProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'type'.
+          */
+          get typeProperty() : IServiceType {
+               return this.type;
+          }
+
+          set typeProperty(type:IServiceType) {
+               this.type = type;
+          }
+
+          /**
+             @property {Adaptive.IServiceMethod[]} methods
+             The methods for calling a path.
+          */
+          methods : Array<IServiceMethod>;
+
+          /**
+             @property {Adaptive.IServiceMethod[]} methods
+             The methods for calling a path. The 'methodsProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'methods'.
+          */
+          get methodsProperty() : Array<IServiceMethod> {
+               return this.methods;
+          }
+
+          set methodsProperty(methods:Array<IServiceMethod>) {
+               this.methods = methods;
+          }
+
+          /**
+             @property {string} path
+             The path for the endpoint.
+          */
+          path : string;
+
+          /**
+             @property {string} path
+             The path for the endpoint. The 'pathProperty' is registered with the ECMAScript 5 Object.defineProperty() for the class field 'path'.
+          */
+          get pathProperty() : string {
+               return this.path;
+          }
+
+          set pathProperty(path:string) {
+               this.path = path;
+          }
+
+          /**
+             @method constructor
+             Constructor with parameters.
+
+             @param {string} path    The path for the endpoint
+             @param {Adaptive.IServiceMethod[]} methods The methods for calling a path
+             @param {Adaptive.IServiceType} type    Protocol type.
+             @since v2.0.6
+          */
+          constructor(path: string, methods: Array<IServiceMethod>, type: IServiceType) {
+               super();
+               this.path = path;
+               this.methods = methods;
+               this.type = type;
+          }
+          /**
+             @method
+             Gets the protocol for the path.
+
+             @return {Adaptive.IServiceType} Type of protocol.
+             @since v2.0.6
+          */
+          getType() : IServiceType {
+               return this.type;
+          }
+
+          /**
+             @method
+             Sets the protocol for the path.
+
+             @param {Adaptive.IServiceType} type Type of protocol.
+             @since v2.0.6
+          */
+          setType(type: IServiceType) {
+               this.type = type;
+          }
+
+          /**
+             @method
+             Endpoint's path methods setter
+
+             @return {Adaptive.IServiceMethod[]} Endpoint's path methods
+             @since v2.0.4
+          */
+          getMethods() : Array<IServiceMethod> {
+               return this.methods;
+          }
+
+          /**
+             @method
+             Endpoint's path methods setter
+
+             @param {Adaptive.IServiceMethod[]} methods Endpoint's path methods
+             @since v2.0.4
+          */
+          setMethods(methods: Array<IServiceMethod>) {
+               this.methods = methods;
+          }
+
+          /**
+             @method
+             Endpoint's Path Getter
+
+             @return {string} Endpoint's Path
+             @since v2.0.4
+          */
+          getPath() : string {
+               return this.path;
+          }
+
+          /**
+             @method
+             Endpoint's path setter
+
+             @param {string} path Endpoint's path
+             @since v2.0.4
+          */
+          setPath(path: string) {
+               this.path = path;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServicePath.
+             @return {Adaptive.ServicePath} Wrapped object instance.
+          */
+          static toObject(object : any) : ServicePath {
+               var result : ServicePath = new ServicePath(null, null, null);
+
+               if (object != null ) {
+                    // Assign values to bean fields.
+                    result.path = object.path;
+                    if (object.methods != null) {
+                         result.methods = new Array<IServiceMethod>();
+                         for(var imethods = 0; imethods < object.methods.length; imethods++) {
+                              var vmethods = object.methods[imethods];
+                              result.methods.push(IServiceMethod.toObject(vmethods));
+                         }
+                    }
+                    result.type = IServiceType.toObject(object.type);
+
+               }
+               return result;
+          }
+
+          /**
+             @method
+             @static
+             Convert JSON parsed object array to typed equivalent.
+             @param {Object} object JSON parsed structure of type Adaptive.ServicePath[].
+             @return {Adaptive.ServicePath[]} Wrapped object array instance.
+          */
+          static toObjectArray(object : any) : ServicePath[] {
+               var resultArray : Array<ServicePath> = new Array<ServicePath>();
+               if (object != null) {
+                    for (var i = 0; i < object.length; i++) {
+                         resultArray.push(ServicePath.toObject(object[i]));
                     }
                }
                return resultArray;
