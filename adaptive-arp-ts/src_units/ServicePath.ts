@@ -32,6 +32,7 @@ Release:
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
 
+///<reference path="APIBean.ts"/>
 ///<reference path="IServiceMethod.ts"/>
 ///<reference path="IServiceType.ts"/>
 
@@ -39,13 +40,14 @@ module Adaptive {
 
      /**
         @class Adaptive.ServicePath
+        @extends Adaptive.APIBean
         Structure representing a service path for one endpoint
 
         @author fnva
         @since v2.0.4
         @version 1.0
      */
-     export class ServicePath {
+     export class ServicePath extends APIBean {
 
           /**
              @property {Adaptive.IServiceType} type
@@ -111,6 +113,7 @@ module Adaptive {
              @since v2.0.6
           */
           constructor(path: string, methods: Array<IServiceMethod>, type: IServiceType) {
+               super();
                this.path = path;
                this.methods = methods;
                this.type = type;
