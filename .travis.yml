@@ -1,6 +1,5 @@
 sudo: false
 language: node_js
-before_install: cd adaptive-arp-ts
 node_js:
 - '0.12'
 install:
@@ -17,6 +16,8 @@ before_script:
 - git config --global push.default simple
 - echo "https://${GH_TOKEN}:@github.com" > $HOME/.git/credentials
 script:
+- npm test
+- cd adaptive-arp-ts
 - ./compile.sh
 after_success: |-
   if [ "$TRAVIS_BRANCH" == "$TRAVIS_TAG" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
