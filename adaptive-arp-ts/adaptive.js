@@ -51,6 +51,10 @@ var Adaptive;
        Base url used internally to POST and intercept JSON requests by the platform.
     */
     Adaptive.bridgePath = "https://adaptiveapp";
+    if (window.hasOwnProperty("_emulatorBridgePath_")) {
+        var emulatorBridgePath = window["_emulatorBridgePath_"];
+        Adaptive.bridgePath = emulatorBridgePath();
+    }
     /**
        @private
        @property {string} bridgeApiVersion
