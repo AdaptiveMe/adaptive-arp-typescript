@@ -46,6 +46,10 @@ module Adaptive {
         Base url used internally to POST and intercept JSON requests by the platform.
      */
      export var bridgePath : string = "https://adaptiveapp";
+     if (window.hasOwnProperty("_emulatorBridgePath_")) {
+          var emulatorBridgePath = window["_emulatorBridgePath_"];
+          bridgePath = emulatorBridgePath();
+     }
 
      /**
         @private
