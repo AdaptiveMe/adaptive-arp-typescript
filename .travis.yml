@@ -17,7 +17,9 @@ before_script:
 - git config --global push.default simple
 - echo "https://${GH_TOKEN}:@github.com" > $HOME/.git/credentials
 script:
-- npm test
+    if [ "$TRAVIS_BRANCH" == "$TRAVIS_TAG" ] && [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
+        npm test
+    fi
 - cd adaptive-arp-ts
 - ./compile.sh
 after_success: |-
