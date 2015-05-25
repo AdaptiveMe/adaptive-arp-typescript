@@ -27,7 +27,7 @@ Contributors:
 
 Release:
 
-    * @version v2.2.12
+    * @version v2.2.13
 
 -------------------------------------------| aut inveniam viam aut faciam |--------------------------------------------
 */
@@ -61,7 +61,7 @@ module Adaptive {
         @property {string} bridgeApiVersion
         The Adaptive Runtime Platform API specification version.
      */
-     export var bridgeApiVersion : string = "v2.2.12";
+     export var bridgeApiVersion : string = "v2.2.13";
 
      /**
         @class Adaptive.IDictionary
