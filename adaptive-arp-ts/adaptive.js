@@ -18755,4 +18755,4 @@ of the device. For device orientation, use the IDevice APIs.
 /**
 ------------------------------------| Engineered with ♥ in Barcelona, Catalonia |--------------------------------------
 */
-//# sourceMappingURL=Adaptive.js.map
+//# sourceMappingURL=adaptive.js.map
